@@ -10,6 +10,7 @@ import { History } from './pages/History.jsx';
 import { Board } from './pages/Board.jsx';
 import { Documents } from './pages/Documents.jsx';
 import { Academy } from './pages/Academy.jsx';
+import { Players } from './pages/Players.jsx';
 
 const IDLE_MAX = 8 * 60 * 60 * 1000; // sessão termina após 8 h sem atividade
 const LAST = 'sfd-admin-last';
@@ -20,7 +21,8 @@ export const NAV = [
   { href: '#/historia', label: 'A Nossa História', icon: 'clock' },
   { href: '#/orgaos', label: 'Órgãos Sociais', icon: 'people' },
   { href: '#/documentos', label: 'Documentos', icon: 'doc' },
-  { href: '#/academia', label: 'Academia', icon: 'ball' }
+  { href: '#/academia', label: 'Academia', icon: 'ball' },
+  { href: '#/plantel', label: 'Plantéis', icon: 'shirt' }
 ];
 
 function useRoute() {
@@ -114,6 +116,7 @@ function Shell({ me, route }) {
     case 'orgaos': page = <Board />; break;
     case 'documentos': page = <Documents />; break;
     case 'academia': page = <Academy />; break;
+    case 'plantel': page = <Players />; break;
     default: page = <Dashboard me={me} />;
   }
   const active = (href) => (href === '#/' ? seg[0] === '' : route.startsWith(href));

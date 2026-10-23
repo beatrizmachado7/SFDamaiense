@@ -2,7 +2,7 @@
 
 Este repositório tem o site público do SF Damaiense e o painel privado em `/admin`. O painel serve para os responsáveis do clube atualizarem conteúdos sem programar.
 
-O painel tem só cinco áreas: **Notícias**, **A Nossa História**, **Órgãos Sociais**, **Documentos** e **Academia**. Jogos, resultados e torneios ficam fora daqui, porque pertencem à app do Torneio de Páscoa.
+O painel tem seis áreas: **Notícias**, **A Nossa História**, **Órgãos Sociais**, **Documentos**, **Academia** e **Plantéis** (atletas da Equipa A, Sub-19, Sub-17 e Sub-15: nome, número, posição, fotografia e destaque na página inicial). Jogos, resultados e torneios ficam fora daqui, porque pertencem à app do Torneio de Páscoa.
 
 ## Como está organizado
 
@@ -122,3 +122,4 @@ Os testes cobrem:
 | Órgãos Sociais | `/clube/`, secção "Órgãos sociais" |
 | Documentos | `/clube/`, secção "Documentos" (abre o PDF) |
 | Academia | `/academia/`, tabela de horários e nota |
+| Plantéis | `/futebol/` (Equipa A e formação) e página inicial ("Quem veste a camisola", atletas em destaque) |

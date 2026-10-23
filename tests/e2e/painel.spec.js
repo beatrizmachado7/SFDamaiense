@@ -319,6 +319,59 @@ test('Academia: alterar horário reflete-se na tabela pública', async ({ page }
   await pub.close();
 });
 
+test('Plantéis: adicionar atleta com foto, editar número, destaque e remover', async ({ page }) => {
+  await login(page);
+  await nav(page, 'Plantéis');
+  await page.getByRole('tab', { name: 'Sub-15' }).click();
+  await expect(page.getByText('ainda não tem atletas')).toBeVisible();
+  await page.getByRole('button', { name: 'Adicionar atleta' }).click();
+  const name = 'Atleta Teste ' + RUN;
+  await page.getByLabel('Nome do atleta').fill(name);
+  await page.getByLabel('Número da camisola').fill('9');
+  await page.getByLabel('Posição').selectOption('Avançado');
+  await page.getByLabel('Fotografia do atleta', { exact: true }).setInputFiles({ name: 'foto.png', mimeType: 'image/png', buffer: PNG });
+  await expect(page.getByAltText('Fotografia do atleta')).toBeVisible();
+  await page.getByRole('button', { name: 'Adicionar atleta' }).last().click();
+  await expect(page.getByText('Atleta adicionado ao plantel.')).toBeVisible();
+  const card = page.getByTestId('player-card').filter({ hasText: name });
+  await expect(card).toContainText('9');
+  const { data: p1 } = await service.from('players').select('*').eq('full_name', name).single();
+  expect(p1.team).toBe('s15');
+  expect(p1.photo_url).toContain('/storage/v1/object/public/plantel/s15/');
+  // site público: aparece no Sub-15 da página Futebol
+  const pub = await page.context().newPage();
+  await pub.goto('/futebol/#sub-15');
+  await expect(pub.getByText(name).first()).toBeVisible();
+  // editar número
+  await card.getByRole('button', { name: 'Editar ' + name }).click();
+  await page.getByLabel('Número da camisola').fill('11');
+  await page.getByRole('button', { name: 'Guardar', exact: true }).click();
+  await expect(page.getByText('Atleta atualizado no site.').last()).toBeVisible();
+  await expect(page.getByTestId('player-card').filter({ hasText: name })).toContainText('11');
+  // remover (com confirmação) → sai do site e a fotografia é apagada
+  await page.getByRole('button', { name: 'Remover ' + name }).click();
+  await page.getByRole('alertdialog').getByRole('button', { name: 'Remover' }).click();
+  await expect(page.getByText('Atleta removido do plantel.')).toBeVisible();
+  expect((await service.from('players').select('id').eq('id', p1.id)).data.length).toBe(0);
+  const path = decodeURIComponent(p1.photo_url.split('/public/plantel/')[1]);
+  const { data: files } = await service.storage.from('plantel').list('s15');
+  expect(files.some((f) => path.endsWith(f.name))).toBe(false);
+  await pub.reload();
+  await expect(pub.getByText(name)).toHaveCount(0);
+  // Equipa A: tirar um destaque reflete-se na página inicial
+  await page.getByRole('tab', { name: 'Equipa A' }).click();
+  const pedro = page.getByTestId('player-card').filter({ hasText: 'Pedro Albino' });
+  await pedro.getByRole('button', { name: 'Editar Pedro Albino' }).click();
+  await page.getByLabel(/Mostrar na página inicial/).uncheck();
+  await page.getByRole('button', { name: 'Guardar', exact: true }).click();
+  await expect(page.getByText('Atleta atualizado no site.').last()).toBeVisible();
+  await pub.goto('/');
+  await expect(pub.getByText('Gonçalo Costa').first()).toBeAttached();
+  await expect(pub.getByText('Pedro Albino')).toHaveCount(0);
+  await service.from('players').update({ featured: true }).eq('full_name', 'Pedro Albino');
+  await pub.close();
+});
+
 test('site público mantém o funcionamento (menu e formulários)', async ({ page }) => {
   await page.goto('/contactos/');
   const input = page.locator('input, textarea').first();

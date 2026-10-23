@@ -238,3 +238,27 @@ a.item-t:hover { text-decoration: underline; }
 .modal p { color: var(--muted); }
 .modal .row { margin-top: 18px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* ── Plantéis ── */
+.pgroup { margin-bottom: 26px; }
+.pgroup h2 { margin-bottom: 12px; font-size: 17px; }
+.pgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; }
+.pgrid-full { grid-column: 1 / -1; }
+.pcard { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+.pcard-ph { position: relative; aspect-ratio: 4 / 5; background: var(--night); display: grid; place-items: center; color: #fff; font: 700 34px var(--display); }
+.pcard-ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.pcard-nr { position: absolute; left: 8px; top: 8px; min-width: 34px; height: 34px; padding: 0 6px; border-radius: 8px; background: var(--red); color: #fff; display: grid; place-items: center; font: 700 17px var(--display); }
+.pcard-star { position: absolute; right: 8px; top: 8px; width: 28px; height: 28px; border-radius: 50%; background: #F2B705; color: var(--ink); display: grid; place-items: center; font-style: normal; font-size: 15px; }
+.pcard-b { padding: 10px 10px 8px; display: flex; flex-direction: column; gap: 6px; }
+.pcard-n { font-weight: 600; font-size: 14px; line-height: 1.3; }
+.pcard .item-a { justify-content: space-between; flex-wrap: nowrap; }
+.pf-grid { display: grid; grid-template-columns: 200px 1fr; gap: 20px; }
+.pf-photo { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.pf-photo .hint, .pf-photo .err { font-size: 12px; }
+.pf-photo .err { color: var(--red2); font-weight: 600; }
+.pf-photo .hint { color: var(--muted); }
+.pf-frame { width: 100%; aspect-ratio: 4 / 5; border-radius: 10px; overflow: hidden; background: var(--paper2); display: grid; place-items: center; color: var(--muted); }
+.pf-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; margin: 4px 0 12px; cursor: pointer; }
+.check input { width: 20px; height: 20px; margin-top: 1px; accent-color: var(--night); }
+@media (max-width: 640px) { .pf-grid { grid-template-columns: 1fr; } .pf-photo { flex-direction: row; flex-wrap: wrap; align-items: center; } .pf-frame { width: 120px; } .pgrid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }

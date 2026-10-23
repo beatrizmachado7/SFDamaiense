@@ -133,3 +133,20 @@ test('campos de controlo não podem ser falsificados pelo cliente', async () => 
   assert.equal(r.data.created_by, u.user.id);
   await admin.from('news').delete().eq('slug', s);
 });
+
+test('plantéis: leitura pública, escrita só administradores, validação', async () => {
+  const { data: pub } = await anon.from('players').select('full_name, team');
+  assert.ok(pub.length >= 57);
+  const ins = await anon.from('players').insert({ team: 'a', full_name: 'Intruso' });
+  assert.ok(ins.error, 'visitante não pode adicionar atletas');
+  const upd = await other.from('players').update({ full_name: 'Hack' }).eq('team', 'a').select();
+  assert.ok(upd.error || upd.data.length === 0, 'conta sem permissão não pode alterar');
+  assert.ok((await admin.from('players').insert({ team: 'x', full_name: 'Equipa inválida' })).error);
+  assert.ok((await admin.from('players').insert({ team: 'a', full_name: 'Número inválido', number: 120 })).error);
+  assert.ok((await admin.from('players').insert({ team: 'a', full_name: 'Posição inválida', position: 'Treinador' })).error);
+  const ok = await admin.from('players').insert({ team: 's15', full_name: 'Atleta Teste', number: 9, position: 'Avançado' }).select('id').single();
+  assert.ifError(ok.error);
+  await admin.from('players').delete().eq('id', ok.data.id);
+  const up = await other.storage.from('plantel').upload('x.jpg', new Blob(['x'], { type: 'image/jpeg' }), { contentType: 'image/jpeg' });
+  assert.ok(up.error, 'upload de fotografia sem permissão devia falhar');
+});

@@ -7,7 +7,8 @@ const CARDS = [
   { href: '#/historia', icon: 'clock', t: 'A Nossa História', d: 'Anos da cronologia' },
   { href: '#/orgaos', icon: 'people', t: 'Órgãos Sociais', d: 'Nomes, cargos e mandatos' },
   { href: '#/documentos', icon: 'doc', t: 'Documentos', d: 'PDF para o site' },
-  { href: '#/academia', icon: 'ball', t: 'Academia', d: 'Horários dos treinos' }
+  { href: '#/academia', icon: 'ball', t: 'Academia', d: 'Horários dos treinos' },
+  { href: '#/plantel', icon: 'shirt', t: 'Plantéis', d: 'Atletas, números e fotografias' }
 ];
 
 async function count(table, f) {
@@ -22,15 +23,16 @@ export function Dashboard({ me }) {
   useEffect(() => {
     Promise.all([
       count('news', (q) => q.eq('status', 'published')), count('news', (q) => q.eq('status', 'draft')),
-      count('history_events'), count('board_members'), count('documents'), count('academy_schedule')
-    ]).then(([pub, dr, h, b, d, a]) => setN({ pub, dr, h, b, d, a }));
+      count('history_events'), count('board_members'), count('documents'), count('academy_schedule'), count('players')
+    ]).then(([pub, dr, h, b, d, a, pl]) => setN({ pub, dr, h, b, d, a, pl }));
   }, []);
   const meta = {
     '#/noticias': n.pub == null ? '' : `${n.pub} publicadas${n.dr ? ` · ${n.dr} rascunho${n.dr > 1 ? 's' : ''}` : ''}`,
     '#/historia': n.h == null ? '' : `${n.h} ${n.h === 1 ? 'ano' : 'anos'}`,
     '#/orgaos': n.b == null ? '' : `${n.b} cargos`,
     '#/documentos': n.d == null ? '' : `${n.d} ${n.d === 1 ? 'documento' : 'documentos'}`,
-    '#/academia': n.a == null ? '' : `${n.a} escalões`
+    '#/academia': n.a == null ? '' : `${n.a} escalões`,
+    '#/plantel': n.pl == null ? '' : `${n.pl} atletas`
   };
   const first = (me.full_name || '').split(' ')[0];
   return (

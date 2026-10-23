@@ -82,6 +82,18 @@
         });
       });
     },
+    players: function () {
+      return get('players?select=team,full_name,number,position,photo_url,featured&order=team.asc,number.asc.nullslast,sort.asc').then(function (rows) {
+        var out = { a: [], s19: [], s17: [], s15: [] }, feat = [];
+        rows.forEach(function (p) {
+          var o = { name: p.full_name, img: p.photo_url || '', pos: p.position || '[Posição a confirmar]', nr: p.number ? String(p.number) : '' };
+          if (out[p.team]) out[p.team].push(o);
+          if (p.team === 'a' && p.featured) feat.push(o);
+        });
+        out.featured = feat;
+        return out;
+      });
+    },
     texts: function () {
       return get('site_texts?select=key,value').then(function (rows) {
         var o = {}; rows.forEach(function (r) { o[r.key] = r.value; }); return o;
@@ -110,6 +122,10 @@
       if (name === 'news' && !v.length) return null; // as páginas de notícias precisam de pelo menos uma
       return v;
     },
+    /** Plantel de uma equipa ('a', 's19', 's17', 's15') no formato da página, ou null. */
+    players: function (team) { var p = store.players; return p && p[team] ? p[team] : null; },
+    /** Jogadores em destaque na página inicial (até 8); sem destaques, os primeiros da Equipa A. */
+    featured: function () { var p = store.players; if (!p || !p.a.length) return null; return (p.featured.length ? p.featured : p.a).slice(0, 8); },
     text: function (key) { return store.texts && store.texts[key] ? store.texts[key] : null; },
     mandate: function () { return store.mandate || null; },
     /** Converte o texto estruturado de uma notícia para o formato dos modelos da página. */
