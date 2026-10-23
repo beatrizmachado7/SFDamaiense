@@ -1,7 +1,8 @@
 [build]
   publish = "site"
   functions = "netlify/functions"
-  command = "node scripts/write-config.mjs && npm run build"
+  # Se as imagens estiverem na pasta assets/ da raiz do repositório, são copiadas para site/assets/ antes de publicar.
+  command = "(if [ -d assets ]; then mkdir -p site/assets && cp -R assets/. site/assets/; fi) && node scripts/write-config.mjs && npm run build"
 
 [build.environment]
   NODE_VERSION = "22"
