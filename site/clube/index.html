@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<title>SF Damaiense — Clube</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E3A22">
+<script src="/config.js"></script>
+<script src="/js/sfd-content.js"></script>
+<script src="/js/assets-map.js"></script>
+<script src="/js/vendor/morphdom-umd.min.js"></script>
+<script src="/js/dc-runtime.js"></script>
+</head>
+<body>
+<template id="x-dc">
+<helmet>
+<style>
+@font-face{font-family:'Tungsten';src:url(/assets/96a6c4058d9925bb362137182b9f6187.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url(/assets/70d0003be0a793d320939f01b352e5dc.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+[style*="Tungsten"],details.faq summary{text-transform:uppercase}
+:root,.th-carbono{--bg:#0C0C0D;--bg2:#151517;--bg3:#070708;--hi:#232326;--ov:12,12,13;--ov2:7,7,8;--mut:#A8A6A0;--mut2:#D2CFC7;--mut3:#8E8B85;--feat:linear-gradient(135deg,#0F4520 0%,#0A2413 55%,#0C0C0D 100%);--featdot:#0A2413;--tex:radial-gradient(ellipse 50% 40% at 0% 0%,rgba(200,17,28,.10),rgba(0,0,0,0) 70%),radial-gradient(ellipse 50% 40% at 100% 100%,rgba(46,122,42,.10),rgba(0,0,0,0) 70%),repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,rgba(0,0,0,0) 1px 120px)}
+.th-relvado{--bg:#07130D;--bg2:#0E1F16;--bg3:#040C08;--hi:#163024;--ov:7,19,13;--ov2:4,12,8;--mut:#A6B6AC;--mut2:#CFDAD3;--mut3:#83958A;--feat:linear-gradient(135deg,#6A0B12 0%,#3A070B 55%,#07130D 100%);--featdot:#3A070B;--tex:radial-gradient(ellipse 60% 45% at 50% 0%,rgba(46,122,42,.16),rgba(0,0,0,0) 70%),repeating-linear-gradient(90deg,rgba(46,122,42,.05) 0 160px,rgba(0,0,0,0) 160px 320px)}
+.th-bordeaux{--bg:#130A0C;--bg2:#1E1013;--bg3:#0B0507;--hi:#2C161B;--ov:19,10,12;--ov2:11,5,7;--mut:#B9AAAC;--mut2:#DACECF;--mut3:#988A8C;--feat:linear-gradient(135deg,#0F4520 0%,#0A2413 55%,#130A0C 100%);--featdot:#0A2413;--tex:radial-gradient(ellipse 55% 45% at 100% 0%,rgba(200,17,28,.14),rgba(0,0,0,0) 70%),radial-gradient(ellipse 40% 35% at 0% 100%,rgba(255,255,255,0.06),rgba(0,0,0,0) 70%)}
+.th-noite{--bg:#0A0918;--bg2:#0F0E22;--bg3:#07060F;--hi:#1D1B42;--ov:10,9,24;--ov2:7,6,15;--mut:#A9A7BF;--mut2:#C9C7DA;--mut3:#8E8CA6;--feat:#3F3A8A;--featdot:#3F3A8A;--tex:none}
+.th-damaiense{--bg:#0A2614;background-color:#0A2614;--bg2:rgba(7,28,15,.66);--bg3:#071C0F;--hi:rgba(51,129,44,.38);--ov:8,32,18;--ov2:6,24,13;--mut:#C6D2C8;--mut2:#E6ECE5;--mut3:#A7B6AA;--feat:linear-gradient(120deg,#C8111C 0%,#93101A 48%,#1E6A2B 100%);--featdot:#93101A;--tex:none}
+.th-damaiense::before{content:"";position:fixed;inset:-60%;z-index:0;pointer-events:none;background-image:url(/assets/ac34ed85ee34adfe4550a3a51b5a155f.png);background-size:406px 276px;background-repeat:repeat;opacity:.075;transform:rotate(-8deg) skewX(-8deg)}
+.th-damaiense::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 100% 0%,rgba(200,17,28,.16),rgba(0,0,0,0) 70%),radial-gradient(ellipse 60% 50% at 0% 100%,rgba(46,122,42,.20),rgba(0,0,0,0) 70%),linear-gradient(180deg,rgba(6,22,12,0) 0%,rgba(6,22,12,.35) 100%)}
+
+@keyframes fluid{0%{transform:scale(1.05) translate(0,0) rotate(0deg)}50%{transform:scale(1.18) translate(-3%,2%) rotate(2deg)}100%{transform:scale(1.1) translate(3%,-2%) rotate(-1.5deg)}}
+.th-damaiense > *{position:relative;z-index:1}
+.th-damaiense > .hdr{position:sticky;z-index:50}
+@media (prefers-reduced-motion: reduce){.th-damaiense::before{content:"";position:fixed;inset:-60%;z-index:0;pointer-events:none;background-image:url(/assets/ac34ed85ee34adfe4550a3a51b5a155f.png);background-size:406px 276px;background-repeat:repeat;opacity:.075;transform:rotate(-8deg) skewX(-8deg)}}
+.site{background-color:var(--bg);background-image:var(--tex);background-attachment:fixed}
+body{margin:0;background:var(--bg)}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+a{color:#F4F1EA;text-decoration:none}a:hover{color:var(--acc)}
+button{font-family:'Suisse Intl', sans-serif}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(var(--ov),.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid rgba(244,241,234,.1)}
+.navlink{position:relative;padding:6px 0}
+.navlink::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--acc);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.navlink:hover::after,.navlink.on::after{transform:scaleX(1);transform-origin:left}
+.navlink.on{color:var(--acc)}
+.burger{display:none}
+@media (max-width: 1240px){ .nav-desk{display:none !important} .burger{display:inline-flex !important} }
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 28px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;border:none;z-index:0}
+.btn::before{content:"";position:absolute;inset:0;transform:translateX(-101%);transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:-1}
+.btn:hover::before{transform:translateX(0)}
+.btn-red{background:#C8111C;color:#FFFFFF}.btn-red::before{background:#8E0A12}.btn-red:hover{color:#FFFFFF}
+.hero{position:relative;overflow:hidden;min-height:max(640px,86vh);display:flex;align-items:flex-end}
+.h-photo{position:absolute;inset:-3%;background-image:url(/assets/34fcb6d53afa6204e324a1fd8a231882.jpg);background-size:cover;background-position:center 55%;animation:hPan 22s ease-in-out infinite alternate}
+@keyframes hPan{from{background-position:center 12%;transform:scale(1.06)}to{background-position:center 55%;transform:scale(1)}}
+.ltr{display:inline-block}
+.go .ltr{animation:ltrUp 1s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes ltrUp{from{opacity:0;transform:translateY(105%)}to{opacity:1;transform:none}}
+.go .fade-up{animation:fadeUp .9s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.d2{animation-delay:.6s}.d3{animation-delay:.9s}
+.swap{animation:fadeUp .5s both}
+.subnav{position:sticky;top:72px;z-index:90;transition:top .45s cubic-bezier(.2,.8,.2,1);background:rgba(var(--ov),.9);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,241,234,.1)}
+.subnav a{padding:18px 0;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);white-space:nowrap;border-bottom:2px solid transparent;transition:color .3s,border-color .3s}
+.subnav a:hover{color:#F4F1EA;border-color:var(--acc)}
+.subnav a.on{color:#F4F1EA;border-color:var(--acc)}
+body:has(.v2-header.hide) .subnav,.subnav.top0{top:0}
+#historia,#missao,#instalacoes,#orgaos,#documentos{scroll-margin-top:130px}
+.hist-side{position:sticky;top:170px;align-self:start}
+.hist-now{display:flex;align-items:flex-end;gap:18px;margin-top:18px}
+.hist-year{font-family:var(--display);font-size:clamp(74px,8.06vw,130px);line-height:0.92;color:var(--acc);font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.hist-count{font-size:11px;letter-spacing:.3em;color:var(--mut);padding-bottom:10px}
+.hist-line{position:relative;padding-left:36px}
+.hist-track,.hist-fill{position:absolute;left:0;top:10px;width:2px}
+.hist-track{bottom:10px;background:rgba(244,241,234,.12)}
+.hist-fill{background:linear-gradient(180deg,#C8111C,var(--acc),#2E7A2A);transition:height .25s linear;max-height:calc(100% - 20px)}
+.tl-item{position:relative;min-height:42vh;padding:0 0 44px;opacity:.28;transition:opacity .5s,transform .5s}
+.tl-item:last-child{min-height:0;padding-bottom:0}
+.tl-item.on{opacity:1}
+.tl-dot{position:absolute;left:-43px;top:10px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--acc);transition:background .4s,box-shadow .4s}
+.tl-item.cur .tl-dot{background:var(--acc);box-shadow:0 0 0 7px rgba(255,255,255,0.18)}
+.tl-item.cur{transform:translateX(6px)}
+.val{transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s}
+.val:hover{transform:translateY(-6px);border-color:rgba(255,255,255,0.22) !important}
+.doc{transition:background .3s,border-color .3s}.doc:hover{background:var(--hi);border-color:rgba(255,255,255,0.22) !important}
+.doc .dl{transition:transform .4s}.doc:hover .dl{transform:translateY(4px)}
+.crest{display:block;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.spin-slow{animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@supports (animation-timeline: view()){
+  .go .rv{animation:rvUp linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+  .go .px{animation:px linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  .go .grow{animation:grow linear both;animation-timeline:view();animation-range:entry 10% cover 60%}
+}
+@keyframes rvUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+@keyframes px{from{transform:translateY(20%)}to{transform:translateY(-20%)}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+@media (max-width: 760px){ .hide-sm{display:none !important} .subnav{top:72px} .hist-side{position:relative;top:auto} .hist-now{display:none} .tl-item{min-height:0;padding-bottom:48px} }
+
+.pay-ic{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.pay-ic img{height:30px;width:auto;display:block}
+button:has(.pay-ic){display:flex !important;align-items:center;justify-content:center;gap:12px}
+@media (max-width:560px){button:has(.pay-ic){flex-direction:column;gap:6px;padding:10px 6px !important;font-size:11px !important;letter-spacing:.08em !important;min-height:84px !important}.pay-ic{max-width:100%}.pay-ic img{height:22px;max-width:100%;object-fit:contain}}
+
+/* ===================== SFD v2 — design system (adaptado do template "Vértice FC") ===================== */
+@font-face{font-family:'Space Grotesk';src:url(/assets/13875eae1d79064dbb465a2adea232e3.woff2) format('woff2');font-weight:300 700;font-style:normal;font-display:swap}
+.v2{--paper:#EFEFE9;--paper2:#E2E5DB;--ink:#0B120E;--night:#0E3A22;--night2:#124428;--night3:#185232;--red:#D3121C;--red2:#A90E17;--green:#2E7A2A;--green2:#6FBF6A;--muted:#6E776E;--muted-d:#B3C6B8;--line:#CDD1C6;--line-d:rgba(255,255,255,.12);--display:'Space Grotesk','Suisse Intl',Arial,sans-serif;--body:'Suisse Intl',Arial,sans-serif;--ease:cubic-bezier(.2,.7,.2,1);
+  background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;animation:v2PageIn .55s ease both}
+@keyframes v2PageIn{from{opacity:0}to{opacity:1}}
+.v2 *{box-sizing:border-box}
+:where(.v2) a{color:inherit;text-decoration:none}
+.v2 ::selection{background:var(--red);color:#fff}
+.v2 button,.v2 input,.v2 select,.v2 textarea{font-family:var(--body)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-stopped{overflow:hidden}
+.v2 .wrap{width:min(1390px,calc(100% - 112px));margin-inline:auto}
+/* progresso e brilho do cursor */
+.v2-progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--red);z-index:120;transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+.v2-glow{position:fixed;width:460px;height:460px;left:-230px;top:-230px;pointer-events:none;z-index:9;border-radius:50%;background:radial-gradient(circle,rgba(226,40,48,.20) 0,rgba(226,40,48,.04) 42%,transparent 70%);opacity:0;transition:opacity .35s;mix-blend-mode:screen;will-change:transform}
+/* header */
+.v2-header{position:fixed;top:0;left:0;right:0;z-index:100;height:85px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 56px;color:#fff;background:rgba(10,46,27,.62);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1);transition:transform .45s var(--ease),background .35s,height .35s}
+.v2-header.scrolled{background:rgba(10,46,27,.94);height:72px}
+.v2-header.hide{transform:translateY(-100%)}
+.v2-brand{display:flex;gap:14px;align-items:center;flex:none}
+.v2-brand img{width:44px;height:auto;display:block}
+.v2-brand b{display:block;font:700 19px/1 var(--display);letter-spacing:.06em;text-transform:uppercase}
+.v2-brand small{display:block;font:600 8px var(--body);letter-spacing:.37em;margin-top:6px;color:#A9B5A2;text-transform:uppercase}
+.v2-nav{display:flex;gap:34px}
+.v2-nav a{position:relative;font-size:12px;color:#C5CEC7;letter-spacing:.04em;padding:6px 0;transition:color .25s}
+.v2-nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--red);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.v2-nav a:hover{color:#fff}
+.v2-nav a:hover::after,.v2-nav a.on::after{transform:scaleX(1);transform-origin:left}
+.v2-nav a.on{color:#fff}
+.v2-dd{position:relative;display:flex;align-items:center}
+.v2-dd>a{display:inline-flex;align-items:center;gap:6px}
+.v2-dd-ic{transition:transform .3s var(--ease);opacity:.7}
+.v2-dd:hover .v2-dd-ic,.v2-dd:focus-within .v2-dd-ic{transform:rotate(180deg)}
+.v2-dd-menu{position:absolute;top:100%;left:-22px;min-width:220px;padding:10px;margin-top:14px;background:var(--night);border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -20px rgba(0,0,0,.55);display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .35s var(--ease),visibility 0s .35s}
+.v2-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.v2-dd:hover .v2-dd-menu,.v2-dd:focus-within .v2-dd-menu{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .35s var(--ease),visibility 0s}
+.v2-nav .v2-dd-menu a{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;font:700 13px var(--display);letter-spacing:-.01em;text-transform:uppercase;color:#E0E8E2;border-radius:2px;transition:background .2s,color .2s,padding .3s var(--ease)}
+.v2-nav .v2-dd-menu a::after{display:none}
+.v2-nav .v2-dd-menu a span{font-size:14px;color:var(--red);opacity:0;transform:translate(-4px,4px);transition:opacity .25s,transform .3s var(--ease)}
+.v2-nav .v2-dd-menu a:hover{background:rgba(255,255,255,.07);color:#fff;padding-left:18px}
+.v2-nav .v2-dd-menu a:hover span{opacity:1;transform:none}
+.v2-msub{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:16px 0 6px}
+.v2-msub span{width:100%;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#A9BDAF}
+.v2-msub a{border:1px solid rgba(255,255,255,.22);padding:10px 14px;font:700 12px var(--display);text-transform:uppercase;border-radius:2px}
+.v2-hright{display:flex;align-items:center;gap:12px;flex:none}
+.v2-cta{display:inline-flex;align-items:center;gap:22px;background:var(--red);color:#fff;font:700 11px var(--body);letter-spacing:.08em;text-transform:uppercase;padding:14px 19px;border-radius:2px;border:none;cursor:pointer;transition:background .3s,transform .3s var(--ease)}
+.v2-cta span{font-size:16px;line-height:0;transition:transform .3s var(--ease)}
+.v2-cta:hover{background:#fff;color:var(--ink)}
+.v2-cta:hover span{transform:translate(2px,-2px)}
+.v2-iconbtn{position:relative;width:46px;height:46px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;border-radius:2px;transition:border-color .25s,background .25s}
+.v2-iconbtn:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.v2-burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:40px;height:44px;border:none;background:none;padding:6px;cursor:pointer}
+.v2-burger span{height:2px;width:26px;background:#fff;display:block;transition:transform .35s var(--ease),opacity .25s}
+.v2-burger.open span:first-child{transform:translateY(4px) rotate(45deg)}
+.v2-burger.open span:last-child{transform:translateY(-4px) rotate(-45deg)}
+.v2-mnav{position:fixed;left:0;right:0;top:72px;bottom:0;z-index:99;background:var(--night);color:#fff;padding:28px 20px 40px;display:flex;flex-direction:column;gap:4px;overflow-y:auto;animation:v2Menu .4s var(--ease) both}
+@keyframes v2Menu{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+.v2-mnav a.m{font:700 clamp(34px,9vw,52px)/1.05 var(--display);letter-spacing:-.05em;text-transform:uppercase;padding:8px 0;border-bottom:1px solid var(--line-d);display:flex;justify-content:space-between;align-items:center}
+.v2-mnav a.m span{font-size:20px;color:var(--red)}
+.v2-mnav .v2-cta{margin-top:22px;justify-content:center}
+.v2-badge{position:absolute;top:-8px;right:-8px;min-width:22px;height:22px;border-radius:11px;background:var(--red);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 6px}
+/* tipografia e secções */
+.v2-sec{padding:140px 0}
+.v2-index{font:700 11px var(--body);letter-spacing:.16em;display:flex;align-items:center;align-self:start;gap:13px;text-transform:uppercase}
+.v2-index i{width:8px;height:8px;border:2px solid currentColor;border-radius:50%;flex:none}
+.v2-top{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin-bottom:60px}
+.v2-h2{font:700 clamp(54px,7.1vw,111px)/.94 var(--display);letter-spacing:-.075em;margin:26px 0 0;text-transform:uppercase}
+.v2-h2 span{color:#8D9B88}
+.v2-aside{color:#667268;max-width:260px;font-size:14px;line-height:1.7;margin:0 0 10px}
+.v2-dark{background:var(--night2);color:#fff;position:relative}
+.v2-dark .v2-h2 span{color:var(--red)}
+.v2-dark .v2-aside{color:#B3C6B8}
+.v2-alt{background:var(--paper2)}
+.v2-link{font:700 11px var(--body);letter-spacing:.1em;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid currentColor;display:inline-flex;gap:46px;white-space:nowrap;align-items:center;transition:gap .35s var(--ease),color .25s}
+.v2-link span{font-size:19px;line-height:0}
+.v2-link:hover{gap:58px;color:var(--red)}
+.v2-btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:52px;padding:0 24px;background:var(--ink);color:#fff;font:700 11px var(--body);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ink);border-radius:2px;cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.v2-btn:hover{background:var(--red);border-color:var(--red);color:#fff;transform:translateY(-2px)}
+.v2-btn.red{background:var(--red);border-color:var(--red)}
+.v2-btn.red:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.v2-btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.v2-btn.ghost:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.v2-round{width:114px;height:114px;border:1px solid rgba(178,192,170,.5);border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;transition:background .35s,color .35s,transform .35s var(--ease),border-color .35s;flex:none}
+.v2-round b{font-size:25px;font-weight:400}
+.v2-round:hover{background:var(--red);border-color:var(--red);transform:rotate(-9deg)}
+.v2-fine{font-size:11px;color:#829386;margin:20px 0 0}
+.v2-tabs{display:flex;gap:4px;flex-wrap:wrap}
+.v2-tab{cursor:pointer;border:1px solid currentColor;background:transparent;color:inherit;opacity:.55;padding:0 18px;min-height:42px;font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;border-radius:2px;transition:opacity .25s,background .25s,color .25s}
+.v2-tab:hover{opacity:1}
+.v2-tab.on{opacity:1;background:var(--ink);border-color:var(--ink);color:#fff}
+.v2-dark .v2-tab.on{background:#fff;border-color:#fff;color:var(--ink)}
+/* animações de entrada */
+.v2 .reveal{opacity:0;transform:translateY(42px);transition:opacity .85s ease,transform .85s var(--ease)}
+.v2 .reveal.in{opacity:1;transform:none}
+.v2 .stagger>.reveal:nth-child(2){transition-delay:.08s}.v2 .stagger>.reveal:nth-child(3){transition-delay:.16s}.v2 .stagger>.reveal:nth-child(4){transition-delay:.24s}.v2 .stagger>.reveal:nth-child(5){transition-delay:.32s}.v2 .stagger>.reveal:nth-child(6){transition-delay:.4s}.v2 .stagger>.reveal:nth-child(7){transition-delay:.48s}.v2 .stagger>.reveal:nth-child(8){transition-delay:.56s}
+.v2 .zoom{overflow:hidden;position:relative}
+.v2 .zoom .zi{transition:transform 1s var(--ease)}
+.v2 .lift{transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.v2 .lift:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(11,18,14,.45)}
+.v2 .lift:hover .zi{transform:scale(1.06)}
+/* rodapé */
+.v2-foot{background:var(--night);color:#fff;padding:85px 0 25px;position:relative;overflow:hidden}
+.v2-foot-top{display:flex;align-items:center;justify-content:space-between;gap:30px;padding-bottom:70px}
+.v2-foot-top img{width:92px;height:auto;display:block;flex:none}
+.v2-foot-top p{font:700 clamp(37px,5vw,75px)/1 var(--display);letter-spacing:-.065em;margin:0;text-transform:uppercase}
+.v2-foot-top p b{color:var(--red)}
+.v2-totop{border:1px solid #69816E;border-radius:50%;width:70px;height:70px;display:grid;place-items:center;font-size:28px;flex:none;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.v2-totop:hover{background:var(--red);border-color:var(--red);transform:translateY(-4px)}
+.v2-foot-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;padding:48px 0 56px;border-top:1px solid rgba(255,255,255,.12);font-size:14px;line-height:1.7}
+.v2-foot-cols div{display:flex;flex-direction:column;gap:8px}
+.v2-foot-cols span.t{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#A9BDAF;margin-bottom:6px}
+.v2-foot-cols a{color:#D7DED8;transition:color .25s;align-self:flex-start}
+.v2-foot-cols a:hover{color:#fff}
+.v2-foot-news{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;justify-content:space-between;padding:40px 0;border-top:1px solid rgba(255,255,255,.12)}
+.v2-foot-news h3{margin:0;font:700 clamp(26px,2.6vw,38px)/1.05 var(--display);letter-spacing:-.05em;text-transform:uppercase;max-width:460px}
+.v2-foot-news form,.v2-foot-news .nf{display:flex;flex:1 1 360px;max-width:560px;border-bottom:1px solid #69816E}
+.v2-foot-news input{flex:1;min-width:0;background:transparent;border:none;color:#fff;font-size:16px;padding:16px 0;outline:none}
+.v2-foot-news input::placeholder{color:#A9BDAF}
+.v2-foot-news button{background:none;border:none;color:#fff;font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;display:flex;gap:16px;align-items:center}
+.v2-foot-news button:hover{color:var(--red)}
+.v2-foot-bottom{display:flex;justify-content:space-between;gap:16px 25px;flex-wrap:wrap;align-items:center;border-top:1px solid rgba(255,255,255,.12);padding-top:25px;color:#B3C6B8;font-size:10px;letter-spacing:.09em;text-transform:uppercase}
+.v2-foot-bottom a{color:#B3C6B8}.v2-foot-bottom a:hover{color:#fff}
+.v2-pay{display:inline-flex;align-items:center;gap:12px}
+.v2-pay img{height:18px;width:auto;display:block}
+.v2-social,.v2-foot-cols .v2-social{display:flex;flex-direction:row;gap:10px}
+.v2-social a{width:40px;height:40px;border:1px solid rgba(255,255,255,.22);border-radius:50%;display:grid;place-items:center;color:#D7DED8;transition:background .3s,border-color .3s,color .3s}
+.v2-social a:hover{background:var(--red);border-color:var(--red);color:#fff}
+/* responsivo */
+@media (max-width:1180px){.v2-header{padding:0 32px}.v2-nav{gap:20px}.v2 .wrap{width:calc(100% - 64px)}.v2-sec{padding:100px 0}.v2-foot-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:980px){.v2-nav{display:none}.v2-burger{display:flex}}
+@media (max-width:760px){.v2 .wrap{width:calc(100% - 40px)}.v2-header,.v2-header.scrolled{height:72px;padding:0 20px}.v2-brand img{width:36px}.v2-brand b{font-size:15px}.v2-brand small{font-size:7px;letter-spacing:.3em}.v2-cta.hdr{padding:12px;gap:8px;font-size:10px}.v2-hide-sm{display:none !important}.v2-sec{padding:85px 0}.v2-top{align-items:flex-start;flex-direction:column;margin-bottom:38px;gap:20px}.v2-h2{font-size:clamp(46px,12vw,79px)}.v2-aside{max-width:380px}.v2-foot-top{flex-wrap:wrap;align-items:flex-start;padding-bottom:50px}.v2-foot-top img{width:62px}.v2-foot-top p{width:100%;order:2;font-size:clamp(30px,8vw,50px)}.v2-foot-cols{grid-template-columns:1fr 1fr;gap:28px}.v2-foot-bottom{flex-direction:column;align-items:flex-start;gap:12px}.v2-round{width:86px;height:86px;font-size:8px}.v2-round b{font-size:18px}}
+@media (prefers-reduced-motion:reduce){.v2,.v2 *{animation-duration:.01ms !important;transition-duration:.01ms !important}.v2 .reveal{opacity:1;transform:none}.v2-glow{display:none}}
+@media (max-width:430px){.v2-iconbtn + .v2-cta.hdr{display:none}}
+
+/* ---------- Mobile: iOS (Safari) e Android (Chrome) ---------- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.v2 a,.v2 button,.v2 input,.v2 select,.v2 textarea,.v2 summary,.v2 label{-webkit-tap-highlight-color:rgba(211,18,28,.12);touch-action:manipulation}
+.v2 img,.v2 video{-webkit-user-drag:none}
+/* zonas seguras (notch, barra inferior do iPhone, ecrãs Android edge-to-edge) */
+.v2-header{padding-left:max(var(--hp,32px),env(safe-area-inset-left));padding-right:max(var(--hp,32px),env(safe-area-inset-right));padding-top:env(safe-area-inset-top);box-sizing:border-box}
+.v2-foot{padding-bottom:calc(25px + env(safe-area-inset-bottom))}
+.v2-mnav{padding-bottom:calc(40px + env(safe-area-inset-bottom));overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+@media (min-width:1201px){.v2-header{--hp:56px}}
+@media (max-width:760px){.v2-header{--hp:20px}}
+/* iOS: campos com 16px para não fazer zoom ao tocar */
+@media (max-width:1024px){.v2 input:not([type=checkbox]):not([type=radio]),.v2 select,.v2 textarea{font-size:16px !important}}
+.v2 input,.v2 select,.v2 textarea{border-radius:0}
+.v2 input[type=date]{min-height:48px;-webkit-appearance:none;appearance:none}
+.v2 select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23B3C6B8' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px !important}
+/* ecrãs táteis: sem efeitos de hover "presos" e sem fundo fixo (o iOS não o suporta) */
+@media (hover:none){
+  .v2 .card:hover,.v2 .lift:hover,.v2 .pcard:hover,.v2 .prod:hover,.v2 .path:hover,.v2 .lvl:hover,.v2 .btn:hover,.v2 .v2-cta:hover,.v2 .m-card:hover,.v2 .ac-btn:hover{transform:none !important}
+  .v2 .pcard:hover .ph,.v2 .pcard:hover .num{transform:none !important}
+  .v2 .site,.site{background-attachment:scroll !important}
+  .v2-glow{display:none !important}
+}
+/* tablets táteis (iPad, tablets Android): menu completo no botão, com os escalões */
+@media (hover:none) and (max-width:1366px){.v2-nav{display:none}.v2-burger{display:flex}}
+/* alvos de toque com pelo menos 44px */
+@media (max-width:760px){.v2-foot a{display:inline-block;padding:6px 0}.v2-social a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}.v2-msub a{min-height:44px;display:flex;align-items:center}}
+@media (max-width:380px){.v2-header{gap:12px}.v2-brand small{display:none}}
+@media (max-width:980px),(hover:none){.v2-header{background:rgba(10,46,27,.96) !important}}
+@media (min-width:761px){.v2-mnav{padding-left:max(32px,env(safe-area-inset-left));padding-right:max(32px,env(safe-area-inset-right))}}
+/* ecrã inteiro: sem margens brancas do navegador (inclui o "elástico" do iOS) */
+html,body{margin:0 !important;padding:0 !important;background:#0E3A22 !important;min-height:100%}
+body > *{margin:0}
+.nl-ok{color:#9BE29B}.nl-err{color:#FF8A8F}
+/* ---------- Páginas interiores (sistema v2 sobre fundo escuro) ---------- */
+.v2.v2-in{--acc:#F0464E;--bg:#0E3A22;--bg2:rgba(255,255,255,.035);--bg3:#0B321D;--hi:rgba(255,255,255,.06);--ov:10,46,27;--ov2:7,36,21;--mut:#B3C6B8;--mut2:#E0E8E2;--mut3:#9DB4A4;--feat:#124428;--featdot:#124428;background:var(--night) !important;background-image:none !important;color:#F4F1EA;animation:v2PageIn .55s ease both !important}
+.v2.v2-in::before,.v2.v2-in::after{display:none !important}
+.v2-in .v2-spacer{height:85px;background:var(--night)}
+@media (max-width:760px){.v2-in .v2-spacer{height:72px}}
+/* títulos convertidos para a fonte de destaque */
+.v2-in .v2d{font-family:var(--display) !important;font-weight:700 !important;text-transform:uppercase;letter-spacing:-.055em !important}
+/* botões no estilo do template */
+.v2-in .btn{border-radius:2px;font-family:var(--body);font-size:11px !important;letter-spacing:.1em !important;min-height:52px;padding:0 24px;gap:16px;transition:background .3s,color .3s,transform .3s var(--ease),border-color .3s}
+.v2-in .btn::before{display:none !important}
+.v2-in .btn:hover{transform:translateY(-2px)}
+.v2-in .btn-gold,.v2-in .btn-red{background:var(--red) !important;color:#fff !important;border:1px solid var(--red) !important}
+.v2-in .btn-gold:hover,.v2-in .btn-red:hover{background:#fff !important;color:var(--ink) !important;border-color:#fff !important}
+.v2-in .btn-line,.v2-in .btn-ghost{background:transparent !important;color:#fff !important;border:1px solid rgba(255,255,255,.45) !important}
+.v2-in .btn-line:hover,.v2-in .btn-ghost:hover{background:#fff !important;color:var(--ink) !important;border-color:#fff !important}
+.v2-in .btn-dark{background:var(--ink) !important;color:#fff !important}
+.v2-in .btn-dark:hover{background:var(--red) !important}
+.v2-in .btn-light{background:#fff !important;color:var(--ink) !important}
+.v2-in .btn-light:hover{background:var(--red) !important;color:#fff !important}
+/* cartões e superfícies */
+.v2-in .card,.v2-in .lift,.v2-in .pcard,.v2-in .prod{transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s}
+.v2-in .card:hover,.v2-in .lift:hover,.v2-in .pcard:hover,.v2-in .prod:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(255,255,255,.28) !important}
+.v2-in .uline{background:linear-gradient(var(--red),var(--red)) 0 100%/0 2px no-repeat !important}
+.v2-in .outline-txt{-webkit-text-stroke:1px rgba(255,255,255,.12) !important;color:transparent}
+.v2-in .ltr{animation-duration:.9s !important}
+/* barras fixas por baixo do header */
+.v2-in .subtabs-wrap{top:72px !important;background:rgba(14,58,34,.94) !important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.v2-in .cnav,.v2-in .subnav{background:rgba(14,58,34,.94) !important}
+.v2-in .pd-info,.v2-in .sum{top:96px}
+/* entrada suave das secções (complementa o reveal) */
+.v2-in section{scroll-margin-top:90px}
+@media (max-width:760px){.v2-in .btn{min-height:48px;padding:0 18px}}
+</style>
+</helmet>
+
+<div class="site v2 v2-in {{ rootCls }}" id="top" style="font-family: 'Suisse Intl', sans-serif; color: #F4F1EA; min-height: 100vh; overflow-x: clip;">
+
+  <div class="v2-progress" aria-hidden="true"></div>
+  <div class="v2-glow" aria-hidden="true"></div>
+  <header class="v2-header">
+    <a class="v2-brand" href="/" aria-label="SF Damaiense — Início"><img src="/assets/4a3f587d612e0707d718734d37dd8d9d.png" alt=""><span><b>SF Damaiense</b><small>Desde 1938 · Damaia</small></span></a>
+    <nav class="v2-nav" aria-label="Principal"><a class="" href="/">Início</a><a class="" href="/jogos/">Jogos</a><div class="v2-dd"><a class="" href="/futebol/" aria-haspopup="true">Futebol<svg class="v2-dd-ic" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></a><div class="v2-dd-menu" role="menu"><a href="/futebol/#equipa-a">Equipa A<span>↗</span></a><a href="/futebol/#sub-19">Sub-19<span>↗</span></a><a href="/futebol/#sub-17">Sub-17<span>↗</span></a><a href="/futebol/#sub-15">Sub-15<span>↗</span></a><a href="/academia/">Academia<span>↗</span></a></div></div><a class="" href="/noticias/">Notícias</a><a class="" href="/loja/">Loja</a><a class="on" href="/clube/">Clube</a><a class="" href="/contactos/">Contactos</a></nav>
+    <div class="v2-hright"><a class="v2-cta hdr" href="/socios/">Ser sócio <span>↗</span></a><button type="button" class="{{ burgerCls }}" aria-label="Menu" aria-expanded="{{ menuOpenStr }}" onClick="{{ toggleMenu }}"><span></span><span></span></button></div>
+  </header>
+  <template data-if="{{ menuOpen }}">
+    <nav class="v2-mnav" aria-label="Menu">
+      <template data-for="{{ mobileNav }}" data-as="m"><a class="m" href="{{ m.href }}" onClick="{{ toggleMenu }}">{{ m.label }}<span>↗</span></a></template>
+      <div class="v2-msub"><span>Futebol</span><a href="/futebol/#equipa-a" onClick="{{ toggleMenu }}">Equipa A</a><a href="/futebol/#sub-19" onClick="{{ toggleMenu }}">Sub-19</a><a href="/futebol/#sub-17" onClick="{{ toggleMenu }}">Sub-17</a><a href="/futebol/#sub-15" onClick="{{ toggleMenu }}">Sub-15</a><a href="/academia/" onClick="{{ toggleMenu }}">Academia</a></div>
+      <a class="v2-cta" href="/socios/" onClick="{{ toggleMenu }}">Ser sócio <span>↗</span></a>
+    </nav>
+  </template>
+  <div class="v2-spacer" aria-hidden="true"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="h-photo" aria-hidden="true"></div>
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(var(--ov),.35) 0%, rgba(var(--ov),.2) 35%, rgba(var(--ov),.7) 75%, var(--bg) 100%);"></div>
+    <div style="position: relative; width: 100%; max-width: 1360px; margin: 0 auto; padding: 120px 24px 72px; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap;">
+      <div>
+        <div class="fade-up" style="font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--mut2);"><a href="/" style="color: var(--mut2);">Início</a> <span style="color: var(--acc);">/</span> Clube</div>
+        <span class="fade-up" style="display: block; margin-top: 18px; font-size: 13px; letter-spacing: .4em; text-transform: uppercase; color: var(--acc);">SF Damaiense</span>
+        <h1 aria-label="Desde 1938" style="margin: 8px 0 0; font-family: var(--display); font-size: clamp(62px, 10.54vw, 174px); line-height: 0.92; overflow: hidden; white-space: nowrap; text-shadow: 0 12px 40px rgba(0,0,0,.45); font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">
+          <template data-for="{{ title }}" data-as="l"><span class="ltr" style="animation-delay: {{ l.d }}">{{ l.c }}</span></template>
+        </h1>
+      </div>
+      <div class="fade-up d3 hide-sm" style="position: relative; width: 150px; height: 150px;">
+        <svg class="spin-slow" viewBox="0 0 200 200" width="150" height="150" aria-hidden="true" style="position: absolute; inset: 0;">
+          <defs><path id="circ" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"></path></defs>
+          <text style="font-family: 'Suisse Intl', sans-serif; font-size: 13px; letter-spacing: 2px; fill: var(--acc); font-weight: 600;"><textPath href="#circ" textLength="496" lengthAdjust="spacing">SF DAMAIENSE · DESDE 1938 · DAMAIA · AMADORA ·</textPath></text>
+        </svg>
+        <img class="crest" src="/assets/4a3f587d612e0707d718734d37dd8d9d.png" alt="" style="position: absolute; left: 50%; top: 50%; width: 64px; transform: translate(-50%, -50%);">
+      </div>
+    </div>
+  </section>
+
+  <!-- Sub-navegação -->
+  <nav class="subnav" aria-label="Secções do clube">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 0 24px; display: flex; gap: 36px; overflow-x: auto;">
+      <template data-for="{{ subnav }}" data-as="sn"><a href="{{ sn.href }}" class="{{ sn.cls }}">{{ sn.label }}</a></template>
+    </div>
+  </nav>
+
+  <!-- História -->
+  <section id="historia" style="position: relative; overflow: clip;">
+    <div aria-hidden="true" class="px" style="position: absolute; right: -3%; top: 10%; font-family: var(--display); font-size: clamp(136px, 21.08vw, 347px); line-height: 0.92; color: rgba(244,241,234,.04); font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">1938</div>
+    <div style="position: relative; max-width: 1360px; margin: 0 auto; padding: 110px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 56px;">
+      <div class="hist-side" style="display: flex; flex-direction: column; gap: 20px;">
+        <span style="font-size: 11px; letter-spacing: .36em; text-transform: uppercase; color: var(--acc);">A nossa história</span>
+        <h2 style="margin: 0; font-family: var(--display); font-size: clamp(37px, 4.34vw, 68px); line-height: 0.92; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">Quase nove décadas de Damaia</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.8; color: var(--mut2); max-width: 480px;">[Texto da história do clube — fundação, primeiros anos, figuras marcantes e o papel do Damaiense na comunidade de Águas Livres. A preencher com o clube.]</p>
+        <div class="hist-now" aria-live="polite"><span class="hist-year">{{ tlYear }}</span><span class="hist-count">{{ tlCount }}</span></div>
+      </div>
+      <div class="hist-line">
+        <div aria-hidden="true" class="hist-track"></div>
+        <div aria-hidden="true" class="hist-fill" style="height: {{ tlFill }};"></div>
+        <template data-for="{{ timeline }}" data-as="h">
+          <div class="{{ h.cls }}" data-tl>
+            <span aria-hidden="true" class="tl-dot"></span>
+            <span style="font-family: var(--display); font-size: 35px; line-height: 1; color: var(--acc); font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ h.y }}</span>
+            <p style="margin: 6px 0 0; font-size: 15px; line-height: 1.7; color: var(--mut2); max-width: 460px;">{{ h.t }}</p>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Missão e valores -->
+  <section id="missao" style="background: var(--feat);">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 110px 24px;">
+      <div class="rv" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 40px; align-items: end; margin-bottom: 48px;">
+        <h2 style="margin: 0; font-family: var(--display); font-size: clamp(37px, 4.34vw, 68px); line-height: 0.92; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">Missão e valores</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: var(--mut2);">[Missão do clube numa frase — ex.: formar pessoas e atletas através do futebol, ao serviço da Damaia.]</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px;">
+        <template data-for="{{ values }}" data-as="v">
+          <div class="val rv" style="border: 1px solid rgba(255,255,255,.16); background: rgba(0,0,0,.22); padding: 32px; display: flex; flex-direction: column; gap: 14px; min-height: 240px;">
+            <span style="font-family: var(--display); font-size: 14px; color: var(--acc); font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ v.n }}</span>
+            <span style="font-family: var(--display); font-size: 25px; line-height: 0.95; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ v.t }}</span>
+            <span style="font-size: 14px; color: var(--mut2); line-height: 1.65;">{{ v.d }}</span>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instalações -->
+  <section id="instalacoes" style="max-width: 1360px; margin: 0 auto; padding: 110px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 48px; align-items: center;">
+    <div class="rv" style="grid-column: 1 / -1; position: relative; overflow: hidden; aspect-ratio: 1920 / 804; background: #000000; box-shadow: 0 40px 80px -30px rgba(0,0,0,.7);">
+      <video src="/assets/f16f0b9eb712f1d373a52325d6d632da.mp4" poster="/assets/9e8bf4b23d24b4438ad902dd506d3f81.jpg" autoplay muted loop playsinline preload="auto" aria-label="Vista aérea de drone do complexo desportivo do SF Damaiense" style="width: 100%; height: 100%; object-fit: cover; display: block;"></video>
+    </div>
+    <div class="rv" style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px 48px;">
+      <span style="font-size: 11px; letter-spacing: .36em; text-transform: uppercase; color: var(--acc);">A nossa casa</span>
+      <p style="margin: 0; font-size: 16px; line-height: 1.8; color: var(--mut2);">Complexo Desportivo Eugénia e Joaquim Cannas da Silva, na Damaia. Campo de relva sintética com 100 × 64 m, inaugurado em 1980. [Confirmar com o clube]</p>
+      <div><a class="btn btn-red" href="/contactos/">Como chegar</a></div>
+    </div>
+  </section>
+
+  <!-- Órgãos sociais -->
+  <section id="orgaos" style="background: var(--bg3); border-top: 1px solid rgba(244,241,234,.08); border-bottom: 1px solid rgba(244,241,234,.08);">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 100px 24px;">
+      <h2 class="rv" style="margin: 0 0 40px; font-family: var(--display); font-size: clamp(32px, 3.72vw, 55px); line-height: 0.92; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">Órgãos sociais <span style="color: var(--acc);">{{ mandato }}</span></h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px;">
+        <template data-for="{{ bodies }}" data-as="b">
+          <div class="rv" style="border-top: 2px solid #C8111C; padding-top: 22px; display: flex; flex-direction: column; gap: 14px;">
+            <span style="font-family: var(--display); font-size: 20px; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ b.name }}</span>
+            <template data-for="{{ b.roles }}" data-as="r">
+              <div style="display: flex; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(244,241,234,.08); font-size: 14px;"><span style="color: var(--mut);">{{ r.role }}</span><span>{{ r.name }}</span></div>
+            </template>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentos -->
+  <section id="documentos" style="max-width: 1360px; margin: 0 auto; padding: 100px 24px 120px;">
+    <h2 class="rv" style="margin: 0 0 32px; font-family: var(--display); font-size: clamp(32px, 3.72vw, 55px); line-height: 0.92; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">Documentos</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px;">
+      <template data-if="{{ noDocs }}"><p style="margin: 0; color: var(--mut);">Ainda não há documentos publicados.</p></template>
+      <template data-for="{{ docs }}" data-as="d">
+        <a class="doc rv" href="{{ d.href }}" target="_blank" rel="noopener" style="border: 1px solid rgba(244,241,234,.14); background: var(--bg2); padding: 26px; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-family: var(--display); font-size: 17px; line-height: 1; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ d.t }}</span>
+            <span style="font-size: 11px; letter-spacing: .2em; color: var(--mut); text-transform: uppercase;">PDF · {{ d.m }}</span>
+          </div>
+          <span class="dl" style="width: 48px; height: 48px; border: 1px solid var(--acc); color: var(--acc); display: flex; align-items: center; justify-content: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"></path></svg></span>
+        </a>
+      </template>
+    </div>
+  </section>
+
+  <footer class="v2-foot" id="rodape">
+    <div class="wrap">
+      <div class="v2-foot-top">
+        <img src="/assets/4a3f587d612e0707d718734d37dd8d9d.png" alt="Emblema SF Damaiense">
+        <p>A Damaia joga<br><b>connosco.</b></p>
+        <a href="#top" class="v2-totop" aria-label="Voltar ao topo">↑</a>
+      </div>
+      <div class="v2-foot-cols">
+        <div><span class="t">Sede</span><span>R. Carvalho Araújo 30<br>2720-698 Damaia</span><a href="/contactos/">Como chegar ↗</a></div>
+        <div><span class="t">Contactos</span><a href="tel:+351214901752">214 901 752</a><a href="mailto:geral@sfdamaiense.pt">geral@sfdamaiense.pt</a><a href="/contactos/">Enviar mensagem</a></div>
+        <div><span class="t">Clube</span><a href="/clube/">História</a><a href="/futebol/">Futebol</a><a href="/academia/">Academia</a><a href="/socios/">Sócios e quotas</a><a href="/loja/">Loja oficial</a></div>
+        <div><span class="t">Segue-nos</span><div class="v2-social">
+          <a href="https://www.instagram.com/sfdamaiense/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"></circle></svg></a>
+          <a href="https://www.facebook.com/SFDamaiense" target="_blank" rel="noopener" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v5h4v-5h3l1-4h-4V8z"></path></svg></a>
+          <a href="https://www.youtube.com/@damaiensetv" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"></rect><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"></path></svg></a>
+        </div></div>
+      </div>
+      <div class="v2-foot-bottom">
+        <span>© 2026 SF Damaiense · Desde 1938</span>
+        <span class="v2-pay"><span>Pagamentos</span><img src="/assets/45466474f5f2f72e3ee0bc0df83079cc.png" alt="MB WAY"><img src="/assets/7fde7c98f52bac35fcba1c2ee1a7f4c8.png" alt="Multibanco"></span>
+        <span>Website por Beatriz Studio</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</template>
+<script type="text/x-dc" data-dc-script data-props='{"fundo":{"editor":"enum","options":["Damaiense","Carbono","Relvado","Bordeaux","Noite (azul)"],"default":"Damaiense"},"$preview":{"width":1440,"height":3800}}'>
+const TL_LOCAL = [
+  { y: '1938', t: 'Fundação do SF Damaiense, na Damaia.' },
+  { y: '[Ano]', t: '[Marco histórico a definir com o clube — ex.: inauguração do campo.]' },
+  { y: '[Ano]', t: '[Marco histórico a definir com o clube — ex.: primeira subida de divisão.]' },
+  { y: '[Ano]', t: '[Marco histórico a definir com o clube — ex.: criação da formação / Academia.]' },
+  { y: '[Ano]', t: '[Marco histórico a definir com o clube — ex.: título ou conquista marcante.]' },
+  { y: '2026', t: 'Novo website e nova casa digital para sócios, atletas e adeptos.' }
+];
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { menuOpen: false, ready: false, tlA: 0, tlF: 0, sn: 'historia' }; }
+  componentDidMount() { /*sfd-cms*/ if (window.SFDContent) window.SFDContent.ready.then(() => this.setState({ cms: Date.now() }));
+    this.fxInit();
+    this._v = setTimeout(() => { try { document.querySelectorAll('video[autoplay]').forEach((v) => { v.muted = true; v.defaultMuted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); }); } catch (e) {} }, 300); this._r = setTimeout(() => this.setState({ ready: true }), 60);
+    const tick = () => {
+      this._raf = 0;
+      const items = Array.from(document.querySelectorAll('[data-tl]')); if (!items.length) return;
+      const vh = window.innerHeight, mark = vh * 0.5, de = document.documentElement;
+      let a = 0, f = 0;
+      if (de.scrollHeight <= vh + 10) { a = items.length - 1; f = 100; }
+      else {
+        items.forEach((el, i) => { if (el.getBoundingClientRect().top < mark) a = i; });
+        const line = document.querySelector('.hist-line');
+        if (line) { const r = line.getBoundingClientRect(); f = Math.round(Math.max(0, Math.min(1, (mark - r.top) / Math.max(1, r.height))) * 200) / 2; }
+      }
+      let sn = 'historia';
+      ['historia', 'missao', 'orgaos', 'documentos'].forEach((id) => { const e = document.getElementById(id); if (e && e.getBoundingClientRect().top < 160) sn = id; });
+      const st = this.state;
+      if (a !== st.tlA || f !== st.tlF || sn !== st.sn) this.setState({ tlA: a, tlF: f, sn });
+    };
+    this._tick = () => { if (!this._raf) this._raf = requestAnimationFrame(tick); };
+    window.addEventListener('scroll', this._tick, { passive: true }); window.addEventListener('resize', this._tick);
+    setTimeout(this._tick, 400); }
+  componentWillUnmount() {
+    this.fxStop(); clearTimeout(this._r); window.removeEventListener('scroll', this._tick); window.removeEventListener('resize', this._tick); }
+  // ===== SFD v2 · efeitos (scroll suave, reveal, parallax, cursor, header) =====
+  fxInit() {
+    const d = document, w = window;
+    const rm = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine = w.matchMedia && w.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    let lastY = w.scrollY || 0, tick = false;
+    const upd = () => {
+      tick = false;
+      const y = w.scrollY || 0, max = d.documentElement.scrollHeight - w.innerHeight;
+      const p = d.querySelector('.v2-progress'); if (p) p.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+      const h = d.querySelector('.v2-header');
+      if (h) { h.classList.toggle('scrolled', y > 40); h.classList.toggle('hide', y > lastY + 2 && y > 320 && !this.state.menuOpen); if (y < lastY - 2 || y < 320) h.classList.remove('hide'); }
+      lastY = y;
+      if (!rm) {
+        d.querySelectorAll('[data-parallax]').forEach((el) => {
+          const box = el.parentElement.getBoundingClientRect();
+          if (box.bottom < -200 || box.top > w.innerHeight + 200) return;
+          const sp = parseFloat(el.getAttribute('data-parallax')) || 0.15;
+          el.style.transform = 'translate3d(0,' + (-box.top * sp).toFixed(1) + 'px,0) scale(1.08)';
+        });
+      }
+    };
+    this._fxScroll = () => { if (!tick) { tick = true; w.requestAnimationFrame(upd); } };
+    w.addEventListener('scroll', this._fxScroll, { passive: true });
+    w.addEventListener('resize', this._fxScroll, { passive: true });
+    upd();
+    if ('IntersectionObserver' in w) {
+      this._fxIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); this._fxIO.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -25px 0px' });
+      const scan = () => d.querySelectorAll('.reveal:not([data-io])').forEach((el) => { el.setAttribute('data-io', '1'); if (rm) el.classList.add('in'); else this._fxIO.observe(el); });
+      scan();
+      this._fxMO = new MutationObserver(() => { clearTimeout(this._fxScan); this._fxScan = setTimeout(scan, 40); });
+      this._fxMO.observe(d.body, { childList: true, subtree: true });
+    } else { d.querySelectorAll('.reveal').forEach((el) => el.classList.add('in')); }
+    if (fine && !rm) {
+      const g = d.querySelector('.v2-glow');
+      this._fxMove = (e) => { if (!g) return; g.style.transform = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0)'; g.style.opacity = '1'; };
+      this._fxLeave = () => { if (g) g.style.opacity = '0'; };
+      w.addEventListener('pointermove', this._fxMove, { passive: true });
+      d.addEventListener('pointerleave', this._fxLeave);
+      // Lenis (scroll suave) — só em rato/trackpad; telemóveis mantêm o scroll nativo
+      const start = () => {
+        try {
+          if (!w.Lenis || this._lenis) return;
+          this._lenis = new w.Lenis({ lerp: 0.12, smoothWheel: true, wheelMultiplier: 1 });
+          const raf = (t) => { if (!this._lenis) return; this._lenis.raf(t); this._fxRaf = w.requestAnimationFrame(raf); };
+          this._fxRaf = w.requestAnimationFrame(raf);
+        } catch (e) {}
+      };
+      if (w.Lenis) start(); else {
+        const sc = d.createElement('script'); sc.src = '/assets/0c7813240655c01d2b32e329308b576f.js'; sc.async = true; sc.onload = start; d.head.appendChild(sc);
+      }
+    }
+  }
+  fxStop() {
+    const w = window;
+    try {
+      w.removeEventListener('scroll', this._fxScroll); w.removeEventListener('resize', this._fxScroll);
+      if (this._fxMove) w.removeEventListener('pointermove', this._fxMove);
+      if (this._fxLeave) document.removeEventListener('pointerleave', this._fxLeave);
+      if (this._fxIO) this._fxIO.disconnect(); if (this._fxMO) this._fxMO.disconnect();
+      clearTimeout(this._fxScan); if (this._fxRaf) w.cancelAnimationFrame(this._fxRaf);
+      if (this._lenis) { this._lenis.destroy(); this._lenis = null; }
+    } catch (e) {}
+  }
+  fxTo(id) {
+    const el = document.getElementById(id); if (!el) return;
+    if (this._lenis) this._lenis.scrollTo(el, { offset: -80 }); else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  renderVals() {
+    const TL = (window.SFDContent && window.SFDContent.get('history')) || TL_LOCAL;
+    const s = this.state;
+    const th = { 'Damaiense': 'damaiense', 'Carbono': 'carbono', 'Relvado': 'relvado', 'Bordeaux': 'bordeaux', 'Noite (azul)': 'noite' }[this.props.fundo ?? 'Damaiense'] || 'damaiense';
+    return {
+      rootCls: 'th-' + th + (s.ready ? ' go' : ''),
+      menuOpen: s.menuOpen, menuOpenStr: s.menuOpen ? 'true' : 'false', burgerCls: 'v2-burger' + (s.menuOpen ? ' open' : ''),
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }),
+      mobileNav: [['/', 'Início'], ['/jogos/', 'Jogos'], ['/futebol/', 'Futebol'], ['/noticias/', 'Notícias'], ['/loja/', 'Loja'], ['/socios/', 'Sócios'], ['/clube/', 'Clube'], ['/contactos/', 'Contactos']].map((x) => ({ href: x[0], label: x[1] })),
+      title: 'DESDE 1938'.split('').map((c, i) => ({ c: c === ' ' ? ' ' : c, d: (0.2 + i * 0.06).toFixed(2) + 's' })),
+      timeline: TL.map((h, i) => Object.assign({}, h, { cls: 'tl-item' + (i <= s.tlA ? ' on' : '') + (i === s.tlA ? ' cur' : '') })),
+      tlYear: (TL[s.tlA] || TL[0]).y,
+      tlCount: String(s.tlA + 1).padStart(2, '0') + ' / ' + String(TL.length).padStart(2, '0'),
+      tlFill: s.tlF + '%',
+      subnav: [['#historia', 'História', 'historia'], ['#missao', 'Missão e valores', 'missao'], ['#orgaos', 'Órgãos sociais', 'orgaos'], ['#documentos', 'Documentos', 'documentos']].map((x) => ({ href: x[0], label: x[1], cls: s.sn === x[2] ? 'on' : '' })),
+      values: [
+        { n: '01', t: 'Formação', d: 'Formar atletas e, acima de tudo, pessoas.' },
+        { n: '02', t: 'Comunidade', d: 'Um clube da Damaia, para a Damaia.' },
+        { n: '03', t: 'Respeito', d: 'Por colegas, adversários, árbitros e adeptos.' },
+        { n: '04', t: 'Ambição', d: 'Competir sempre para ganhar, com os pés no chão.' }
+      ],
+      bodies: (window.SFDContent && window.SFDContent.get('bodies')) || [
+        { name: 'Direção', roles: ['Presidente', 'Vice-presidente', 'Tesoureiro', 'Secretário'] },
+        { name: 'Assembleia Geral', roles: ['Presidente da Mesa', 'Vice-presidente', 'Secretário'] },
+        { name: 'Conselho Fiscal', roles: ['Presidente', 'Vogal', 'Vogal'] }
+      ].map((b) => ({ name: b.name, roles: b.roles.map((r) => ({ role: r, name: '[Nome]' })) })),
+      docs: (window.SFDContent && window.SFDContent.get('docs')) || [{ t: 'Regulamento interno', m: '[Data]', href: '#documentos' }, { t: 'Estatutos', m: '[Data]', href: '#documentos' }, { t: 'Relatório e contas', m: '[Época]', href: '#documentos' }],
+      noDocs: !!(window.SFDContent && window.SFDContent.get('docs') && !window.SFDContent.get('docs').length),
+      mandato: (window.SFDContent && window.SFDContent.mandate()) || '2026/27'
+    };
+  }
+}
+</script>
+</body>
+</html>

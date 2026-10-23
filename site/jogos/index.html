@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<title>SF Damaiense — Jogos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E3A22">
+<script src="/config.js"></script>
+<script src="/js/sfd-content.js"></script>
+<script src="/js/assets-map.js"></script>
+<script src="/js/vendor/morphdom-umd.min.js"></script>
+<script src="/js/dc-runtime.js"></script>
+</head>
+<body>
+<template id="x-dc">
+<helmet>
+<style>
+@font-face{font-family:'Tungsten';src:url(/assets/96a6c4058d9925bb362137182b9f6187.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url(/assets/70d0003be0a793d320939f01b352e5dc.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+[style*="Tungsten"],details.faq summary{text-transform:uppercase}
+:root,.th-carbono{--bg:#0C0C0D;--bg2:#151517;--bg3:#070708;--hi:#232326;--ov:12,12,13;--ov2:7,7,8;--mut:#A8A6A0;--mut2:#D2CFC7;--mut3:#8E8B85;--feat:linear-gradient(135deg,#0F4520 0%,#0A2413 55%,#0C0C0D 100%);--featdot:#0A2413;--tex:radial-gradient(ellipse 50% 40% at 0% 0%,rgba(200,17,28,.10),rgba(0,0,0,0) 70%),radial-gradient(ellipse 50% 40% at 100% 100%,rgba(46,122,42,.10),rgba(0,0,0,0) 70%),repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,rgba(0,0,0,0) 1px 120px)}
+.th-relvado{--bg:#07130D;--bg2:#0E1F16;--bg3:#040C08;--hi:#163024;--ov:7,19,13;--ov2:4,12,8;--mut:#A6B6AC;--mut2:#CFDAD3;--mut3:#83958A;--feat:linear-gradient(135deg,#6A0B12 0%,#3A070B 55%,#07130D 100%);--featdot:#3A070B;--tex:radial-gradient(ellipse 60% 45% at 50% 0%,rgba(46,122,42,.16),rgba(0,0,0,0) 70%),repeating-linear-gradient(90deg,rgba(46,122,42,.05) 0 160px,rgba(0,0,0,0) 160px 320px)}
+.th-bordeaux{--bg:#130A0C;--bg2:#1E1013;--bg3:#0B0507;--hi:#2C161B;--ov:19,10,12;--ov2:11,5,7;--mut:#B9AAAC;--mut2:#DACECF;--mut3:#988A8C;--feat:linear-gradient(135deg,#0F4520 0%,#0A2413 55%,#130A0C 100%);--featdot:#0A2413;--tex:radial-gradient(ellipse 55% 45% at 100% 0%,rgba(200,17,28,.14),rgba(0,0,0,0) 70%),radial-gradient(ellipse 40% 35% at 0% 100%,rgba(255,255,255,0.06),rgba(0,0,0,0) 70%)}
+.th-noite{--bg:#0A0918;--bg2:#0F0E22;--bg3:#07060F;--hi:#1D1B42;--ov:10,9,24;--ov2:7,6,15;--mut:#A9A7BF;--mut2:#C9C7DA;--mut3:#8E8CA6;--feat:#3F3A8A;--featdot:#3F3A8A;--tex:none}
+.th-damaiense{--bg:#0A2614;background-color:#0A2614;--bg2:rgba(7,28,15,.66);--bg3:#071C0F;--hi:rgba(51,129,44,.38);--ov:8,32,18;--ov2:6,24,13;--mut:#C6D2C8;--mut2:#E6ECE5;--mut3:#A7B6AA;--feat:linear-gradient(120deg,#C8111C 0%,#93101A 48%,#1E6A2B 100%);--featdot:#93101A;--tex:none}
+.th-damaiense::before{content:"";position:fixed;inset:-60%;z-index:0;pointer-events:none;background-image:url(/assets/ac34ed85ee34adfe4550a3a51b5a155f.png);background-size:406px 276px;background-repeat:repeat;opacity:.075;transform:rotate(-8deg) skewX(-8deg)}
+.th-damaiense::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 100% 0%,rgba(200,17,28,.16),rgba(0,0,0,0) 70%),radial-gradient(ellipse 60% 50% at 0% 100%,rgba(46,122,42,.20),rgba(0,0,0,0) 70%),linear-gradient(180deg,rgba(6,22,12,0) 0%,rgba(6,22,12,.35) 100%)}
+
+@keyframes fluid{0%{transform:scale(1.05) translate(0,0) rotate(0deg)}50%{transform:scale(1.18) translate(-3%,2%) rotate(2deg)}100%{transform:scale(1.1) translate(3%,-2%) rotate(-1.5deg)}}
+.th-damaiense > *{position:relative;z-index:1}
+.th-damaiense > .hdr{position:sticky;z-index:50}
+@media (prefers-reduced-motion: reduce){.th-damaiense::before{content:"";position:fixed;inset:-60%;z-index:0;pointer-events:none;background-image:url(/assets/ac34ed85ee34adfe4550a3a51b5a155f.png);background-size:406px 276px;background-repeat:repeat;opacity:.075;transform:rotate(-8deg) skewX(-8deg)}}
+.site{background-color:var(--bg);background-image:var(--tex);background-attachment:fixed}
+body{margin:0;background:var(--bg)}
+*{box-sizing:border-box}
+a{color:#F4F1EA;text-decoration:none}a:hover{color:var(--acc)}
+button,input,select,textarea{font-family:'Suisse Intl', sans-serif}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(var(--ov),.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid rgba(244,241,234,.1)}
+.navlink{position:relative;padding:6px 0}
+.navlink::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--acc);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.navlink:hover::after,.navlink.on::after{transform:scaleX(1);transform-origin:left}
+.navlink.on{color:var(--acc)}
+.burger{display:none}
+@media (max-width: 1240px){ .nav-desk{display:none !important} .burger{display:inline-flex !important} }
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 28px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;border:none;z-index:0}
+.btn::before{content:"";position:absolute;inset:0;transform:translateX(-101%);transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:-1}
+.btn:hover::before{transform:translateX(0)}
+.btn .arr{transition:transform .4s}.btn:hover .arr{transform:translateX(6px)}
+.btn-red{background:#C8111C;color:#FFFFFF}.btn-red::before{background:#8E0A12}.btn-red:hover{color:#FFFFFF}
+.btn-gold{background:var(--red);color:#FFFFFF}.btn-gold::before{background:#F4F1EA}.btn-gold:hover{color:#0C0C0D}
+.btn-line{background:transparent;color:#F4F1EA;border:1px solid rgba(244,241,234,.4)}.btn-line::before{background:#F4F1EA}.btn-line:hover{color:#0C0C0D}
+.page-hero{position:relative;overflow:hidden;min-height:440px;display:flex;align-items:flex-end}
+.ph-photo{position:absolute;inset:-3%;background-image:url(/assets/4fc37a32ae04d47eca908409bdcd62b0.jpg);background-size:cover;background-position:center 62%;animation:phZoom 18s ease-out both}
+@keyframes phZoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+.ltr{display:inline-block}
+.go .ltr{animation:ltrUp .9s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes ltrUp{from{opacity:0;transform:translateY(105%)}to{opacity:1;transform:none}}
+.go .fade-up{animation:fadeUp .9s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.d1{animation-delay:.3s}.d2{animation-delay:.55s}.d3{animation-delay:.8s}
+.tick{display:inline-block;animation:tickIn .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes tickIn{from{opacity:.2;transform:translateY(-30%)}to{opacity:1;transform:none}}
+.lift{transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s,background .4s}
+.lift:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.22) !important}
+.row-h{transition:background .3s}.row-h:hover{background:rgba(255,255,255,0.06)}
+.swap{animation:swapIn .6s cubic-bezier(.2,.8,.2,1)}
+@keyframes swapIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.outline-txt{color:transparent;-webkit-text-stroke:1px rgba(244,241,234,.2)}
+.crest{display:block;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+@supports (animation-timeline: view()){
+  .go .rv{animation:rvUp linear both;animation-timeline:view();animation-range:entry 0% cover 25%}
+}
+@keyframes rvUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+@media (max-width: 760px){ .hide-sm{display:none !important} }
+.tabs{display:flex;gap:6px;flex-wrap:wrap;padding:6px;border:1px solid rgba(244,241,234,.14);width:fit-content;max-width:100%}
+.tab{cursor:pointer;border:none;background:transparent;color:#F4F1EA;padding:0 22px;min-height:44px;font-family:'Suisse Intl',sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.tab.on{background:#F4F1EA;color:#0C0C0D;font-weight:700}
+.opp-badge{width:60px;height:60px;border-radius:50%;border:1px solid rgba(244,241,234,.35);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:14px;color:var(--mut2);background:rgba(var(--ov2),.5);flex:none;font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.fx{display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 8px;border-bottom:1px solid rgba(244,241,234,.08)}
+.fx.next{background:rgba(255,255,255,0.08)}
+.vt{font-size:9px;font-weight:700;letter-spacing:.2em;padding:4px 8px;color:#FFFFFF;flex:none}
+.vt.c{background:#C8111C}.vt.f{background:#2B4A8A}
+.rs{width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.rs.V{background:#2E7A2A;color:#FFFFFF}.rs.E{background:var(--red);color:#FFFFFF}.rs.D{background:#C8111C;color:#FFFFFF}
+.trow{border-top:1px solid rgba(244,241,234,.07)}
+.trow.me{background:rgba(255,255,255,0.12);font-weight:700}
+@media (max-width:560px){.fx{grid-template-columns:72px minmax(0,1fr) auto;gap:10px}.fxw{white-space:normal !important;line-height:1.35}}
+
+.opp-crest{width:60px;height:60px;object-fit:contain;display:block;filter:drop-shadow(0 6px 14px rgba(0,0,0,.35))}
+.mcr{display:inline-block;flex:0 0 auto;width:26px;height:26px;background-size:contain;background-repeat:no-repeat;background-position:center}
+.mcr.lg{width:40px;height:40px}
+
+.pay-ic{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.pay-ic img{height:30px;width:auto;display:block}
+button:has(.pay-ic){display:flex !important;align-items:center;justify-content:center;gap:12px}
+@media (max-width:560px){button:has(.pay-ic){flex-direction:column;gap:6px;padding:10px 6px !important;font-size:11px !important;letter-spacing:.08em !important;min-height:84px !important}.pay-ic{max-width:100%}.pay-ic img{height:22px;max-width:100%;object-fit:contain}}
+
+/* ===================== SFD v2 — design system (adaptado do template "Vértice FC") ===================== */
+@font-face{font-family:'Space Grotesk';src:url(/assets/13875eae1d79064dbb465a2adea232e3.woff2) format('woff2');font-weight:300 700;font-style:normal;font-display:swap}
+.v2{--paper:#EFEFE9;--paper2:#E2E5DB;--ink:#0B120E;--night:#0E3A22;--night2:#124428;--night3:#185232;--red:#D3121C;--red2:#A90E17;--green:#2E7A2A;--green2:#6FBF6A;--muted:#6E776E;--muted-d:#B3C6B8;--line:#CDD1C6;--line-d:rgba(255,255,255,.12);--display:'Space Grotesk','Suisse Intl',Arial,sans-serif;--body:'Suisse Intl',Arial,sans-serif;--ease:cubic-bezier(.2,.7,.2,1);
+  background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;animation:v2PageIn .55s ease both}
+@keyframes v2PageIn{from{opacity:0}to{opacity:1}}
+.v2 *{box-sizing:border-box}
+:where(.v2) a{color:inherit;text-decoration:none}
+.v2 ::selection{background:var(--red);color:#fff}
+.v2 button,.v2 input,.v2 select,.v2 textarea{font-family:var(--body)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-stopped{overflow:hidden}
+.v2 .wrap{width:min(1390px,calc(100% - 112px));margin-inline:auto}
+/* progresso e brilho do cursor */
+.v2-progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--red);z-index:120;transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+.v2-glow{position:fixed;width:460px;height:460px;left:-230px;top:-230px;pointer-events:none;z-index:9;border-radius:50%;background:radial-gradient(circle,rgba(226,40,48,.20) 0,rgba(226,40,48,.04) 42%,transparent 70%);opacity:0;transition:opacity .35s;mix-blend-mode:screen;will-change:transform}
+/* header */
+.v2-header{position:fixed;top:0;left:0;right:0;z-index:100;height:85px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 56px;color:#fff;background:rgba(10,46,27,.62);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1);transition:transform .45s var(--ease),background .35s,height .35s}
+.v2-header.scrolled{background:rgba(10,46,27,.94);height:72px}
+.v2-header.hide{transform:translateY(-100%)}
+.v2-brand{display:flex;gap:14px;align-items:center;flex:none}
+.v2-brand img{width:44px;height:auto;display:block}
+.v2-brand b{display:block;font:700 19px/1 var(--display);letter-spacing:.06em;text-transform:uppercase}
+.v2-brand small{display:block;font:600 8px var(--body);letter-spacing:.37em;margin-top:6px;color:#A9B5A2;text-transform:uppercase}
+.v2-nav{display:flex;gap:34px}
+.v2-nav a{position:relative;font-size:12px;color:#C5CEC7;letter-spacing:.04em;padding:6px 0;transition:color .25s}
+.v2-nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--red);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.v2-nav a:hover{color:#fff}
+.v2-nav a:hover::after,.v2-nav a.on::after{transform:scaleX(1);transform-origin:left}
+.v2-nav a.on{color:#fff}
+.v2-dd{position:relative;display:flex;align-items:center}
+.v2-dd>a{display:inline-flex;align-items:center;gap:6px}
+.v2-dd-ic{transition:transform .3s var(--ease);opacity:.7}
+.v2-dd:hover .v2-dd-ic,.v2-dd:focus-within .v2-dd-ic{transform:rotate(180deg)}
+.v2-dd-menu{position:absolute;top:100%;left:-22px;min-width:220px;padding:10px;margin-top:14px;background:var(--night);border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -20px rgba(0,0,0,.55);display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .35s var(--ease),visibility 0s .35s}
+.v2-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.v2-dd:hover .v2-dd-menu,.v2-dd:focus-within .v2-dd-menu{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .35s var(--ease),visibility 0s}
+.v2-nav .v2-dd-menu a{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;font:700 13px var(--display);letter-spacing:-.01em;text-transform:uppercase;color:#E0E8E2;border-radius:2px;transition:background .2s,color .2s,padding .3s var(--ease)}
+.v2-nav .v2-dd-menu a::after{display:none}
+.v2-nav .v2-dd-menu a span{font-size:14px;color:var(--red);opacity:0;transform:translate(-4px,4px);transition:opacity .25s,transform .3s var(--ease)}
+.v2-nav .v2-dd-menu a:hover{background:rgba(255,255,255,.07);color:#fff;padding-left:18px}
+.v2-nav .v2-dd-menu a:hover span{opacity:1;transform:none}
+.v2-msub{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:16px 0 6px}
+.v2-msub span{width:100%;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#A9BDAF}
+.v2-msub a{border:1px solid rgba(255,255,255,.22);padding:10px 14px;font:700 12px var(--display);text-transform:uppercase;border-radius:2px}
+.v2-hright{display:flex;align-items:center;gap:12px;flex:none}
+.v2-cta{display:inline-flex;align-items:center;gap:22px;background:var(--red);color:#fff;font:700 11px var(--body);letter-spacing:.08em;text-transform:uppercase;padding:14px 19px;border-radius:2px;border:none;cursor:pointer;transition:background .3s,transform .3s var(--ease)}
+.v2-cta span{font-size:16px;line-height:0;transition:transform .3s var(--ease)}
+.v2-cta:hover{background:#fff;color:var(--ink)}
+.v2-cta:hover span{transform:translate(2px,-2px)}
+.v2-iconbtn{position:relative;width:46px;height:46px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;border-radius:2px;transition:border-color .25s,background .25s}
+.v2-iconbtn:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.v2-burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:40px;height:44px;border:none;background:none;padding:6px;cursor:pointer}
+.v2-burger span{height:2px;width:26px;background:#fff;display:block;transition:transform .35s var(--ease),opacity .25s}
+.v2-burger.open span:first-child{transform:translateY(4px) rotate(45deg)}
+.v2-burger.open span:last-child{transform:translateY(-4px) rotate(-45deg)}
+.v2-mnav{position:fixed;left:0;right:0;top:72px;bottom:0;z-index:99;background:var(--night);color:#fff;padding:28px 20px 40px;display:flex;flex-direction:column;gap:4px;overflow-y:auto;animation:v2Menu .4s var(--ease) both}
+@keyframes v2Menu{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+.v2-mnav a.m{font:700 clamp(34px,9vw,52px)/1.05 var(--display);letter-spacing:-.05em;text-transform:uppercase;padding:8px 0;border-bottom:1px solid var(--line-d);display:flex;justify-content:space-between;align-items:center}
+.v2-mnav a.m span{font-size:20px;color:var(--red)}
+.v2-mnav .v2-cta{margin-top:22px;justify-content:center}
+.v2-badge{position:absolute;top:-8px;right:-8px;min-width:22px;height:22px;border-radius:11px;background:var(--red);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 6px}
+/* tipografia e secções */
+.v2-sec{padding:140px 0}
+.v2-index{font:700 11px var(--body);letter-spacing:.16em;display:flex;align-items:center;align-self:start;gap:13px;text-transform:uppercase}
+.v2-index i{width:8px;height:8px;border:2px solid currentColor;border-radius:50%;flex:none}
+.v2-top{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin-bottom:60px}
+.v2-h2{font:700 clamp(54px,7.1vw,111px)/.94 var(--display);letter-spacing:-.075em;margin:26px 0 0;text-transform:uppercase}
+.v2-h2 span{color:#8D9B88}
+.v2-aside{color:#667268;max-width:260px;font-size:14px;line-height:1.7;margin:0 0 10px}
+.v2-dark{background:var(--night2);color:#fff;position:relative}
+.v2-dark .v2-h2 span{color:var(--red)}
+.v2-dark .v2-aside{color:#B3C6B8}
+.v2-alt{background:var(--paper2)}
+.v2-link{font:700 11px var(--body);letter-spacing:.1em;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid currentColor;display:inline-flex;gap:46px;white-space:nowrap;align-items:center;transition:gap .35s var(--ease),color .25s}
+.v2-link span{font-size:19px;line-height:0}
+.v2-link:hover{gap:58px;color:var(--red)}
+.v2-btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:52px;padding:0 24px;background:var(--ink);color:#fff;font:700 11px var(--body);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ink);border-radius:2px;cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.v2-btn:hover{background:var(--red);border-color:var(--red);color:#fff;transform:translateY(-2px)}
+.v2-btn.red{background:var(--red);border-color:var(--red)}
+.v2-btn.red:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.v2-btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.v2-btn.ghost:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.v2-round{width:114px;height:114px;border:1px solid rgba(178,192,170,.5);border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;transition:background .35s,color .35s,transform .35s var(--ease),border-color .35s;flex:none}
+.v2-round b{font-size:25px;font-weight:400}
+.v2-round:hover{background:var(--red);border-color:var(--red);transform:rotate(-9deg)}
+.v2-fine{font-size:11px;color:#829386;margin:20px 0 0}
+.v2-tabs{display:flex;gap:4px;flex-wrap:wrap}
+.v2-tab{cursor:pointer;border:1px solid currentColor;background:transparent;color:inherit;opacity:.55;padding:0 18px;min-height:42px;font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;border-radius:2px;transition:opacity .25s,background .25s,color .25s}
+.v2-tab:hover{opacity:1}
+.v2-tab.on{opacity:1;background:var(--ink);border-color:var(--ink);color:#fff}
+.v2-dark .v2-tab.on{background:#fff;border-color:#fff;color:var(--ink)}
+/* animações de entrada */
+.v2 .reveal{opacity:0;transform:translateY(42px);transition:opacity .85s ease,transform .85s var(--ease)}
+.v2 .reveal.in{opacity:1;transform:none}
+.v2 .stagger>.reveal:nth-child(2){transition-delay:.08s}.v2 .stagger>.reveal:nth-child(3){transition-delay:.16s}.v2 .stagger>.reveal:nth-child(4){transition-delay:.24s}.v2 .stagger>.reveal:nth-child(5){transition-delay:.32s}.v2 .stagger>.reveal:nth-child(6){transition-delay:.4s}.v2 .stagger>.reveal:nth-child(7){transition-delay:.48s}.v2 .stagger>.reveal:nth-child(8){transition-delay:.56s}
+.v2 .zoom{overflow:hidden;position:relative}
+.v2 .zoom .zi{transition:transform 1s var(--ease)}
+.v2 .lift{transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.v2 .lift:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(11,18,14,.45)}
+.v2 .lift:hover .zi{transform:scale(1.06)}
+/* rodapé */
+.v2-foot{background:var(--night);color:#fff;padding:85px 0 25px;position:relative;overflow:hidden}
+.v2-foot-top{display:flex;align-items:center;justify-content:space-between;gap:30px;padding-bottom:70px}
+.v2-foot-top img{width:92px;height:auto;display:block;flex:none}
+.v2-foot-top p{font:700 clamp(37px,5vw,75px)/1 var(--display);letter-spacing:-.065em;margin:0;text-transform:uppercase}
+.v2-foot-top p b{color:var(--red)}
+.v2-totop{border:1px solid #69816E;border-radius:50%;width:70px;height:70px;display:grid;place-items:center;font-size:28px;flex:none;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.v2-totop:hover{background:var(--red);border-color:var(--red);transform:translateY(-4px)}
+.v2-foot-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;padding:48px 0 56px;border-top:1px solid rgba(255,255,255,.12);font-size:14px;line-height:1.7}
+.v2-foot-cols div{display:flex;flex-direction:column;gap:8px}
+.v2-foot-cols span.t{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#A9BDAF;margin-bottom:6px}
+.v2-foot-cols a{color:#D7DED8;transition:color .25s;align-self:flex-start}
+.v2-foot-cols a:hover{color:#fff}
+.v2-foot-news{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;justify-content:space-between;padding:40px 0;border-top:1px solid rgba(255,255,255,.12)}
+.v2-foot-news h3{margin:0;font:700 clamp(26px,2.6vw,38px)/1.05 var(--display);letter-spacing:-.05em;text-transform:uppercase;max-width:460px}
+.v2-foot-news form,.v2-foot-news .nf{display:flex;flex:1 1 360px;max-width:560px;border-bottom:1px solid #69816E}
+.v2-foot-news input{flex:1;min-width:0;background:transparent;border:none;color:#fff;font-size:16px;padding:16px 0;outline:none}
+.v2-foot-news input::placeholder{color:#A9BDAF}
+.v2-foot-news button{background:none;border:none;color:#fff;font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;display:flex;gap:16px;align-items:center}
+.v2-foot-news button:hover{color:var(--red)}
+.v2-foot-bottom{display:flex;justify-content:space-between;gap:16px 25px;flex-wrap:wrap;align-items:center;border-top:1px solid rgba(255,255,255,.12);padding-top:25px;color:#B3C6B8;font-size:10px;letter-spacing:.09em;text-transform:uppercase}
+.v2-foot-bottom a{color:#B3C6B8}.v2-foot-bottom a:hover{color:#fff}
+.v2-pay{display:inline-flex;align-items:center;gap:12px}
+.v2-pay img{height:18px;width:auto;display:block}
+.v2-social,.v2-foot-cols .v2-social{display:flex;flex-direction:row;gap:10px}
+.v2-social a{width:40px;height:40px;border:1px solid rgba(255,255,255,.22);border-radius:50%;display:grid;place-items:center;color:#D7DED8;transition:background .3s,border-color .3s,color .3s}
+.v2-social a:hover{background:var(--red);border-color:var(--red);color:#fff}
+/* responsivo */
+@media (max-width:1180px){.v2-header{padding:0 32px}.v2-nav{gap:20px}.v2 .wrap{width:calc(100% - 64px)}.v2-sec{padding:100px 0}.v2-foot-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:980px){.v2-nav{display:none}.v2-burger{display:flex}}
+@media (max-width:760px){.v2 .wrap{width:calc(100% - 40px)}.v2-header,.v2-header.scrolled{height:72px;padding:0 20px}.v2-brand img{width:36px}.v2-brand b{font-size:15px}.v2-brand small{font-size:7px;letter-spacing:.3em}.v2-cta.hdr{padding:12px;gap:8px;font-size:10px}.v2-hide-sm{display:none !important}.v2-sec{padding:85px 0}.v2-top{align-items:flex-start;flex-direction:column;margin-bottom:38px;gap:20px}.v2-h2{font-size:clamp(46px,12vw,79px)}.v2-aside{max-width:380px}.v2-foot-top{flex-wrap:wrap;align-items:flex-start;padding-bottom:50px}.v2-foot-top img{width:62px}.v2-foot-top p{width:100%;order:2;font-size:clamp(30px,8vw,50px)}.v2-foot-cols{grid-template-columns:1fr 1fr;gap:28px}.v2-foot-bottom{flex-direction:column;align-items:flex-start;gap:12px}.v2-round{width:86px;height:86px;font-size:8px}.v2-round b{font-size:18px}}
+@media (prefers-reduced-motion:reduce){.v2,.v2 *{animation-duration:.01ms !important;transition-duration:.01ms !important}.v2 .reveal{opacity:1;transform:none}.v2-glow{display:none}}
+@media (max-width:430px){.v2-iconbtn + .v2-cta.hdr{display:none}}
+
+/* ---------- Mobile: iOS (Safari) e Android (Chrome) ---------- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.v2 a,.v2 button,.v2 input,.v2 select,.v2 textarea,.v2 summary,.v2 label{-webkit-tap-highlight-color:rgba(211,18,28,.12);touch-action:manipulation}
+.v2 img,.v2 video{-webkit-user-drag:none}
+/* zonas seguras (notch, barra inferior do iPhone, ecrãs Android edge-to-edge) */
+.v2-header{padding-left:max(var(--hp,32px),env(safe-area-inset-left));padding-right:max(var(--hp,32px),env(safe-area-inset-right));padding-top:env(safe-area-inset-top);box-sizing:border-box}
+.v2-foot{padding-bottom:calc(25px + env(safe-area-inset-bottom))}
+.v2-mnav{padding-bottom:calc(40px + env(safe-area-inset-bottom));overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+@media (min-width:1201px){.v2-header{--hp:56px}}
+@media (max-width:760px){.v2-header{--hp:20px}}
+/* iOS: campos com 16px para não fazer zoom ao tocar */
+@media (max-width:1024px){.v2 input:not([type=checkbox]):not([type=radio]),.v2 select,.v2 textarea{font-size:16px !important}}
+.v2 input,.v2 select,.v2 textarea{border-radius:0}
+.v2 input[type=date]{min-height:48px;-webkit-appearance:none;appearance:none}
+.v2 select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23B3C6B8' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px !important}
+/* ecrãs táteis: sem efeitos de hover "presos" e sem fundo fixo (o iOS não o suporta) */
+@media (hover:none){
+  .v2 .card:hover,.v2 .lift:hover,.v2 .pcard:hover,.v2 .prod:hover,.v2 .path:hover,.v2 .lvl:hover,.v2 .btn:hover,.v2 .v2-cta:hover,.v2 .m-card:hover,.v2 .ac-btn:hover{transform:none !important}
+  .v2 .pcard:hover .ph,.v2 .pcard:hover .num{transform:none !important}
+  .v2 .site,.site{background-attachment:scroll !important}
+  .v2-glow{display:none !important}
+}
+/* tablets táteis (iPad, tablets Android): menu completo no botão, com os escalões */
+@media (hover:none) and (max-width:1366px){.v2-nav{display:none}.v2-burger{display:flex}}
+/* alvos de toque com pelo menos 44px */
+@media (max-width:760px){.v2-foot a{display:inline-block;padding:6px 0}.v2-social a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}.v2-msub a{min-height:44px;display:flex;align-items:center}}
+@media (max-width:380px){.v2-header{gap:12px}.v2-brand small{display:none}}
+@media (max-width:980px),(hover:none){.v2-header{background:rgba(10,46,27,.96) !important}}
+@media (min-width:761px){.v2-mnav{padding-left:max(32px,env(safe-area-inset-left));padding-right:max(32px,env(safe-area-inset-right))}}
+/* ecrã inteiro: sem margens brancas do navegador (inclui o "elástico" do iOS) */
+html,body{margin:0 !important;padding:0 !important;background:#0E3A22 !important;min-height:100%}
+body > *{margin:0}
+.nl-ok{color:#9BE29B}.nl-err{color:#FF8A8F}
+/* ---------- Páginas interiores (sistema v2 sobre fundo escuro) ---------- */
+.v2.v2-in{--acc:#F0464E;--bg:#0E3A22;--bg2:rgba(255,255,255,.035);--bg3:#0B321D;--hi:rgba(255,255,255,.06);--ov:10,46,27;--ov2:7,36,21;--mut:#B3C6B8;--mut2:#E0E8E2;--mut3:#9DB4A4;--feat:#124428;--featdot:#124428;background:var(--night) !important;background-image:none !important;color:#F4F1EA;animation:v2PageIn .55s ease both !important}
+.v2.v2-in::before,.v2.v2-in::after{display:none !important}
+.v2-in .v2-spacer{height:85px;background:var(--night)}
+@media (max-width:760px){.v2-in .v2-spacer{height:72px}}
+/* títulos convertidos para a fonte de destaque */
+.v2-in .v2d{font-family:var(--display) !important;font-weight:700 !important;text-transform:uppercase;letter-spacing:-.055em !important}
+/* botões no estilo do template */
+.v2-in .btn{border-radius:2px;font-family:var(--body);font-size:11px !important;letter-spacing:.1em !important;min-height:52px;padding:0 24px;gap:16px;transition:background .3s,color .3s,transform .3s var(--ease),border-color .3s}
+.v2-in .btn::before{display:none !important}
+.v2-in .btn:hover{transform:translateY(-2px)}
+.v2-in .btn-gold,.v2-in .btn-red{background:var(--red) !important;color:#fff !important;border:1px solid var(--red) !important}
+.v2-in .btn-gold:hover,.v2-in .btn-red:hover{background:#fff !important;color:var(--ink) !important;border-color:#fff !important}
+.v2-in .btn-line,.v2-in .btn-ghost{background:transparent !important;color:#fff !important;border:1px solid rgba(255,255,255,.45) !important}
+.v2-in .btn-line:hover,.v2-in .btn-ghost:hover{background:#fff !important;color:var(--ink) !important;border-color:#fff !important}
+.v2-in .btn-dark{background:var(--ink) !important;color:#fff !important}
+.v2-in .btn-dark:hover{background:var(--red) !important}
+.v2-in .btn-light{background:#fff !important;color:var(--ink) !important}
+.v2-in .btn-light:hover{background:var(--red) !important;color:#fff !important}
+/* cartões e superfícies */
+.v2-in .card,.v2-in .lift,.v2-in .pcard,.v2-in .prod{transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s}
+.v2-in .card:hover,.v2-in .lift:hover,.v2-in .pcard:hover,.v2-in .prod:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(255,255,255,.28) !important}
+.v2-in .uline{background:linear-gradient(var(--red),var(--red)) 0 100%/0 2px no-repeat !important}
+.v2-in .outline-txt{-webkit-text-stroke:1px rgba(255,255,255,.12) !important;color:transparent}
+.v2-in .ltr{animation-duration:.9s !important}
+/* barras fixas por baixo do header */
+.v2-in .subtabs-wrap{top:72px !important;background:rgba(14,58,34,.94) !important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.v2-in .cnav,.v2-in .subnav{background:rgba(14,58,34,.94) !important}
+.v2-in .pd-info,.v2-in .sum{top:96px}
+/* entrada suave das secções (complementa o reveal) */
+.v2-in section{scroll-margin-top:90px}
+@media (max-width:760px){.v2-in .btn{min-height:48px;padding:0 18px}}
+</style>
+</helmet>
+
+<div class="site v2 v2-in {{ rootCls }}" id="top" style="font-family: 'Suisse Intl', sans-serif; color: #F4F1EA; min-height: 100vh; overflow-x: clip;">
+
+  <!-- Cabeçalho -->
+  <div class="v2-progress" aria-hidden="true"></div>
+  <div class="v2-glow" aria-hidden="true"></div>
+  <header class="v2-header">
+    <a class="v2-brand" href="/" aria-label="SF Damaiense — Início"><img src="/assets/4a3f587d612e0707d718734d37dd8d9d.png" alt=""><span><b>SF Damaiense</b><small>Desde 1938 · Damaia</small></span></a>
+    <nav class="v2-nav" aria-label="Principal"><a class="" href="/">Início</a><a class="on" href="/jogos/">Jogos</a><div class="v2-dd"><a class="" href="/futebol/" aria-haspopup="true">Futebol<svg class="v2-dd-ic" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></a><div class="v2-dd-menu" role="menu"><a href="/futebol/#equipa-a">Equipa A<span>↗</span></a><a href="/futebol/#sub-19">Sub-19<span>↗</span></a><a href="/futebol/#sub-17">Sub-17<span>↗</span></a><a href="/futebol/#sub-15">Sub-15<span>↗</span></a><a href="/academia/">Academia<span>↗</span></a></div></div><a class="" href="/noticias/">Notícias</a><a class="" href="/loja/">Loja</a><a class="" href="/clube/">Clube</a><a class="" href="/contactos/">Contactos</a></nav>
+    <div class="v2-hright"><a class="v2-cta hdr" href="/socios/">Ser sócio <span>↗</span></a><button type="button" class="{{ burgerCls }}" aria-label="Menu" aria-expanded="{{ menuOpenStr }}" onClick="{{ toggleMenu }}"><span></span><span></span></button></div>
+  </header>
+  <template data-if="{{ menuOpen }}">
+    <nav class="v2-mnav" aria-label="Menu">
+      <template data-for="{{ mobileNav }}" data-as="m"><a class="m" href="{{ m.href }}" onClick="{{ toggleMenu }}">{{ m.label }}<span>↗</span></a></template>
+      <div class="v2-msub"><span>Futebol</span><a href="/futebol/#equipa-a" onClick="{{ toggleMenu }}">Equipa A</a><a href="/futebol/#sub-19" onClick="{{ toggleMenu }}">Sub-19</a><a href="/futebol/#sub-17" onClick="{{ toggleMenu }}">Sub-17</a><a href="/futebol/#sub-15" onClick="{{ toggleMenu }}">Sub-15</a><a href="/academia/" onClick="{{ toggleMenu }}">Academia</a></div>
+      <a class="v2-cta" href="/socios/" onClick="{{ toggleMenu }}">Ser sócio <span>↗</span></a>
+    </nav>
+  </template>
+  <div class="v2-spacer" aria-hidden="true"></div>
+
+  <!-- Cabeçalho da página -->
+  <section class="page-hero">
+    <div class="ph-photo" aria-hidden="true"></div>
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(var(--ov),.55) 0%, rgba(var(--ov),.75) 60%, var(--bg) 100%);"></div>
+    <div style="position: relative; width: 100%; max-width: 1360px; margin: 0 auto; padding: 120px 24px 56px;">
+      <div class="fade-up" style="font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--mut);"><a href="/" style="color: var(--mut);">Início</a> <span style="color: var(--acc);">/</span> Jogos</div>
+      <h1 aria-label="Jogos" style="margin: 14px 0 0; font-family: var(--display); font-size: clamp(55px, 8.06vw, 124px); line-height: 0.92; overflow: hidden; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">
+        <template data-for="{{ title }}" data-as="l"><span class="ltr" style="animation-delay: {{ l.d }}">{{ l.c }}</span></template>
+      </h1>
+      <p class="fade-up d2" style="margin: 16px 0 0; font-size: 16px; color: var(--mut2); max-width: 560px; line-height: 1.7;">Calendário, resultados e classificação da Equipa A, Sub-19, Sub-17 e Sub-15. Dados do zerozero.pt.</p>
+    </div>
+  </section>
+
+  <!-- Separadores de equipa -->
+  <section style="max-width: 1360px; margin: 0 auto; padding: 24px 24px 0;">
+    <div role="tablist" aria-label="Equipas" class="tabs">
+      <template data-for="{{ teamTabs }}" data-as="tb">
+        <button type="button" role="tab" aria-selected="{{ tb.sel }}" class="{{ tb.cls }}" onClick="{{ tb.pick }}">{{ tb.name }}</button>
+      </template>
+    </div>
+  </section>
+
+  <template data-for="{{ panel }}" data-as="p">
+    <div class="swap">
+      <!-- Próximo jogo -->
+      <section style="max-width: 1360px; margin: 0 auto; padding: 40px 24px 0;">
+        <template data-if="{{ p.hasNext }}">
+          <div style="position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.22); background: linear-gradient(120deg, var(--hi) 0%, var(--bg2) 60%); padding: clamp(28px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 40px; align-items: center;">
+            <div aria-hidden="true" class="outline-txt" style="position: absolute; right: -20px; bottom: -60px; font-family: var(--display); font-size: 186px; line-height: 1; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">VS</div>
+            <div style="position: relative; display: flex; flex-direction: column; gap: 24px;">
+              <span style="font-size: 10px; letter-spacing: .32em; text-transform: uppercase; color: var(--acc);">Próximo jogo · {{ p.nRound }} · {{ p.comp }}</span>
+              <div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
+                <template data-for="{{ p.sides }}" data-as="sd">
+                  <div style="display: flex; align-items: center; gap: 14px;">
+                    <template data-if="{{ sd.us }}"><img class="crest" src="/assets/4a3f587d612e0707d718734d37dd8d9d.png" alt="SF Damaiense" style="width: 60px;"></template>
+                    <template data-if="{{ sd.them }}"><img class="opp-crest" src="{{ sd.crest }}" alt="{{ sd.name }}"></template>
+                    <span style="font-family: var(--display); font-size: 25px; line-height: 1; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ sd.name }}</span>
+                    <template data-if="{{ sd.vs }}"><span style="font-family: var(--display); font-size: 17px; color: var(--acc); margin-left: 4px; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">vs</span></template>
+                  </div>
+                </template>
+              </div>
+              <div style="display: flex; gap: 10px 28px; flex-wrap: wrap; font-size: 13px; color: var(--mut2);">
+                <span>{{ p.nWhen }}</span><span>{{ p.nVenue }}</span>
+              </div>
+            </div>
+            <div style="position: relative; display: flex; flex-direction: column; gap: 20px; align-items: flex-start;">
+              <span style="font-size: 10px; letter-spacing: .32em; text-transform: uppercase; color: var(--mut);">Faltam</span>
+              <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; width: 100%; max-width: 360px; font-family: var(--display); font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">
+                <template data-for="{{ cd }}" data-as="u">
+                  <div style="display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 12px 4px; border: 1px solid rgba(244,241,234,.14); background: rgba(var(--ov),.5);">
+                    <span class="tick" style="font-size: 52px; line-height: 1;">{{ u.v }}</span>
+                    <span style="font-family: 'Suisse Intl', sans-serif; font-size: 9px; letter-spacing: .3em; color: var(--mut); margin-top: 6px;">{{ u.k }}</span>
+                  </div>
+                </template>
+              </div>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a class="btn btn-gold" href="{{ p.zzGames }}" target="_blank" rel="noopener">Ver no zerozero <span class="arr">↗</span></a>
+                <a class="btn btn-line" href="/contactos/">Como chegar</a>
+              </div>
+            </div>
+          </div>
+        </template>
+      </section>
+
+      <!-- Calendário + Classificação -->
+      <section style="max-width: 1360px; margin: 0 auto; padding: 80px 24px 110px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); gap: 40px; align-items: start;">
+        <div class="rv">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; gap: 12px; flex-wrap: wrap;">
+            <h2 style="margin: 0; font-family: var(--display); font-size: 35px; line-height: 0.92; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">Calendário &amp; resultados</h2>
+            <span style="font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--mut);">Época 2026/27</span>
+          </div>
+          <div style="display: flex; flex-direction: column; border-top: 1px solid rgba(244,241,234,.12);">
+            <template data-for="{{ p.rows }}" data-as="f">
+              <div class="{{ f.cls }}">
+                <div style="display: flex; flex-direction: column; gap: 2px;">
+                  <span style="font-family: var(--display); font-size: 14px; color: var(--acc); line-height: 1; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ f.round }}</span>
+                  <span class="fxw" style="font-size: 10px; color: var(--mut); letter-spacing: .06em; white-space: nowrap;">{{ f.when }}</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
+                  <span class="{{ f.tagCls }}">{{ f.venue }}</span>
+                  <span class="mcr" style="background-image: url({{ f.crest }});"></span>
+                  <span style="font-size: 14px; font-weight: 600; letter-spacing: .02em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ f.opp }}</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px; justify-content: flex-end;">
+                  <span style="font-family: var(--display); font-size: 16px; white-space: nowrap; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ f.score }}</span>
+                  <template data-if="{{ f.played }}"><span class="{{ f.resCls }}">{{ f.res }}</span></template>
+                </div>
+              </div>
+            </template>
+          </div>
+          <template data-if="{{ p.canMore }}">
+            <button type="button" class="btn btn-line" onClick="{{ toggleAll }}" style="margin-top: 20px;">{{ p.moreLabel }}</button>
+          </template>
+        </div>
+        <div class="rv">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; gap: 12px; flex-wrap: wrap;">
+            <h2 style="margin: 0; font-family: var(--display); font-size: 35px; line-height: 0.92; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">Classificação</h2>
+            <span style="font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--mut);">{{ p.comp }}</span>
+          </div>
+          <div style="overflow-x: auto; border: 1px solid rgba(244,241,234,.12); background: var(--bg2);">
+            <table style="width: 100%; border-collapse: collapse; font-size: 13px; min-width: 460px;">
+              <thead>
+                <tr style="color: var(--mut); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; background: rgba(var(--ov2),.6);">
+                  <th style="text-align: left; padding: 14px 12px; font-weight: 500;">#</th>
+                  <th style="text-align: left; padding: 14px 12px; font-weight: 500;">Clube</th>
+                  <th style="text-align: center; padding: 14px 8px; font-weight: 500;">J</th>
+                  <th style="text-align: center; padding: 14px 8px; font-weight: 500;">V</th>
+                  <th style="text-align: center; padding: 14px 8px; font-weight: 500;">E</th>
+                  <th style="text-align: center; padding: 14px 8px; font-weight: 500;">D</th>
+                  <th style="text-align: center; padding: 14px 8px; font-weight: 500;">DG</th>
+                  <th style="text-align: right; padding: 14px 12px; font-weight: 500;">Pts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <template data-for="{{ p.table }}" data-as="r">
+                  <tr class="{{ r.cls }}">
+                    <td style="padding: 11px 12px; font-family: var(--display); font-size: 12px; color: var(--mut); font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ r.pos }}</td>
+                    <td style="padding: 11px 12px;"><span style="display: flex; align-items: center; gap: 10px;"><span class="mcr" style="width: 22px; height: 22px; background-image: url({{ r.crest }});"></span>{{ r.club }}</span></td>
+                    <td style="padding: 11px 8px; text-align: center; color: var(--mut2);">{{ r.j }}</td>
+                    <td style="padding: 11px 8px; text-align: center; color: var(--mut2);">{{ r.v }}</td>
+                    <td style="padding: 11px 8px; text-align: center; color: var(--mut2);">{{ r.e }}</td>
+                    <td style="padding: 11px 8px; text-align: center; color: var(--mut2);">{{ r.d }}</td>
+                    <td style="padding: 11px 8px; text-align: center; color: var(--mut2);">{{ r.dg }}</td>
+                    <td style="padding: 11px 12px; text-align: right; font-family: var(--display); font-size: 14px; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ r.pts }}</td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin: 14px 0 0; font-size: 12px; color: var(--mut3); line-height: 1.6;">Fonte: zerozero.pt · atualizado a {{ updated }}. <a href="{{ p.zzTable }}" target="_blank" rel="noopener" style="color: var(--acc);">Ver classificação completa ↗</a></p>
+        </div>
+      </section>
+    </div>
+  </template>
+
+  <!-- Rodapé -->
+  <footer class="v2-foot" id="rodape">
+    <div class="wrap">
+      <div class="v2-foot-top">
+        <img src="/assets/4a3f587d612e0707d718734d37dd8d9d.png" alt="Emblema SF Damaiense">
+        <p>A Damaia joga<br><b>connosco.</b></p>
+        <a href="#top" class="v2-totop" aria-label="Voltar ao topo">↑</a>
+      </div>
+      <div class="v2-foot-cols">
+        <div><span class="t">Sede</span><span>R. Carvalho Araújo 30<br>2720-698 Damaia</span><a href="/contactos/">Como chegar ↗</a></div>
+        <div><span class="t">Contactos</span><a href="tel:+351214901752">214 901 752</a><a href="mailto:geral@sfdamaiense.pt">geral@sfdamaiense.pt</a><a href="/contactos/">Enviar mensagem</a></div>
+        <div><span class="t">Clube</span><a href="/clube/">História</a><a href="/futebol/">Futebol</a><a href="/academia/">Academia</a><a href="/socios/">Sócios e quotas</a><a href="/loja/">Loja oficial</a></div>
+        <div><span class="t">Segue-nos</span><div class="v2-social">
+          <a href="https://www.instagram.com/sfdamaiense/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"></circle></svg></a>
+          <a href="https://www.facebook.com/SFDamaiense" target="_blank" rel="noopener" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v5h4v-5h3l1-4h-4V8z"></path></svg></a>
+          <a href="https://www.youtube.com/@damaiensetv" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"></rect><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"></path></svg></a>
+        </div></div>
+      </div>
+      <div class="v2-foot-bottom">
+        <span>© 2026 SF Damaiense · Desde 1938</span>
+        <span class="v2-pay"><span>Pagamentos</span><img src="/assets/45466474f5f2f72e3ee0bc0df83079cc.png" alt="MB WAY"><img src="/assets/7fde7c98f52bac35fcba1c2ee1a7f4c8.png" alt="Multibanco"></span>
+        <span>Website por Beatriz Studio</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</template>
+<script type="text/x-dc" data-dc-script data-props='{"fundo":{"editor":"enum","options":["Damaiense","Carbono","Relvado","Bordeaux","Noite (azul)"],"default":"Damaiense"},"$preview":{"width":1440,"height":3400}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { team: 0, showAll: false, menuOpen: false, ready: false, now: Date.now() }; }
+  componentDidMount() {
+    this.fxInit();
+    this._r = setTimeout(() => this.setState({ ready: true }), 60);
+    this._c = setInterval(() => this.setState({ now: Date.now() }), 1000);
+  }
+  componentWillUnmount() {
+    this.fxStop(); clearTimeout(this._r); clearInterval(this._c); }
+  // ===== SFD v2 · efeitos (scroll suave, reveal, parallax, cursor, header) =====
+  fxInit() {
+    const d = document, w = window;
+    const rm = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine = w.matchMedia && w.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    let lastY = w.scrollY || 0, tick = false;
+    const upd = () => {
+      tick = false;
+      const y = w.scrollY || 0, max = d.documentElement.scrollHeight - w.innerHeight;
+      const p = d.querySelector('.v2-progress'); if (p) p.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+      const h = d.querySelector('.v2-header');
+      if (h) { h.classList.toggle('scrolled', y > 40); h.classList.toggle('hide', y > lastY + 2 && y > 320 && !this.state.menuOpen); if (y < lastY - 2 || y < 320) h.classList.remove('hide'); }
+      lastY = y;
+      if (!rm) {
+        d.querySelectorAll('[data-parallax]').forEach((el) => {
+          const box = el.parentElement.getBoundingClientRect();
+          if (box.bottom < -200 || box.top > w.innerHeight + 200) return;
+          const sp = parseFloat(el.getAttribute('data-parallax')) || 0.15;
+          el.style.transform = 'translate3d(0,' + (-box.top * sp).toFixed(1) + 'px,0) scale(1.08)';
+        });
+      }
+    };
+    this._fxScroll = () => { if (!tick) { tick = true; w.requestAnimationFrame(upd); } };
+    w.addEventListener('scroll', this._fxScroll, { passive: true });
+    w.addEventListener('resize', this._fxScroll, { passive: true });
+    upd();
+    if ('IntersectionObserver' in w) {
+      this._fxIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); this._fxIO.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -25px 0px' });
+      const scan = () => d.querySelectorAll('.reveal:not([data-io])').forEach((el) => { el.setAttribute('data-io', '1'); if (rm) el.classList.add('in'); else this._fxIO.observe(el); });
+      scan();
+      this._fxMO = new MutationObserver(() => { clearTimeout(this._fxScan); this._fxScan = setTimeout(scan, 40); });
+      this._fxMO.observe(d.body, { childList: true, subtree: true });
+    } else { d.querySelectorAll('.reveal').forEach((el) => el.classList.add('in')); }
+    if (fine && !rm) {
+      const g = d.querySelector('.v2-glow');
+      this._fxMove = (e) => { if (!g) return; g.style.transform = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0)'; g.style.opacity = '1'; };
+      this._fxLeave = () => { if (g) g.style.opacity = '0'; };
+      w.addEventListener('pointermove', this._fxMove, { passive: true });
+      d.addEventListener('pointerleave', this._fxLeave);
+      // Lenis (scroll suave) — só em rato/trackpad; telemóveis mantêm o scroll nativo
+      const start = () => {
+        try {
+          if (!w.Lenis || this._lenis) return;
+          this._lenis = new w.Lenis({ lerp: 0.12, smoothWheel: true, wheelMultiplier: 1 });
+          const raf = (t) => { if (!this._lenis) return; this._lenis.raf(t); this._fxRaf = w.requestAnimationFrame(raf); };
+          this._fxRaf = w.requestAnimationFrame(raf);
+        } catch (e) {}
+      };
+      if (w.Lenis) start(); else {
+        const sc = d.createElement('script'); sc.src = '/assets/0c7813240655c01d2b32e329308b576f.js'; sc.async = true; sc.onload = start; d.head.appendChild(sc);
+      }
+    }
+  }
+  fxStop() {
+    const w = window;
+    try {
+      w.removeEventListener('scroll', this._fxScroll); w.removeEventListener('resize', this._fxScroll);
+      if (this._fxMove) w.removeEventListener('pointermove', this._fxMove);
+      if (this._fxLeave) document.removeEventListener('pointerleave', this._fxLeave);
+      if (this._fxIO) this._fxIO.disconnect(); if (this._fxMO) this._fxMO.disconnect();
+      clearTimeout(this._fxScan); if (this._fxRaf) w.cancelAnimationFrame(this._fxRaf);
+      if (this._lenis) { this._lenis.destroy(); this._lenis = null; }
+    } catch (e) {}
+  }
+  fxTo(id) {
+    const el = document.getElementById(id); if (!el) return;
+    if (this._lenis) this._lenis.scrollTo(el, { offset: -80 }); else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  renderVals() {
+    const s = this.state;
+    const th = { 'Damaiense': 'damaiense', 'Carbono': 'carbono', 'Relvado': 'relvado', 'Bordeaux': 'bordeaux', 'Noite (azul)': 'noite' }[this.props.fundo ?? 'Damaiense'] || 'damaiense';
+    // ===== Dados desportivos (fonte: zerozero.pt, atualizados a 22/10/2026) =====
+    // Em produção: substituído por um ficheiro JSON atualizado automaticamente.
+    const SFD = {
+      updated: '22/10/2026',
+      venueHome: 'Complexo Desportivo Eugénia e Joaquim Cannas da Silva · Damaia',
+      teams: [
+        {
+          key: 'a', name: 'Equipa A', comp: 'AF Lisboa 2.ª Divisão · Série 2',
+          zz: 'https://www.zerozero.pt/equipa/damaiense/11188',
+          zzGames: 'https://www.zerozero.pt/equipa/damaiense/11188/jogos?grp=1',
+          zzTable: 'https://www.zerozero.pt/edicao/af-lisboa-2-divisao-1-fase-serie-2-2026-2027/223617',
+          table: [
+            [1, 'Casa Pia AC B', 16, 6, 5, 1, 0, '+14'], [2, 'SF Damaiense', 11, 6, 3, 2, 1, '+6'], [3, 'Algés', 11, 6, 3, 2, 1, '+4'],
+            [4, 'Belenenses B', 11, 6, 3, 2, 1, '+3'], [5, 'U. Tires', 10, 6, 3, 1, 2, '+5'], [6, 'Águias da Musgueira', 10, 6, 3, 1, 2, '+3'],
+            [7, 'Atlético Cacém', 10, 6, 3, 1, 2, '-1'], [8, 'Operário Lisboa', 9, 6, 3, 0, 3, '-3'], [9, 'Santo António Lisboa', 7, 6, 2, 1, 3, '0'],
+            [10, 'Leões Porto Salvo', 7, 6, 2, 1, 3, '0'], [11, 'Linda-a-Velha', 7, 5, 2, 1, 2, '-2'], [12, 'Fontainhas', 7, 6, 1, 4, 1, '-3'],
+            [13, 'Carcavelos', 6, 6, 2, 0, 4, '-4'], [14, 'Abóboda', 5, 6, 1, 2, 3, '-2'], [15, 'UDR Santa Maria', 4, 5, 1, 1, 3, '-5'],
+            [16, 'CSD Bairro da Boavista', 0, 6, 0, 0, 6, '-15']
+          ],
+          games: [
+            ['J1', '2026-09-13', '17:00', 'C', 'U. Tires', 3, 2], ['J2', '2026-09-20', '15:00', 'F', 'Abóboda', 3, 3],
+            ['J3', '2026-09-27', '15:00', 'C', 'CSD Bairro da Boavista', 5, 1], ['J4', '2026-10-04', '15:00', 'F', 'Linda-a-Velha', 2, 2],
+            ['J5', '2026-10-11', '15:00', 'C', 'Operário Lisboa', 4, 2], ['J6', '2026-10-18', '15:00', 'F', 'UDR Santa Maria', 1, 2],
+            ['J7', '2026-10-25', '15:00', 'C', 'Leões Porto Salvo'], ['J8', '2026-11-01', '15:00', 'F', 'Casa Pia AC B'],
+            ['J9', '2026-11-08', '15:00', 'F', 'Algés'], ['J10', '2026-11-15', '15:00', 'C', 'Carcavelos'],
+            ['J11', '2026-11-29', '15:00', 'F', 'Santo António Lisboa'], ['J12', '2026-12-13', '15:00', 'C', 'Águias da Musgueira'],
+            ['J13', '2026-12-20', '15:00', 'F', 'Atlético Cacém'], ['J14', '2027-01-10', '15:30', 'C', 'Fontainhas'],
+            ['J15', '2027-01-17', '15:30', 'F', 'Belenenses B'], ['J16', '2027-01-24', '15:30', 'F', 'U. Tires'],
+            ['J17', '2027-01-31', '15:30', 'C', 'Abóboda'], ['J18', '2027-02-14', '15:30', 'F', 'CSD Bairro da Boavista'],
+            ['J19', '2027-02-21', '15:30', 'C', 'Linda-a-Velha'], ['J20', '2027-02-28', '15:30', 'F', 'Operário Lisboa'],
+            ['J21', '2027-03-07', '15:30', 'C', 'UDR Santa Maria'], ['J22', '2027-03-14', '15:30', 'F', 'Leões Porto Salvo'],
+            ['J23', '2027-03-21', '15:30', 'C', 'Casa Pia AC B'], ['J24', '2027-04-04', '16:00', 'C', 'Algés'],
+            ['J25', '2027-04-11', '16:00', 'F', 'Carcavelos'], ['J26', '2027-04-18', '16:00', 'C', 'Santo António Lisboa'],
+            ['J27', '2027-04-25', '16:00', 'F', 'Águias da Musgueira'], ['J28', '2027-05-02', '16:00', 'C', 'Atlético Cacém'],
+            ['J29', '2027-05-09', '17:00', 'F', 'Fontainhas'], ['J30', '2027-05-16', '17:00', 'C', 'Belenenses B']
+          ]
+        },
+        {
+          key: 's19', name: 'Sub-19', comp: 'AF Lisboa Juniores A · 1.ª Divisão',
+          zz: 'https://www.zerozero.pt/equipa/damaiense/12767',
+          zzGames: 'https://www.zerozero.pt/equipa/damaiense/12767',
+          zzTable: 'https://www.zerozero.pt/edicao/af-lisboa-juniores-a-1-divisao-2026-2027/224376',
+          table: [
+            [1, 'GDS Cascais', 9, 3, 3, 0, 0, '+6'], [2, 'Sintrense', 9, 3, 3, 0, 0, '+6'], [3, 'Real SC', 7, 3, 2, 1, 0, '+7'],
+            [4, 'AD Oeiras', 7, 3, 2, 1, 0, '+4'], [5, 'Algés', 7, 3, 2, 1, 0, '+3'], [6, '1º Dezembro', 6, 3, 2, 0, 1, '+2'],
+            [7, 'At. Povoense', 5, 3, 1, 2, 0, '+2'], [8, 'GS Loures', 4, 3, 1, 1, 1, '0'], [9, 'SF Damaiense', 4, 3, 1, 1, 1, '0'],
+            [10, 'UDR Santa Maria', 3, 3, 1, 0, 2, '-1'], [11, 'Mem Martins SC', 3, 3, 1, 0, 2, '-2'], [12, 'Carcavelos', 1, 3, 0, 1, 2, '-3'],
+            [13, 'Sacavenense', 1, 3, 0, 1, 2, '-5'], [14, 'At. Malveira', 1, 3, 0, 1, 2, '-3'], [15, 'Ponte Frielas', 0, 3, 0, 0, 3, '-7'],
+            [16, 'Operário Lisboa', 0, 3, 0, 0, 3, '-9']
+          ],
+          games: [
+            ['J1', '2026-10-03', '16:00', 'C', '1º Dezembro', 0, 1], ['J2', '2026-10-10', '15:00', 'F', 'GS Loures', 2, 2],
+            ['J3', '2026-10-17', '16:00', 'C', 'Mem Martins SC', 1, 0], ['J4', '2026-10-24', '15:00', 'F', 'At. Malveira'],
+            ['J5', '2026-10-31', '16:00', 'C', 'Real SC'], ['J6', '2026-11-07', '16:00', 'F', 'Sacavenense']
+          ]
+        },
+        {
+          key: 's17', name: 'Sub-17', comp: 'AF Lisboa Juniores B · 1.ª Divisão',
+          zz: 'https://www.zerozero.pt/equipa/damaiense/12720',
+          zzGames: 'https://www.zerozero.pt/equipa/damaiense/12720',
+          zzTable: 'https://www.zerozero.pt/edicao/af-lisboa-juniores-b-1-divisao-2026-2027/224930',
+          table: [
+            [1, 'Oriental', 9, 3, 3, 0, 0, '+7'], [2, 'Atlético CP', 9, 3, 3, 0, 0, '+7'], [3, 'Sacavenense', 6, 3, 2, 0, 1, '+1'],
+            [4, 'CAC', 6, 3, 2, 0, 1, '+3'], [5, 'Torreense B', 6, 3, 2, 0, 1, '-1'], [6, 'Sintrense', 6, 3, 2, 0, 1, '+2'],
+            [7, 'Algés', 5, 3, 1, 2, 0, '+1'], [8, 'CD Mafra', 4, 3, 1, 1, 1, '+1'], [9, 'FC Alverca B', 4, 3, 1, 1, 1, '0'],
+            [10, 'Belenenses B', 3, 3, 1, 0, 2, '0'], [11, '1º Dezembro', 3, 3, 1, 0, 2, '-4'], [12, 'UDR Santa Maria', 3, 3, 1, 0, 2, '-2'],
+            [13, 'Ericeirense', 3, 3, 1, 0, 2, '-2'], [14, 'At. Povoense', 1, 3, 0, 1, 2, '-3'], [15, 'SF Damaiense', 1, 3, 0, 1, 2, '-4'],
+            [16, 'EFBO', 0, 3, 0, 0, 3, '-6']
+          ],
+          games: [
+            ['J1', '2026-10-04', '11:00', 'F', 'UDR Santa Maria', 1, 2], ['J2', '2026-10-11', '08:45', 'C', 'Atlético CP', 1, 4],
+            ['J3', '2026-10-18', '10:00', 'F', 'CD Mafra', 0, 0], ['J4', '2026-10-25', '08:45', 'C', 'Oriental'],
+            ['J5', '2026-11-01', '10:00', 'F', 'CAC'], ['J6', '2026-11-08', '08:45', 'C', 'Belenenses B']
+          ]
+        },
+        {
+          key: 's15', name: 'Sub-15', comp: 'AF Lisboa Juniores C · 2.ª Divisão · Série 2',
+          zz: 'https://www.zerozero.pt/equipa/damaiense/12570',
+          zzGames: 'https://www.zerozero.pt/equipa/damaiense/12570',
+          zzTable: 'https://www.zerozero.pt/edicao/af-lisboa-juniores-c-2-divisao-serie-2-2026-27/225386',
+          table: [
+            [1, 'Casa Pia AC B', 9, 3, 3, 0, 0, '+16'], [2, 'Benfica C', 9, 3, 3, 0, 0, '+12'], [3, 'CIF', 9, 3, 3, 0, 0, '+8'],
+            [4, 'Belenenses C', 7, 3, 2, 1, 0, '+4'], [5, 'Malveira da Serra', 6, 3, 2, 0, 1, '+1'], [6, 'Olivais Sul', 6, 3, 2, 0, 1, '+16'],
+            [7, 'SF Damaiense', 5, 3, 1, 2, 0, '+8'], [8, 'Assoc. Torre', 4, 3, 1, 1, 1, '0'], [9, 'Academia Alcoitão', 3, 3, 1, 0, 2, '+1'],
+            [10, 'Linda-a-Velha', 3, 3, 1, 0, 2, '0'], [11, 'Real SC B', 3, 3, 1, 0, 2, '-2'], [12, 'Fut. Benfica', 3, 3, 1, 0, 2, '-6'],
+            [13, 'Carcavelos', 1, 3, 0, 1, 2, '-4'], [14, 'São João de Brito', 1, 3, 0, 1, 2, '-11'], [15, 'EF Belém Estádio Restelo', 0, 3, 0, 0, 3, '-20'],
+            [16, 'CAC', 0, 3, 0, 0, 3, '-23']
+          ],
+          games: [
+            ['J1', '2026-10-04', '11:00', 'C', 'São João de Brito', 9, 1], ['J2', '2026-10-11', '11:00', 'F', 'Belenenses C', 2, 2],
+            ['J3', '2026-10-18', '11:00', 'C', 'Carcavelos', 1, 1], ['J4', '2026-10-25', '11:00', 'F', 'Malveira da Serra'],
+            ['J5', '2026-11-01', '11:00', 'C', 'CAC'], ['J6', '2026-11-08', '11:00', 'F', 'Real SC B']
+          ]
+        }
+      ]
+    };
+    const DIAS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+    const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+    const sfdGame = (g) => {
+      const d = new Date(g[1] + 'T' + g[2] + ':00');
+      const played = g.length > 5;
+      const res = played ? (g[5] > g[6] ? 'V' : g[5] < g[6] ? 'D' : 'E') : '';
+      return { round: g[0], date: d, day: DIAS[d.getDay()] + ' · ' + String(d.getDate()).padStart(2, '0') + ' ' + MESES[d.getMonth()], time: g[2], home: g[3] === 'C', opp: g[4], played: played, gf: played ? g[5] : null, ga: played ? g[6] : null, res: res,
+        homeName: g[3] === 'C' ? 'SF Damaiense' : g[4], awayName: g[3] === 'C' ? g[4] : 'SF Damaiense',
+        scoreHA: played ? (g[3] === 'C' ? g[5] + '–' + g[6] : g[6] + '–' + g[5]) : '' };
+    };
+    const sfdTeam = (t, nowMs) => {
+      const games = t.games.map(sfdGame);
+      const next = games.find((g) => !g.played && g.date.getTime() + 2 * 3600000 > nowMs) || null;
+      const past = games.filter((g) => g.played);
+      const last = past.length ? past[past.length - 1] : null;
+      const me = t.table.find((r) => r[1] === 'SF Damaiense');
+      return Object.assign({}, t, { g: games, next: next, last: last, form: past.slice(-5).map((g) => g.res), pos: me ? me[0] : null, pts: me ? me[2] : null });
+    };
+    const initials = (n) => n.replace(/[^A-Za-zÀ-ÿ0-9 ]/g, '').split(' ').filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+    // ===== fim dos dados =====
+    // Emblemas dos clubes (fonte: zerozero.pt)
+    const CREST = {"Águias da Musgueira": "4b9ac4519948c2dda1c151a70a4bc790", "Algés": "86c034688e17bbaef5374d32dae3a2ff", "Santo António Lisboa": "b45ef91f2305875b1f42ea6a917291a7", "SF Damaiense": "4a3f587d612e0707d718734d37dd8d9d", "Damaiense": "4a3f587d612e0707d718734d37dd8d9d", "Carcavelos": "a7bd27dfe04e8074431d17832da74ec7", "UDR Santa Maria": "18e3c89c1594f3ef1d1278a3d0999679", "Operário Lisboa": "d7422b7cedf277fb98254c9f07672802", "Abóboda": "480031dbf29fdbded93196311d92d6d4", "Leões Porto Salvo": "a90e4339c92f4218fde7d286cab3a4e4", "Casa Pia AC B": "9771612f80d1376451fb85f51593cc17", "Casa Pia AC": "9771612f80d1376451fb85f51593cc17", "Atlético Cacém": "affabc6af12964687f9161a31c423132", "U. Tires": "60616b5412fd03bc4f39f492d7b12107", "Fontainhas": "6b21c89645da87d8e4f4c8bdc5173889", "Belenenses B": "3ea17be0feb6da08d26aef74411fa675", "Belenenses": "3ea17be0feb6da08d26aef74411fa675", "CSD Bairro da Boavista": "9020a0439862933606c47f67ec678862", "Linda-a-Velha": "b67d33fba464715047e94a88635c18bf", "1º Dezembro": "9e8eb6d0fbd25fb00bcdc547d390d48f", "AD Oeiras": "1d0efd60b7be8113afc4dc1cabfcdf3b", "At. Malveira": "c40d95075101cc3943c3b9badde48d97", "At. Povoense": "fffdec9b990e6c179d4933e149097f8e", "GDS Cascais": "4c597a096442b31082e20fdd4d913f39", "GS Loures": "b8c8815ae3b9d043cd1e18d9287ff727", "Mem Martins SC": "9407a534bd50dc20546610affecbe85f", "Ponte Frielas": "12d7fcab8904101e6b3c98897aa4f93b", "Real SC": "c1015ff51d82fe0f0e04626f4328a984", "Sacavenense": "f6be4c495c04f857f83ee4806e6434d4", "Sintrense": "268276996f622f5395d65078bb99e2e6", "Atlético CP": "b69299907ea108b8a50c148edc2b4110", "CAC": "3bab22ff0e0d4492cadffa0e4fa05160", "CD Mafra": "8355f06f8241d1cc536c3e4a7949a897", "EFBO": "161cd91165ecd5671943bb8abb16bd21", "Ericeirense": "35caeb9b749e5c59b71325775854eb33", "FC Alverca": "6bae56f17f0bf98dbaec638ef6afecd8", "FC Alverca B": "6bae56f17f0bf98dbaec638ef6afecd8", "Oriental": "bfb37bc8c20c0d30bef421fa81dcc8e8", "Torreense": "ad6d66deb3d1fa12f991ebdf8cd556bf", "Torreense B": "ad6d66deb3d1fa12f991ebdf8cd556bf", "CIF": "36b41663b8ecb158f252481d1861c4d1", "Benfica C": "94a21fd269c7a165fd2521c9cd8b0eef", "EF Belém Estádio Restelo": "1638381b1c0a3bc8efeae82c773348cd", "Assoc. Torre": "228920b2b714ce8661b7516bb475f5e8", "São João de Brito": "528f190845f182c2d2345bd4066e46fa", "Malveira da Serra": "eb025a5b39fd904763441b3aead232ba", "Academia Alcoitão": "26c60817f408c8421514060d27c73dcb", "Fut. Benfica": "2327b6093aa99689ef1c69dc3c90fc47", "Olivais Sul": "c9f4e7d66f3d6a05dc45846f558def54", "Real SC B": "c1015ff51d82fe0f0e04626f4328a984", "Belenenses C": "3ea17be0feb6da08d26aef74411fa675"};
+    const crestOf = (n) => CREST[n] ? '/_blob/' + CREST[n] : '';
+    const nowMs = s.now;
+    const T = SFD.teams.map((t) => sfdTeam(t, nowMs));
+    const t = T[s.team] || T[0];
+    let diff = t.next ? Math.max(0, t.next.date.getTime() - nowMs) : 0; const pad = (n) => String(n).padStart(2, '0');
+    const dd = Math.floor(diff / 86400000); diff -= dd * 86400000;
+    const hh = Math.floor(diff / 3600000); diff -= hh * 3600000;
+    const mm = Math.floor(diff / 60000); diff -= mm * 60000;
+    const ss = Math.floor(diff / 1000);
+    const nIdx = t.next ? t.g.indexOf(t.next) : t.g.length;
+    const visible = s.showAll ? t.g : t.g.filter((g, i) => i < nIdx + 6);
+    const panel = {
+      comp: t.comp, zzGames: t.zzGames, zzTable: t.zzTable,
+      hasNext: !!t.next,
+      nRound: t.next ? 'Jornada ' + t.next.round.slice(1) : '',
+      nWhen: t.next ? t.next.day + ' · ' + t.next.time : '',
+      nVenue: t.next ? (t.next.home ? SFD.venueHome : 'Campo do ' + t.next.opp) : '',
+      sides: t.next ? [
+        { name: t.next.homeName, us: t.next.home, them: !t.next.home, ini: initials(t.next.homeName), crest: crestOf(t.next.homeName), vs: true },
+        { name: t.next.awayName, us: !t.next.home, them: t.next.home, ini: initials(t.next.awayName), crest: crestOf(t.next.awayName), vs: false }
+      ] : [],
+      rows: visible.map((g) => ({
+        round: g.round, when: g.day + ' · ' + g.time, venue: g.home ? 'CASA' : 'FORA', tagCls: 'vt ' + (g.home ? 'c' : 'f'), opp: g.opp, crest: crestOf(g.opp),
+        score: g.played ? g.gf + '–' + g.ga : 'vs', played: g.played, res: g.res, resCls: 'rs ' + g.res,
+        cls: 'fx row-h' + (t.next === g ? ' next' : '')
+      })),
+      canMore: t.g.length > nIdx + 6,
+      moreLabel: s.showAll ? 'Mostrar menos' : 'Ver calendário completo (' + t.g.length + ' jornadas)',
+      table: t.table.map((r) => ({ pos: String(r[0]), club: r[1], crest: crestOf(r[1]), pts: String(r[2]), j: String(r[3]), v: String(r[4]), e: String(r[5]), d: String(r[6]), dg: r[7], cls: 'trow row-h' + (r[1] === 'SF Damaiense' ? ' me' : '') }))
+    };
+    return {
+      rootCls: 'th-' + th + (s.ready ? ' go' : ''),
+      menuOpen: s.menuOpen, menuOpenStr: s.menuOpen ? 'true' : 'false', burgerCls: 'v2-burger' + (s.menuOpen ? ' open' : ''),
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }),
+      mobileNav: [['/', 'Início'], ['/jogos/', 'Jogos'], ['/futebol/', 'Futebol'], ['/noticias/', 'Notícias'], ['/loja/', 'Loja'], ['/socios/', 'Sócios'], ['/clube/', 'Clube'], ['/contactos/', 'Contactos']].map((x) => ({ href: x[0], label: x[1] })),
+      title: 'JOGOS'.split('').map((c, i) => ({ c: c, d: (0.15 + i * 0.06).toFixed(2) + 's' })),
+      teamTabs: T.map((x, i) => ({ name: x.name, cls: 'tab' + (i === s.team ? ' on' : ''), sel: i === s.team ? 'true' : 'false', pick: () => this.setState({ team: i, showAll: false }) })),
+      toggleAll: () => this.setState({ showAll: !s.showAll }),
+      panel: [panel],
+      updated: SFD.updated,
+      cd: [{ v: pad(dd), k: 'DIAS' }, { v: pad(hh), k: 'HORAS' }, { v: pad(mm), k: 'MIN' }, { v: pad(ss), k: 'SEG' }]
+    };
+  }
+}
+</script>
+</body>
+</html>

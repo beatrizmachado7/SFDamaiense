@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<title>SF Damaiense — Futebol</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E3A22">
+<script src="/config.js"></script>
+<script src="/js/sfd-content.js"></script>
+<script src="/js/assets-map.js"></script>
+<script src="/js/vendor/morphdom-umd.min.js"></script>
+<script src="/js/dc-runtime.js"></script>
+</head>
+<body>
+<template id="x-dc">
+<helmet>
+<style>
+@font-face{font-family:'Tungsten';src:url(/assets/96a6c4058d9925bb362137182b9f6187.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url(/assets/70d0003be0a793d320939f01b352e5dc.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+[style*="Tungsten"],details.faq summary{text-transform:uppercase}
+:root,.th-carbono{--bg:#0C0C0D;--bg2:#151517;--bg3:#070708;--hi:#232326;--ov:12,12,13;--ov2:7,7,8;--mut:#A8A6A0;--mut2:#D2CFC7;--mut3:#8E8B85;--feat:linear-gradient(135deg,#0F4520 0%,#0A2413 55%,#0C0C0D 100%);--featdot:#0A2413;--tex:radial-gradient(ellipse 50% 40% at 0% 0%,rgba(200,17,28,.10),rgba(0,0,0,0) 70%),radial-gradient(ellipse 50% 40% at 100% 100%,rgba(46,122,42,.10),rgba(0,0,0,0) 70%),repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,rgba(0,0,0,0) 1px 120px)}
+.th-relvado{--bg:#07130D;--bg2:#0E1F16;--bg3:#040C08;--hi:#163024;--ov:7,19,13;--ov2:4,12,8;--mut:#A6B6AC;--mut2:#CFDAD3;--mut3:#83958A;--feat:linear-gradient(135deg,#6A0B12 0%,#3A070B 55%,#07130D 100%);--featdot:#3A070B;--tex:radial-gradient(ellipse 60% 45% at 50% 0%,rgba(46,122,42,.16),rgba(0,0,0,0) 70%),repeating-linear-gradient(90deg,rgba(46,122,42,.05) 0 160px,rgba(0,0,0,0) 160px 320px)}
+.th-bordeaux{--bg:#130A0C;--bg2:#1E1013;--bg3:#0B0507;--hi:#2C161B;--ov:19,10,12;--ov2:11,5,7;--mut:#B9AAAC;--mut2:#DACECF;--mut3:#988A8C;--feat:linear-gradient(135deg,#0F4520 0%,#0A2413 55%,#130A0C 100%);--featdot:#0A2413;--tex:radial-gradient(ellipse 55% 45% at 100% 0%,rgba(200,17,28,.14),rgba(0,0,0,0) 70%),radial-gradient(ellipse 40% 35% at 0% 100%,rgba(255,255,255,0.06),rgba(0,0,0,0) 70%)}
+.th-noite{--bg:#0A0918;--bg2:#0F0E22;--bg3:#07060F;--hi:#1D1B42;--ov:10,9,24;--ov2:7,6,15;--mut:#A9A7BF;--mut2:#C9C7DA;--mut3:#8E8CA6;--feat:#3F3A8A;--featdot:#3F3A8A;--tex:none}
+.th-damaiense{--bg:#0A2614;background-color:#0A2614;--bg2:rgba(7,28,15,.66);--bg3:#071C0F;--hi:rgba(51,129,44,.38);--ov:8,32,18;--ov2:6,24,13;--mut:#C6D2C8;--mut2:#E6ECE5;--mut3:#A7B6AA;--feat:linear-gradient(120deg,#C8111C 0%,#93101A 48%,#1E6A2B 100%);--featdot:#93101A;--tex:none}
+.th-damaiense::before{content:"";position:fixed;inset:-60%;z-index:0;pointer-events:none;background-image:url(/assets/ac34ed85ee34adfe4550a3a51b5a155f.png);background-size:406px 276px;background-repeat:repeat;opacity:.075;transform:rotate(-8deg) skewX(-8deg)}
+.th-damaiense::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 100% 0%,rgba(200,17,28,.16),rgba(0,0,0,0) 70%),radial-gradient(ellipse 60% 50% at 0% 100%,rgba(46,122,42,.20),rgba(0,0,0,0) 70%),linear-gradient(180deg,rgba(6,22,12,0) 0%,rgba(6,22,12,.35) 100%)}
+
+@keyframes fluid{0%{transform:scale(1.05) translate(0,0) rotate(0deg)}50%{transform:scale(1.18) translate(-3%,2%) rotate(2deg)}100%{transform:scale(1.1) translate(3%,-2%) rotate(-1.5deg)}}
+.th-damaiense > *{position:relative;z-index:1}
+.th-damaiense > .hdr{position:sticky;z-index:50}
+@media (prefers-reduced-motion: reduce){.th-damaiense::before{content:"";position:fixed;inset:-60%;z-index:0;pointer-events:none;background-image:url(/assets/ac34ed85ee34adfe4550a3a51b5a155f.png);background-size:406px 276px;background-repeat:repeat;opacity:.075;transform:rotate(-8deg) skewX(-8deg)}}
+.site{background-color:var(--bg);background-image:var(--tex);background-attachment:fixed}
+body{margin:0;background:var(--bg)}
+*{box-sizing:border-box}
+a{color:#F4F1EA;text-decoration:none}a:hover{color:var(--acc)}
+button,input,select,textarea{font-family:'Suisse Intl', sans-serif}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(var(--ov),.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid rgba(244,241,234,.1)}
+.navlink{position:relative;padding:6px 0}
+.navlink::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--acc);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.navlink:hover::after,.navlink.on::after{transform:scaleX(1);transform-origin:left}
+.navlink.on{color:var(--acc)}
+.burger{display:none}
+@media (max-width: 1240px){ .nav-desk{display:none !important} .burger{display:inline-flex !important} }
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 28px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;border:none;z-index:0}
+.btn::before{content:"";position:absolute;inset:0;transform:translateX(-101%);transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:-1}
+.btn:hover::before{transform:translateX(0)}
+.btn .arr{transition:transform .4s}.btn:hover .arr{transform:translateX(6px)}
+.btn-red{background:#C8111C;color:#FFFFFF}.btn-red::before{background:#8E0A12}.btn-red:hover{color:#FFFFFF}
+.btn-gold{background:var(--red);color:#FFFFFF}.btn-gold::before{background:#F4F1EA}.btn-gold:hover{color:#0C0C0D}
+.btn-dark{background:#0C0C0D;color:#F4F1EA}.btn-dark::before{background:#C8111C}.btn-dark:hover{color:#FFFFFF}
+.page-hero{position:relative;overflow:hidden;min-height:480px;display:flex;align-items:flex-end}
+.ph-photo{position:absolute;inset:-3%;background-image:url(/assets/4fc37a32ae04d47eca908409bdcd62b0.jpg);background-size:cover;background-position:center 80%;animation:phZoom 18s ease-out both}
+@keyframes phZoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+.ltr{display:inline-block}
+.go .ltr{animation:ltrUp .9s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes ltrUp{from{opacity:0;transform:translateY(105%)}to{opacity:1;transform:none}}
+.go .fade-up{animation:fadeUp .9s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.d2{animation-delay:.55s}.d3{animation-delay:.8s}
+.swap{animation:swapIn .6s cubic-bezier(.2,.8,.2,1)}
+@keyframes swapIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.lvl{transition:transform .5s cubic-bezier(.2,.7,.2,1),background .3s,border-color .3s}
+.lvl:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.22) !important}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:84px}
+.path{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.path:hover{transform:translateY(-6px);box-shadow:0 30px 60px -24px rgba(200,17,28,.45)}
+.path .go-arr{transition:letter-spacing .4s}.path:hover .go-arr{letter-spacing:.32em}
+.btn-line{background:transparent;color:#F4F1EA;border:1px solid rgba(244,241,234,.4)}.btn-line::before{background:#F4F1EA}.btn-line:hover{color:#0C0C0D}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mut)}
+.field input,.field select{background:rgba(var(--ov),.4);border:1px solid rgba(244,241,234,.22);color:#F4F1EA;padding:0 16px;min-height:52px;font-size:15px;transition:border-color .3s,background .3s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--acc);background:rgba(var(--ov),.7)}
+.field select option{color:#0C0C0D}
+details.faq{border-bottom:1px solid rgba(244,241,234,.12)}
+details.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;font-family:var(--display);font-size:17px;font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary .pl{transition:transform .4s;color:var(--acc);font-size:30px}
+details.faq[open] summary .pl{transform:rotate(45deg)}
+details.faq p{margin:0 0 24px;color:var(--mut2);line-height:1.75;max-width:720px;animation:fadeUp .5s both}
+.gr-big{position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-family:var(--display);font-size:clamp(136px,19.84vw,298px);line-height:0.92;color:rgba(255,255,255,.06);font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.crest{display:block;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+@supports (animation-timeline: view()){ .go .rv{animation:rvUp linear both;animation-timeline:view();animation-range:entry 0% cover 25%} }
+@keyframes rvUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+@media (max-width: 760px){ .hide-sm{display:none !important} }
+.pcard{position:relative;overflow:hidden;border:1px solid rgba(244,241,234,.1);background:var(--bg2);transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(255,255,255,0.22)}
+.pcard .ph{transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.pcard:hover .ph{transform:scale(1.06)}
+.pcard .num{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pcard:hover .num{transform:translateY(-8px)}
+.subtabs-wrap{position:sticky;top:64px;z-index:40;background:rgba(var(--ov2),.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid rgba(244,241,234,.08);border-bottom:1px solid rgba(244,241,234,.1)}
+.subtabs{max-width:1360px;margin:0 auto;padding:0 24px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.subtabs::-webkit-scrollbar{display:none}
+.stab{cursor:pointer;background:none;border:none;border-bottom:3px solid transparent;color:var(--mut);font-family:'Suisse Intl',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:20px 18px 17px;white-space:nowrap}
+.stab:hover{color:#F4F1EA}
+.stab.on{color:#F4F1EA;border-bottom-color:var(--acc)}
+.sumgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1px;background:rgba(244,241,234,.12);border:1px solid rgba(244,241,234,.12)}
+.sumc{background:var(--bg2);padding:22px 24px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.sl{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--mut)}
+.sv{font-size:16px;font-weight:700;line-height:1.35}
+.sv.big{font-family:var(--display);font-size:27px;line-height:1;color:var(--acc);font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.sv.big i{font-style:normal;font-size:22px;color:#F4F1EA}
+.ss{font-size:12px;color:var(--mut2)}
+.ss.lk{color:var(--acc);letter-spacing:.06em}
+.yrow{display:grid;grid-template-columns:44px auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 24px;border-bottom:1px solid rgba(244,241,234,.07);font-size:14px}
+.yr{font-family:var(--display);font-size:12px;color:var(--acc);font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.yo{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.yw{font-size:12px;color:var(--mut);white-space:nowrap}
+.vt{font-size:9px;font-weight:700;letter-spacing:.2em;padding:4px 8px;color:#FFFFFF}
+.vt.c{background:#C8111C}.vt.f{background:#2B4A8A}
+.pend{border:1px dashed rgba(255,255,255,0.22);background:rgba(255,255,255,0.06);padding:14px 16px;font-size:13px;line-height:1.6;color:var(--mut2)}
+.pend b{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
+@media (max-width:560px){.yrow{grid-template-columns:36px auto minmax(0,1fr);}.yw{grid-column:3}.subtabs-wrap{top:60px}.stab{padding:16px 12px 13px;font-size:11px}}
+
+.pnum{position:absolute;left:14px;bottom:8px;font-family:var(--display);font-size:33px;line-height:1;color:#FFFFFF;text-shadow:0 4px 18px rgba(0,0,0,.5);font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.noph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 35%,#16331F,#07150C);font-family:var(--display);font-size:45px;color:rgba(244,241,234,.18);font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.staffg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(44%,200px),1fr));gap:14px}
+.stc{border:1px solid rgba(244,241,234,.1);background:var(--bg2);display:flex;flex-direction:column}
+.stc .sti{position:relative;aspect-ratio:4/5;overflow:hidden;background:#000}
+.stc .sti img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.stc .stt{padding:14px 16px;display:flex;flex-direction:column;gap:4px;border-top:2px solid #2E7A2A}
+.stc .stn{font-family:var(--display);font-size:15px;line-height:1;font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.stc .str{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid rgba(244,241,234,.14);background:var(--bg2);padding:14px 18px;display:flex;flex-direction:column;gap:4px;min-width:200px}
+.chip b{font-family:var(--display);font-size:15px;line-height:1;font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.chip span{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--acc)}
+
+.opp-crest{width:72px;height:72px;object-fit:contain;display:block;filter:drop-shadow(0 6px 14px rgba(0,0,0,.35))}
+.mcr{display:inline-block;flex:0 0 auto;width:26px;height:26px;background-size:contain;background-repeat:no-repeat;background-position:center}
+.mcr.lg{width:40px;height:40px}
+
+.pay-ic{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.pay-ic img{height:30px;width:auto;display:block}
+button:has(.pay-ic){display:flex !important;align-items:center;justify-content:center;gap:12px}
+@media (max-width:560px){button:has(.pay-ic){flex-direction:column;gap:6px;padding:10px 6px !important;font-size:11px !important;letter-spacing:.08em !important;min-height:84px !important}.pay-ic{max-width:100%}.pay-ic img{height:22px;max-width:100%;object-fit:contain}}
+
+/* Academia (inspirado nos Afonsinhos) */
+.ac-hero{position:relative;background:#050B07;overflow:hidden}
+.ac-hero h2{position:relative;z-index:2;margin:0;font-family:var(--display);font-size:clamp(60px,10.54vw,174px);line-height:0.92;color:#FFFFFF;font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.ac-hero h2 span{color:var(--acc)}
+.ac-hero figure{position:relative;margin:-4vw 0 0;z-index:1}
+.ac-hero figure img{display:block;width:100%;height:clamp(320px,52vw,760px);object-fit:cover;object-position:50% 40%}
+.ac-hero figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#050B07 0%,rgba(5,11,7,0) 26%,rgba(5,11,7,0) 70%,rgba(5,11,7,.55) 100%)}
+.ac-paper{position:relative;overflow:hidden;background:#F4F1EA;color:#141414}
+.ac-paper::before{content:"";position:absolute;inset:-40%;background-image:url(/assets/ac34ed85ee34adfe4550a3a51b5a155f.png);background-size:406px 276px;filter:invert(1);opacity:.055;transform:rotate(-8deg) skewX(-8deg);pointer-events:none}
+.ac-in{position:relative;max-width:1240px;margin:0 auto;padding:0 24px}
+.ac-eyb{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#5D635C}
+.ac-h{margin:0;font-family:'Suisse Intl',sans-serif;font-weight:800;font-size:clamp(40px,4.6vw,64px);line-height:1.02;letter-spacing:-.01em;color:#0B2415}
+.ac-h i{font-style:normal;color:#C8111C}
+.ac-p{margin:0;font-size:16px;line-height:1.75;color:#33372F}
+.ac-p b{color:#141414}
+.ac-btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 24px;background:var(--red);color:#FFFFFF;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;border:none;cursor:pointer;transition:background .25s,transform .25s;font-family:'Suisse Intl',sans-serif}
+.ac-btn:hover{background:#0B2415;color:#FFFFFF;transform:translateY(-2px)}
+.ac-btn.out{background:transparent;border:1.5px solid #0B2415;color:#0B2415}
+.ac-btn.out:hover{background:#0B2415;color:#FFFFFF}
+.ac-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+@media (max-width:860px){.ac-two{grid-template-columns:1fr}}
+.ac-frame{position:relative;margin:0}
+.ac-frame img{display:block;width:100%;aspect-ratio:16/8;object-fit:cover}
+.ac-frame::after{content:"";position:absolute;left:-14px;bottom:-14px;width:38%;height:14px;background:repeating-linear-gradient(90deg,#C8111C 0 36px,#2E7A2A 36px 72px)}
+.ac-side{position:absolute;left:18px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#C8111C}
+@media (max-width:860px){.ac-side{display:none}}
+.pil{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(11,36,21,.15);border:1px solid rgba(11,36,21,.15)}
+@media (max-width:560px){.pil{grid-template-columns:1fr}}
+.pil div{background:#FBFAF6;padding:22px;display:flex;flex-direction:column;gap:8px}
+.pil b{font-family:var(--display);font-size:19px;line-height:1;color:#0B2415;font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.pil span{font-size:13px;line-height:1.6;color:#4A4E47}
+.pil i{font-style:normal;font-family:var(--display);font-size:14px;color:#C8111C;font-weight:700;letter-spacing:-.05em;text-transform:uppercase}
+.ac-card{background:#FFFFFF;border:1px solid rgba(11,36,21,.12);padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:26px}
+.ac-card-h{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.ct-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 28px}
+@media (max-width:760px){.ct-grid{grid-template-columns:1fr 1fr}}
+.ct-grid b{display:block;font-size:14px;color:#0B2415;margin-bottom:4px}
+.ct-grid span{font-size:14px;color:#4A4E47;word-break:break-word}
+.ht{width:100%;border-collapse:collapse;font-size:14px}
+.ht th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C8111C;font-weight:700;padding:12px 14px;border:1px solid rgba(11,36,21,.18);background:#FBFAF6;text-align:center}
+.ht td{padding:12px 14px;border:1px solid rgba(11,36,21,.18);text-align:center;color:#33372F}
+.ht td:first-child{font-weight:700;color:#0B2415;text-align:left}
+.ht .na{color:#A3121B;font-size:12px}
+.tbl-wrap{overflow-x:auto}
+.ct-grid .na{color:#A3121B}
+.ask{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+
+/* Academia no sistema v2 (fundo verde, como as restantes páginas) */
+.ac-paper{background:transparent !important;color:#F4F1EA !important;border-top:1px solid rgba(255,255,255,.08) !important}
+.ac-paper::before{display:none !important}
+.ac-in{max-width:1360px !important}
+.ac-eyb{font-size:11px;letter-spacing:.3em;color:var(--mut) !important}
+.ac-h{font-family:var(--display) !important;font-weight:700 !important;text-transform:uppercase;letter-spacing:-.05em !important;line-height:.95 !important;color:#F4F1EA !important}
+.ac-h i{color:var(--red) !important}
+.ac-p{color:var(--mut2) !important}
+.ac-p b{color:#FFFFFF !important}
+.ac-btn{border-radius:2px;background:var(--red) !important;color:#fff !important;border:1px solid var(--red) !important;font-weight:500 !important;font-size:11px !important;letter-spacing:.1em !important;min-height:52px}
+.ac-btn:hover{background:#fff !important;color:var(--ink) !important;border-color:#fff !important}
+.ac-btn.out{background:transparent !important;color:#fff !important;border:1px solid rgba(255,255,255,.45) !important}
+.ac-btn.out:hover{background:#fff !important;color:var(--ink) !important}
+.ac-frame::after{left:0 !important;bottom:-6px !important;height:6px !important;width:30% !important;background:var(--red) !important}
+.pil{background:rgba(255,255,255,.12) !important;border-color:rgba(255,255,255,.12) !important}
+.pil div{background:var(--feat) !important}
+.pil b{font-family:var(--display) !important;font-weight:700 !important;letter-spacing:-.04em;font-size:22px !important;color:#F4F1EA !important}
+.pil span{color:var(--mut2) !important}
+.pil i{font-family:var(--display) !important;font-weight:700;font-size:14px !important;color:var(--red) !important}
+.ac-card{background:var(--bg2) !important;border:1px solid rgba(255,255,255,.12) !important}
+.ct-grid b{color:var(--mut) !important;font-size:10px !important;letter-spacing:.24em;text-transform:uppercase;font-weight:500 !important}
+.ct-grid span{color:#F4F1EA !important}
+.ht th{color:var(--mut) !important;background:rgba(255,255,255,.04) !important;border-color:rgba(255,255,255,.12) !important;font-weight:500 !important}
+.ht td{color:#F4F1EA !important;border-color:rgba(255,255,255,.12) !important}
+.ht td:first-child{font-weight:600}
+.ac-note{font-size:12px;color:var(--mut3)}
+.ac-hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.ac-side{display:none !important}
+@media (max-width:760px){.page-hero > div[aria-hidden]:nth-child(2){background:linear-gradient(180deg, rgba(var(--ov),.3) 0%, rgba(var(--ov),.82) 45%, var(--bg) 100%) !important}}
+/* ===================== SFD v2 — design system (adaptado do template "Vértice FC") ===================== */
+@font-face{font-family:'Space Grotesk';src:url(/assets/13875eae1d79064dbb465a2adea232e3.woff2) format('woff2');font-weight:300 700;font-style:normal;font-display:swap}
+.v2{--paper:#EFEFE9;--paper2:#E2E5DB;--ink:#0B120E;--night:#0E3A22;--night2:#124428;--night3:#185232;--red:#D3121C;--red2:#A90E17;--green:#2E7A2A;--green2:#6FBF6A;--muted:#6E776E;--muted-d:#B3C6B8;--line:#CDD1C6;--line-d:rgba(255,255,255,.12);--display:'Space Grotesk','Suisse Intl',Arial,sans-serif;--body:'Suisse Intl',Arial,sans-serif;--ease:cubic-bezier(.2,.7,.2,1);
+  background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;animation:v2PageIn .55s ease both}
+@keyframes v2PageIn{from{opacity:0}to{opacity:1}}
+.v2 *{box-sizing:border-box}
+:where(.v2) a{color:inherit;text-decoration:none}
+.v2 ::selection{background:var(--red);color:#fff}
+.v2 button,.v2 input,.v2 select,.v2 textarea{font-family:var(--body)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-stopped{overflow:hidden}
+.v2 .wrap{width:min(1390px,calc(100% - 112px));margin-inline:auto}
+/* progresso e brilho do cursor */
+.v2-progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--red);z-index:120;transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+.v2-glow{position:fixed;width:460px;height:460px;left:-230px;top:-230px;pointer-events:none;z-index:9;border-radius:50%;background:radial-gradient(circle,rgba(226,40,48,.20) 0,rgba(226,40,48,.04) 42%,transparent 70%);opacity:0;transition:opacity .35s;mix-blend-mode:screen;will-change:transform}
+/* header */
+.v2-header{position:fixed;top:0;left:0;right:0;z-index:100;height:85px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 56px;color:#fff;background:rgba(10,46,27,.62);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1);transition:transform .45s var(--ease),background .35s,height .35s}
+.v2-header.scrolled{background:rgba(10,46,27,.94);height:72px}
+.v2-header.hide{transform:translateY(-100%)}
+.v2-brand{display:flex;gap:14px;align-items:center;flex:none}
+.v2-brand img{width:44px;height:auto;display:block}
+.v2-brand b{display:block;font:700 19px/1 var(--display);letter-spacing:.06em;text-transform:uppercase}
+.v2-brand small{display:block;font:600 8px var(--body);letter-spacing:.37em;margin-top:6px;color:#A9B5A2;text-transform:uppercase}
+.v2-nav{display:flex;gap:34px}
+.v2-nav a{position:relative;font-size:12px;color:#C5CEC7;letter-spacing:.04em;padding:6px 0;transition:color .25s}
+.v2-nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--red);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.v2-nav a:hover{color:#fff}
+.v2-nav a:hover::after,.v2-nav a.on::after{transform:scaleX(1);transform-origin:left}
+.v2-nav a.on{color:#fff}
+.v2-dd{position:relative;display:flex;align-items:center}
+.v2-dd>a{display:inline-flex;align-items:center;gap:6px}
+.v2-dd-ic{transition:transform .3s var(--ease);opacity:.7}
+.v2-dd:hover .v2-dd-ic,.v2-dd:focus-within .v2-dd-ic{transform:rotate(180deg)}
+.v2-dd-menu{position:absolute;top:100%;left:-22px;min-width:220px;padding:10px;margin-top:14px;background:var(--night);border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -20px rgba(0,0,0,.55);display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .35s var(--ease),visibility 0s .35s}
+.v2-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.v2-dd:hover .v2-dd-menu,.v2-dd:focus-within .v2-dd-menu{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .35s var(--ease),visibility 0s}
+.v2-nav .v2-dd-menu a{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;font:700 13px var(--display);letter-spacing:-.01em;text-transform:uppercase;color:#E0E8E2;border-radius:2px;transition:background .2s,color .2s,padding .3s var(--ease)}
+.v2-nav .v2-dd-menu a::after{display:none}
+.v2-nav .v2-dd-menu a span{font-size:14px;color:var(--red);opacity:0;transform:translate(-4px,4px);transition:opacity .25s,transform .3s var(--ease)}
+.v2-nav .v2-dd-menu a:hover{background:rgba(255,255,255,.07);color:#fff;padding-left:18px}
+.v2-nav .v2-dd-menu a:hover span{opacity:1;transform:none}
+.v2-msub{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:16px 0 6px}
+.v2-msub span{width:100%;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#A9BDAF}
+.v2-msub a{border:1px solid rgba(255,255,255,.22);padding:10px 14px;font:700 12px var(--display);text-transform:uppercase;border-radius:2px}
+.v2-hright{display:flex;align-items:center;gap:12px;flex:none}
+.v2-cta{display:inline-flex;align-items:center;gap:22px;background:var(--red);color:#fff;font:700 11px var(--body);letter-spacing:.08em;text-transform:uppercase;padding:14px 19px;border-radius:2px;border:none;cursor:pointer;transition:background .3s,transform .3s var(--ease)}
+.v2-cta span{font-size:16px;line-height:0;transition:transform .3s var(--ease)}
+.v2-cta:hover{background:#fff;color:var(--ink)}
+.v2-cta:hover span{transform:translate(2px,-2px)}
+.v2-iconbtn{position:relative;width:46px;height:46px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;border-radius:2px;transition:border-color .25s,background .25s}
+.v2-iconbtn:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.v2-burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:40px;height:44px;border:none;background:none;padding:6px;cursor:pointer}
+.v2-burger span{height:2px;width:26px;background:#fff;display:block;transition:transform .35s var(--ease),opacity .25s}
+.v2-burger.open span:first-child{transform:translateY(4px) rotate(45deg)}
+.v2-burger.open span:last-child{transform:translateY(-4px) rotate(-45deg)}
+.v2-mnav{position:fixed;left:0;right:0;top:72px;bottom:0;z-index:99;background:var(--night);color:#fff;padding:28px 20px 40px;display:flex;flex-direction:column;gap:4px;overflow-y:auto;animation:v2Menu .4s var(--ease) both}
+@keyframes v2Menu{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+.v2-mnav a.m{font:700 clamp(34px,9vw,52px)/1.05 var(--display);letter-spacing:-.05em;text-transform:uppercase;padding:8px 0;border-bottom:1px solid var(--line-d);display:flex;justify-content:space-between;align-items:center}
+.v2-mnav a.m span{font-size:20px;color:var(--red)}
+.v2-mnav .v2-cta{margin-top:22px;justify-content:center}
+.v2-badge{position:absolute;top:-8px;right:-8px;min-width:22px;height:22px;border-radius:11px;background:var(--red);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 6px}
+/* tipografia e secções */
+.v2-sec{padding:140px 0}
+.v2-index{font:700 11px var(--body);letter-spacing:.16em;display:flex;align-items:center;align-self:start;gap:13px;text-transform:uppercase}
+.v2-index i{width:8px;height:8px;border:2px solid currentColor;border-radius:50%;flex:none}
+.v2-top{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin-bottom:60px}
+.v2-h2{font:700 clamp(54px,7.1vw,111px)/.94 var(--display);letter-spacing:-.075em;margin:26px 0 0;text-transform:uppercase}
+.v2-h2 span{color:#8D9B88}
+.v2-aside{color:#667268;max-width:260px;font-size:14px;line-height:1.7;margin:0 0 10px}
+.v2-dark{background:var(--night2);color:#fff;position:relative}
+.v2-dark .v2-h2 span{color:var(--red)}
+.v2-dark .v2-aside{color:#B3C6B8}
+.v2-alt{background:var(--paper2)}
+.v2-link{font:700 11px var(--body);letter-spacing:.1em;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid currentColor;display:inline-flex;gap:46px;white-space:nowrap;align-items:center;transition:gap .35s var(--ease),color .25s}
+.v2-link span{font-size:19px;line-height:0}
+.v2-link:hover{gap:58px;color:var(--red)}
+.v2-btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:52px;padding:0 24px;background:var(--ink);color:#fff;font:700 11px var(--body);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ink);border-radius:2px;cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.v2-btn:hover{background:var(--red);border-color:var(--red);color:#fff;transform:translateY(-2px)}
+.v2-btn.red{background:var(--red);border-color:var(--red)}
+.v2-btn.red:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.v2-btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.v2-btn.ghost:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.v2-round{width:114px;height:114px;border:1px solid rgba(178,192,170,.5);border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;transition:background .35s,color .35s,transform .35s var(--ease),border-color .35s;flex:none}
+.v2-round b{font-size:25px;font-weight:400}
+.v2-round:hover{background:var(--red);border-color:var(--red);transform:rotate(-9deg)}
+.v2-fine{font-size:11px;color:#829386;margin:20px 0 0}
+.v2-tabs{display:flex;gap:4px;flex-wrap:wrap}
+.v2-tab{cursor:pointer;border:1px solid currentColor;background:transparent;color:inherit;opacity:.55;padding:0 18px;min-height:42px;font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;border-radius:2px;transition:opacity .25s,background .25s,color .25s}
+.v2-tab:hover{opacity:1}
+.v2-tab.on{opacity:1;background:var(--ink);border-color:var(--ink);color:#fff}
+.v2-dark .v2-tab.on{background:#fff;border-color:#fff;color:var(--ink)}
+/* animações de entrada */
+.v2 .reveal{opacity:0;transform:translateY(42px);transition:opacity .85s ease,transform .85s var(--ease)}
+.v2 .reveal.in{opacity:1;transform:none}
+.v2 .stagger>.reveal:nth-child(2){transition-delay:.08s}.v2 .stagger>.reveal:nth-child(3){transition-delay:.16s}.v2 .stagger>.reveal:nth-child(4){transition-delay:.24s}.v2 .stagger>.reveal:nth-child(5){transition-delay:.32s}.v2 .stagger>.reveal:nth-child(6){transition-delay:.4s}.v2 .stagger>.reveal:nth-child(7){transition-delay:.48s}.v2 .stagger>.reveal:nth-child(8){transition-delay:.56s}
+.v2 .zoom{overflow:hidden;position:relative}
+.v2 .zoom .zi{transition:transform 1s var(--ease)}
+.v2 .lift{transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.v2 .lift:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(11,18,14,.45)}
+.v2 .lift:hover .zi{transform:scale(1.06)}
+/* rodapé */
+.v2-foot{background:var(--night);color:#fff;padding:85px 0 25px;position:relative;overflow:hidden}
+.v2-foot-top{display:flex;align-items:center;justify-content:space-between;gap:30px;padding-bottom:70px}
+.v2-foot-top img{width:92px;height:auto;display:block;flex:none}
+.v2-foot-top p{font:700 clamp(37px,5vw,75px)/1 var(--display);letter-spacing:-.065em;margin:0;text-transform:uppercase}
+.v2-foot-top p b{color:var(--red)}
+.v2-totop{border:1px solid #69816E;border-radius:50%;width:70px;height:70px;display:grid;place-items:center;font-size:28px;flex:none;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.v2-totop:hover{background:var(--red);border-color:var(--red);transform:translateY(-4px)}
+.v2-foot-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;padding:48px 0 56px;border-top:1px solid rgba(255,255,255,.12);font-size:14px;line-height:1.7}
+.v2-foot-cols div{display:flex;flex-direction:column;gap:8px}
+.v2-foot-cols span.t{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#A9BDAF;margin-bottom:6px}
+.v2-foot-cols a{color:#D7DED8;transition:color .25s;align-self:flex-start}
+.v2-foot-cols a:hover{color:#fff}
+.v2-foot-news{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;justify-content:space-between;padding:40px 0;border-top:1px solid rgba(255,255,255,.12)}
+.v2-foot-news h3{margin:0;font:700 clamp(26px,2.6vw,38px)/1.05 var(--display);letter-spacing:-.05em;text-transform:uppercase;max-width:460px}
+.v2-foot-news form,.v2-foot-news .nf{display:flex;flex:1 1 360px;max-width:560px;border-bottom:1px solid #69816E}
+.v2-foot-news input{flex:1;min-width:0;background:transparent;border:none;color:#fff;font-size:16px;padding:16px 0;outline:none}
+.v2-foot-news input::placeholder{color:#A9BDAF}
+.v2-foot-news button{background:none;border:none;color:#fff;font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;display:flex;gap:16px;align-items:center}
+.v2-foot-news button:hover{color:var(--red)}
+.v2-foot-bottom{display:flex;justify-content:space-between;gap:16px 25px;flex-wrap:wrap;align-items:center;border-top:1px solid rgba(255,255,255,.12);padding-top:25px;color:#B3C6B8;font-size:10px;letter-spacing:.09em;text-transform:uppercase}
+.v2-foot-bottom a{color:#B3C6B8}.v2-foot-bottom a:hover{color:#fff}
+.v2-pay{display:inline-flex;align-items:center;gap:12px}
+.v2-pay img{height:18px;width:auto;display:block}
+.v2-social,.v2-foot-cols .v2-social{display:flex;flex-direction:row;gap:10px}
+.v2-social a{width:40px;height:40px;border:1px solid rgba(255,255,255,.22);border-radius:50%;display:grid;place-items:center;color:#D7DED8;transition:background .3s,border-color .3s,color .3s}
+.v2-social a:hover{background:var(--red);border-color:var(--red);color:#fff}
+/* responsivo */
+@media (max-width:1180px){.v2-header{padding:0 32px}.v2-nav{gap:20px}.v2 .wrap{width:calc(100% - 64px)}.v2-sec{padding:100px 0}.v2-foot-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:980px){.v2-nav{display:none}.v2-burger{display:flex}}
+@media (max-width:760px){.v2 .wrap{width:calc(100% - 40px)}.v2-header,.v2-header.scrolled{height:72px;padding:0 20px}.v2-brand img{width:36px}.v2-brand b{font-size:15px}.v2-brand small{font-size:7px;letter-spacing:.3em}.v2-cta.hdr{padding:12px;gap:8px;font-size:10px}.v2-hide-sm{display:none !important}.v2-sec{padding:85px 0}.v2-top{align-items:flex-start;flex-direction:column;margin-bottom:38px;gap:20px}.v2-h2{font-size:clamp(46px,12vw,79px)}.v2-aside{max-width:380px}.v2-foot-top{flex-wrap:wrap;align-items:flex-start;padding-bottom:50px}.v2-foot-top img{width:62px}.v2-foot-top p{width:100%;order:2;font-size:clamp(30px,8vw,50px)}.v2-foot-cols{grid-template-columns:1fr 1fr;gap:28px}.v2-foot-bottom{flex-direction:column;align-items:flex-start;gap:12px}.v2-round{width:86px;height:86px;font-size:8px}.v2-round b{font-size:18px}}
+@media (prefers-reduced-motion:reduce){.v2,.v2 *{animation-duration:.01ms !important;transition-duration:.01ms !important}.v2 .reveal{opacity:1;transform:none}.v2-glow{display:none}}
+@media (max-width:430px){.v2-iconbtn + .v2-cta.hdr{display:none}}
+
+/* ---------- Mobile: iOS (Safari) e Android (Chrome) ---------- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.v2 a,.v2 button,.v2 input,.v2 select,.v2 textarea,.v2 summary,.v2 label{-webkit-tap-highlight-color:rgba(211,18,28,.12);touch-action:manipulation}
+.v2 img,.v2 video{-webkit-user-drag:none}
+/* zonas seguras (notch, barra inferior do iPhone, ecrãs Android edge-to-edge) */
+.v2-header{padding-left:max(var(--hp,32px),env(safe-area-inset-left));padding-right:max(var(--hp,32px),env(safe-area-inset-right));padding-top:env(safe-area-inset-top);box-sizing:border-box}
+.v2-foot{padding-bottom:calc(25px + env(safe-area-inset-bottom))}
+.v2-mnav{padding-bottom:calc(40px + env(safe-area-inset-bottom));overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+@media (min-width:1201px){.v2-header{--hp:56px}}
+@media (max-width:760px){.v2-header{--hp:20px}}
+/* iOS: campos com 16px para não fazer zoom ao tocar */
+@media (max-width:1024px){.v2 input:not([type=checkbox]):not([type=radio]),.v2 select,.v2 textarea{font-size:16px !important}}
+.v2 input,.v2 select,.v2 textarea{border-radius:0}
+.v2 input[type=date]{min-height:48px;-webkit-appearance:none;appearance:none}
+.v2 select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23B3C6B8' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px !important}
+/* ecrãs táteis: sem efeitos de hover "presos" e sem fundo fixo (o iOS não o suporta) */
+@media (hover:none){
+  .v2 .card:hover,.v2 .lift:hover,.v2 .pcard:hover,.v2 .prod:hover,.v2 .path:hover,.v2 .lvl:hover,.v2 .btn:hover,.v2 .v2-cta:hover,.v2 .m-card:hover,.v2 .ac-btn:hover{transform:none !important}
+  .v2 .pcard:hover .ph,.v2 .pcard:hover .num{transform:none !important}
+  .v2 .site,.site{background-attachment:scroll !important}
+  .v2-glow{display:none !important}
+}
+/* tablets táteis (iPad, tablets Android): menu completo no botão, com os escalões */
+@media (hover:none) and (max-width:1366px){.v2-nav{display:none}.v2-burger{display:flex}}
+/* alvos de toque com pelo menos 44px */
+@media (max-width:760px){.v2-foot a{display:inline-block;padding:6px 0}.v2-social a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}.v2-msub a{min-height:44px;display:flex;align-items:center}}
+@media (max-width:380px){.v2-header{gap:12px}.v2-brand small{display:none}}
+@media (max-width:980px),(hover:none){.v2-header{background:rgba(10,46,27,.96) !important}}
+@media (min-width:761px){.v2-mnav{padding-left:max(32px,env(safe-area-inset-left));padding-right:max(32px,env(safe-area-inset-right))}}
+/* ecrã inteiro: sem margens brancas do navegador (inclui o "elástico" do iOS) */
+html,body{margin:0 !important;padding:0 !important;background:#0E3A22 !important;min-height:100%}
+body > *{margin:0}
+.nl-ok{color:#9BE29B}.nl-err{color:#FF8A8F}
+/* ---------- Páginas interiores (sistema v2 sobre fundo escuro) ---------- */
+.v2.v2-in{--acc:#F0464E;--bg:#0E3A22;--bg2:rgba(255,255,255,.035);--bg3:#0B321D;--hi:rgba(255,255,255,.06);--ov:10,46,27;--ov2:7,36,21;--mut:#B3C6B8;--mut2:#E0E8E2;--mut3:#9DB4A4;--feat:#124428;--featdot:#124428;background:var(--night) !important;background-image:none !important;color:#F4F1EA;animation:v2PageIn .55s ease both !important}
+.v2.v2-in::before,.v2.v2-in::after{display:none !important}
+.v2-in .v2-spacer{height:85px;background:var(--night)}
+@media (max-width:760px){.v2-in .v2-spacer{height:72px}}
+/* títulos convertidos para a fonte de destaque */
+.v2-in .v2d{font-family:var(--display) !important;font-weight:700 !important;text-transform:uppercase;letter-spacing:-.055em !important}
+/* botões no estilo do template */
+.v2-in .btn{border-radius:2px;font-family:var(--body);font-size:11px !important;letter-spacing:.1em !important;min-height:52px;padding:0 24px;gap:16px;transition:background .3s,color .3s,transform .3s var(--ease),border-color .3s}
+.v2-in .btn::before{display:none !important}
+.v2-in .btn:hover{transform:translateY(-2px)}
+.v2-in .btn-gold,.v2-in .btn-red{background:var(--red) !important;color:#fff !important;border:1px solid var(--red) !important}
+.v2-in .btn-gold:hover,.v2-in .btn-red:hover{background:#fff !important;color:var(--ink) !important;border-color:#fff !important}
+.v2-in .btn-line,.v2-in .btn-ghost{background:transparent !important;color:#fff !important;border:1px solid rgba(255,255,255,.45) !important}
+.v2-in .btn-line:hover,.v2-in .btn-ghost:hover{background:#fff !important;color:var(--ink) !important;border-color:#fff !important}
+.v2-in .btn-dark{background:var(--ink) !important;color:#fff !important}
+.v2-in .btn-dark:hover{background:var(--red) !important}
+.v2-in .btn-light{background:#fff !important;color:var(--ink) !important}
+.v2-in .btn-light:hover{background:var(--red) !important;color:#fff !important}
+/* cartões e superfícies */
+.v2-in .card,.v2-in .lift,.v2-in .pcard,.v2-in .prod{transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s}
+.v2-in .card:hover,.v2-in .lift:hover,.v2-in .pcard:hover,.v2-in .prod:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(255,255,255,.28) !important}
+.v2-in .uline{background:linear-gradient(var(--red),var(--red)) 0 100%/0 2px no-repeat !important}
+.v2-in .outline-txt{-webkit-text-stroke:1px rgba(255,255,255,.12) !important;color:transparent}
+.v2-in .ltr{animation-duration:.9s !important}
+/* barras fixas por baixo do header */
+.v2-in .subtabs-wrap{top:72px !important;background:rgba(14,58,34,.94) !important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.v2-in .cnav,.v2-in .subnav{background:rgba(14,58,34,.94) !important}
+.v2-in .pd-info,.v2-in .sum{top:96px}
+/* entrada suave das secções (complementa o reveal) */
+.v2-in section{scroll-margin-top:90px}
+@media (max-width:760px){.v2-in .btn{min-height:48px;padding:0 18px}}
+.ht-obs{display:block;margin-top:4px;font-size:12px;font-weight:400;opacity:.75;text-transform:none;letter-spacing:0}
+</style>
+</helmet>
+
+<div class="site v2 v2-in {{ rootCls }}" id="top" style="font-family: 'Suisse Intl', sans-serif; color: #F4F1EA; min-height: 100vh; overflow-x: clip;">
+
+  <div class="v2-progress" aria-hidden="true"></div>
+  <div class="v2-glow" aria-hidden="true"></div>
+  <header class="v2-header">
+    <a class="v2-brand" href="/" aria-label="SF Damaiense — Início"><img src="/assets/4a3f587d612e0707d718734d37dd8d9d.png" alt=""><span><b>SF Damaiense</b><small>Desde 1938 · Damaia</small></span></a>
+    <nav class="v2-nav" aria-label="Principal"><a class="" href="/">Início</a><a class="" href="/jogos/">Jogos</a><div class="v2-dd"><a class="on" href="/futebol/" aria-haspopup="true">Futebol<svg class="v2-dd-ic" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></a><div class="v2-dd-menu" role="menu"><a href="/futebol/#equipa-a">Equipa A<span>↗</span></a><a href="/futebol/#sub-19">Sub-19<span>↗</span></a><a href="/futebol/#sub-17">Sub-17<span>↗</span></a><a href="/futebol/#sub-15">Sub-15<span>↗</span></a><a href="/academia/">Academia<span>↗</span></a></div></div><a class="" href="/noticias/">Notícias</a><a class="" href="/loja/">Loja</a><a class="" href="/clube/">Clube</a><a class="" href="/contactos/">Contactos</a></nav>
+    <div class="v2-hright"><a class="v2-cta hdr" href="/socios/">Ser sócio <span>↗</span></a><button type="button" class="{{ burgerCls }}" aria-label="Menu" aria-expanded="{{ menuOpenStr }}" onClick="{{ toggleMenu }}"><span></span><span></span></button></div>
+  </header>
+  <template data-if="{{ menuOpen }}">
+    <nav class="v2-mnav" aria-label="Menu">
+      <template data-for="{{ mobileNav }}" data-as="m"><a class="m" href="{{ m.href }}" onClick="{{ toggleMenu }}">{{ m.label }}<span>↗</span></a></template>
+      <div class="v2-msub"><span>Futebol</span><a href="/futebol/#equipa-a" onClick="{{ toggleMenu }}">Equipa A</a><a href="/futebol/#sub-19" onClick="{{ toggleMenu }}">Sub-19</a><a href="/futebol/#sub-17" onClick="{{ toggleMenu }}">Sub-17</a><a href="/futebol/#sub-15" onClick="{{ toggleMenu }}">Sub-15</a><a href="/academia/" onClick="{{ toggleMenu }}">Academia</a></div>
+      <a class="v2-cta" href="/socios/" onClick="{{ toggleMenu }}">Ser sócio <span>↗</span></a>
+    </nav>
+  </template>
+  <div class="v2-spacer" aria-hidden="true"></div>
+
+  <!-- ACADEMIA -->
+  <template data-if="{{ isAcad }}">
+  <div class="swap">
+  <!-- Topo -->
+  <section class="page-hero">
+    <div class="ph-photo" aria-hidden="true" style="background-image: url(/assets/64a35f3d104b0b9df1a43f3fc5f830b4.jpg); background-position: center 35%;"></div>
+    <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(var(--ov),.9) 0%, rgba(var(--ov),.55) 50%, rgba(var(--ov),.2) 100%), linear-gradient(180deg, rgba(0,0,0,0) 55%, var(--bg) 100%);"></div>
+    <div style="position: relative; width: 100%; max-width: 1360px; margin: 0 auto; padding: 140px 24px 64px;">
+      <div class="fade-up" style="font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--mut);"><a href="/" style="color: var(--mut);">Início</a> <span style="color: var(--acc);">/</span> <a href="/futebol/" style="color: var(--mut);">Futebol</a> <span style="color: var(--acc);">/</span> Academia</div>
+      <h1 aria-label="Academia" style="margin: 14px 0 0; font-family: var(--display); font-size: clamp(55px, 8.06vw, 124px); line-height: 0.92; overflow: hidden; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">
+        <template data-for="{{ title }}" data-as="l"><span class="ltr" style="animation-delay: {{ l.d }}">{{ l.c }}</span></template>
+      </h1>
+      <p class="fade-up d2" style="margin: 16px 0 0; font-size: 16px; color: var(--mut2); max-width: 540px; line-height: 1.7;">Dos Petizes aos Juniores. Aprender a jogar, crescer em equipa e vestir as riscas vermelhas e verdes da Damaia.</p>
+      <div class="ac-hero-btns fade-up d3"><a class="btn btn-red" href="#inscricao" onClick="{{ goInsc }}">Pré-inscrição <span class="arr">→</span></a><a class="btn btn-line" href="#mensalidade" onClick="{{ goMens }}">Pagar mensalidade</a></div>
+    </div>
+  </section>
+
+  <!-- O teu caminho -->
+  <section class="ac-paper">
+    <span class="ac-side" aria-hidden="true">Academia SF Damaiense · desde 1938</span>
+    <div class="ac-in ac-two" style="padding-top: clamp(64px, 8vw, 120px); padding-bottom: clamp(56px, 7vw, 100px);">
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span class="ac-eyb">A Academia</span>
+        <h3 class="ac-h">O teu caminho começa aqui<i>.</i></h3>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <p class="ac-p"><b>Acreditamos em ti. Queremos que aprendas a jogar, que cresças com os teus colegas e que tenhas orgulho em vestir as riscas vermelhas e verdes.</b></p>
+        <p class="ac-p">Na Academia do SF Damaiense cada atleta é acompanhado de perto, dos Petizes aos Juniores. Treinamos com exigência, mas sem esquecer o que mais importa nestas idades: gostar de jogar, ganhar confiança e fazer amigos.</p>
+        <p class="ac-p">Aqui o futebol é uma escola de valores: respeito, compromisso, entreajuda e espírito de equipa. Formamos jogadores, mas sobretudo pessoas, como fazemos na Damaia há mais de 85 anos.</p>
+        <p class="ac-p">Estamos à tua espera.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;"><button type="button" class="ac-btn" onClick="{{ goInfo }}">Mais informação</button><button type="button" class="ac-btn out" onClick="{{ goInsc }}">Pré-inscrição</button></div>
+      </div>
+    </div>
+    <div class="ac-in" style="padding-bottom: clamp(64px, 8vw, 120px);">
+      <figure class="ac-frame"><img src="/assets/34fcb6d53afa6204e324a1fd8a231882.jpg" alt="Vista aérea do Complexo Desportivo do SF Damaiense"></figure>
+    </div>
+  </section>
+
+  <!-- Projeto metodológico -->
+  <section class="ac-paper">
+    <div class="ac-in ac-two" style="padding-top: clamp(64px, 8vw, 120px); padding-bottom: clamp(64px, 8vw, 120px); align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <span class="ac-eyb">Como trabalhamos</span>
+        <h3 class="ac-h">Projeto metodológico<i>.</i></h3>
+        <p class="ac-p">Sabemos que nenhum atleta é igual a outro e que o caminho não é igual para todos. Sabemos que o tempo com bola é decisivo para evoluir. Sabemos que ganhar não é tudo, mas que querer ganhar faz parte de aprender.</p>
+        <p class="ac-p">Por isso o nosso trabalho assenta em quatro princípios, iguais em todos os escalões e adaptados a cada idade.</p>
+        <div><button type="button" class="ac-btn out" onClick="{{ toggleMethod }}">{{ methodBtn }}</button></div>
+      </div>
+      <figure class="ac-frame" style="margin: 0;"><img src="/assets/94827edab866a2ca11a8ae67b90f392c.jpg" alt="Campo do SF Damaiense visto do drone" style="aspect-ratio: 4 / 3;"></figure>
+    </div>
+    <template data-if="{{ showMethod }}">
+      <div class="ac-in swap" style="padding-bottom: clamp(64px, 8vw, 120px);">
+        <div class="pil">
+          <template data-for="{{ pillars }}" data-as="p"><div><i>{{ p.n }}</i><b>{{ p.t }}</b><span>{{ p.d }}</span></div></template>
+        </div>
+      </div>
+    </template>
+  </section>
+
+  <!-- Informações e horários -->
+  <section id="informacoes" class="ac-paper">
+    <div class="ac-in" style="padding-top: clamp(64px, 8vw, 110px); padding-bottom: clamp(64px, 8vw, 110px); display: flex; flex-direction: column; gap: 28px;">
+      <div class="ac-card">
+        <div class="ac-card-h"><h3 class="ac-h" style="font-size: clamp(30px, 3.4vw, 44px);">Academia SF Damaiense<i>.</i></h3><button type="button" class="ac-btn out" onClick="{{ goInsc }}">Pré-inscrição</button></div>
+        <div class="ct-grid">
+          <template data-for="{{ contacts }}" data-as="c"><div><b>{{ c.l }}</b><span class="{{ c.cls }}">{{ c.v }}</span></div></template>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <h4 class="ac-h" style="font-size: clamp(26px, 2.8vw, 36px);">Horários<i>.</i></h4>
+          <div class="tbl-wrap">
+            <table class="ht">
+              <thead><tr><th style="text-align: left;">Escalão</th><th>Idade</th><th>Dias</th><th>Horário</th><th>Treinador</th><template data-if="{{ hasLocal }}"><th>Local</th></template></tr></thead>
+              <tbody>
+                <template data-for="{{ schedule }}" data-as="h"><tr><td>{{ h.name }}<template data-if="{{ h.hasObs }}"><small class="ht-obs">{{ h.obs }}</small></template></td><td>{{ h.age }}</td><td class="na">{{ h.days }}</td><td class="na">{{ h.time }}</td><td class="{{ h.coachCls }}">{{ h.coach }}</td><template data-if="{{ hasLocal }}"><td>{{ h.local }}</td></template></tr></template>
+              </tbody>
+            </table>
+          </div>
+          <span class="ac-note">{{ acNote }}</span>
+        </div>
+      </div>
+      <div class="ask" style="padding-top: 48px;">
+        <h3 class="ac-h">Tens dúvidas<i>?</i></h3>
+        <p class="ac-p" style="max-width: 520px;">Se tens alguma dúvida sobre o funcionamento da Academia, fala connosco através do email <a href="mailto:geral@sfdamaiense.pt" style="color: #FFFFFF; font-weight: 700; text-decoration: underline;">geral@sfdamaiense.pt</a> ou do telefone <a href="tel:+351214901752" style="color: #FFFFFF; font-weight: 700; text-decoration: underline;">214 901 752</a>. Teremos todo o gosto em ajudar.</p>
+        <img src="/assets/4a3f587d612e0707d718734d37dd8d9d.png" alt="Emblema SF Damaiense" style="width: 120px; height: auto; margin-top: 12px; filter: drop-shadow(0 12px 20px rgba(0,0,0,.35));">
+      </div>
+    </div>
+  </section>
+
+  <!-- Escola GR -->
+  <section style="position: relative; overflow: hidden; background: var(--feat);">
+    <div aria-hidden="true" class="gr-big">GR</div>
+    <div style="position: relative; max-width: 1360px; margin: 0 auto; padding: 110px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 48px; align-items: center;">
+      <div class="rv" style="display: flex; flex-direction: column; gap: 20px;">
+        <span style="font-size: 11px; letter-spacing: .36em; text-transform: uppercase; color: var(--acc);">Dos 6 aos 18 anos</span>
+        <h2 style="margin: 0; font-family: var(--display); font-size: clamp(37px, 4.96vw, 74px); line-height: 0.92; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">Escola de Guarda-Redes</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.75; color: var(--mut2); max-width: 520px;">Formação específica para jovens guarda-redes e treinadores, com uma abordagem que junta as dimensões física, psicológica, técnica e tática.</p>
+        <div><a class="btn btn-gold" href="#inscricao" onClick="{{ goInsc }}">Inscrever na Escola GR <span class="arr">→</span></a></div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+        <template data-for="{{ grPillars }}" data-as="gp">
+          <div class="rv lvl" style="border: 1px solid rgba(255,255,255,.18); background: rgba(0,0,0,.18); padding: 24px; display: flex; flex-direction: column; gap: 10px;">
+            <span style="font-family: var(--display); font-size: 25px; color: var(--acc); line-height: 1; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ gp.n }}</span>
+            <span style="font-family: var(--display); font-size: 16px; line-height: 1; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ gp.t }}</span>
+            <span style="font-size: 13px; color: var(--mut2); line-height: 1.6;">{{ gp.d }}</span>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pré-inscrição -->
+  <section id="inscricao" style="max-width: 1360px; margin: 0 auto; padding: 110px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 56px;">
+    <div class="rv" style="display: flex; flex-direction: column; gap: 18px;">
+      <span style="font-size: 11px; letter-spacing: .36em; text-transform: uppercase; color: var(--acc);">Época 2026/27</span>
+      <h2 style="margin: 0; font-family: var(--display); font-size: clamp(37px, 4.34vw, 68px); line-height: 0.92; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">Inscrever novo atleta</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.75; color: var(--mut2); max-width: 460px;">Preenche os dados do atleta. O clube entra em contacto para marcar o treino de captação, e o pagamento da inscrição faz-se por MB WAY ou referência Multibanco.</p>
+      <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 12px;">
+        <template data-for="{{ steps }}" data-as="st">
+          <div style="display: flex; gap: 16px; align-items: center;">
+            <span style="width: 44px; height: 44px; flex: 0 0 44px; border: 1px solid var(--acc); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 14px; color: var(--acc); font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">{{ st.n }}</span>
+            <span style="font-size: 14px; color: var(--mut2);">{{ st.t }}</span>
+          </div>
+        </template>
+      </div>
+    </div>
+    <div class="rv" style="border: 1px solid rgba(255,255,255,0.22); background: var(--bg2); padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 18px;">
+      <div class="field"><label for="a1">Nome do atleta</label><input id="a1" type="text" placeholder="Nome completo"></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 18px;">
+        <div class="field"><label for="a2">Data de nascimento</label><input id="a2" type="date"></div>
+        <div class="field"><label for="a3">Escalão</label>
+          <select id="a3">
+            <option>Petizes</option><option>Traquinas</option><option>Benjamins</option><option>Infantis</option><option>Iniciados</option><option>Juvenis</option><option>Juniores</option><option>Escola GR</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="a4">Encarregado de educação</label><input id="a4" type="text" placeholder="Nome completo"></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 18px;">
+        <div class="field"><label for="a5">Telemóvel</label><input id="a5" type="tel" placeholder="9XX XXX XXX"></div>
+        <div class="field"><label for="a6">Email</label><input id="a6" type="email" placeholder="email@exemplo.pt"></div>
+      </div>
+      <label style="display: flex; gap: 12px; align-items: flex-start; font-size: 13px; color: var(--mut2); line-height: 1.6; cursor: pointer;"><input id="a7" type="checkbox" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #C8111C;"> Autorizo o tratamento dos dados para efeitos de inscrição (RGPD).</label>
+      <template data-if="{{ inscErr }}"><div role="alert" style="padding: 12px 16px; border: 1px solid rgba(240,70,78,.6); background: rgba(240,70,78,.1); font-size: 14px; color: #FFB3B7;">Preenche o nome do atleta, a data de nascimento, o encarregado de educação, um telemóvel e email válidos e aceita o tratamento dos dados.</div></template>
+      <template data-if="{{ inscOk }}"><div class="swap" role="status" style="display: flex; gap: 12px; align-items: center; padding: 14px 16px; background: rgba(46,122,42,.18); border: 1px solid rgba(46,122,42,.6); font-size: 14px;"><span style="color: #7FD17A; font-size: 18px;">✓</span> Pré-inscrição enviada. A coordenação entra em contacto para marcar o treino de captação.</div></template>
+      <button type="button" class="btn btn-red" style="margin-top: 6px;" onClick="{{ sendInsc }}">Enviar pré-inscrição <span class="arr">→</span></button>
+    </div>
+  </section>
+
+  <!-- Pagar mensalidade -->
+  <section id="mensalidade" style="background: var(--bg3); border-top: 1px solid rgba(244,241,234,.08); border-bottom: 1px solid rgba(244,241,234,.08); margin-bottom: 110px;">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 110px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 56px; align-items: start;">
+      <div class="rv" style="display: flex; flex-direction: column; gap: 18px;">
+        <span style="font-size: 11px; letter-spacing: .36em; text-transform: uppercase; color: var(--acc);">Atletas inscritos</span>
+        <h2 style="margin: 0; font-family: var(--display); font-size: clamp(37px, 4.34vw, 68px); line-height: 0.92; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">Pagar mensalidade</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.75; color: var(--mut2); max-width: 460px;">Paga a mensalidade do teu atleta em segundos. Podes pagar um mês, o trimestre ou a época completa, e recebes o recibo por email.</p>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgba(244,241,234,.12); border: 1px solid rgba(244,241,234,.12); margin-top: 8px; max-width: 460px;">
+          <div style="background: var(--bg2); padding: 18px; display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 9px; letter-spacing: .26em; color: var(--mut);">MENSAL</span><span style="font-family: var(--display); font-size: 19px; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">[0] €</span></div>
+          <div style="background: var(--bg2); padding: 18px; display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 9px; letter-spacing: .26em; color: var(--mut);">TRIMESTRE</span><span style="font-family: var(--display); font-size: 19px; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">[0] €</span></div>
+          <div style="background: var(--bg2); padding: 18px; display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 9px; letter-spacing: .26em; color: var(--mut);">ÉPOCA</span><span style="font-family: var(--display); font-size: 19px; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">[0] €</span></div>
+        </div>
+      </div>
+      <div class="rv" style="border: 1px solid rgba(255,255,255,0.22); background: var(--bg2); padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 18px;">
+          <div class="field"><label for="m1">Nome do atleta</label><input id="m1" type="text" placeholder="Nome completo"></div>
+          <div class="field"><label for="m2">N.º de atleta</label><input id="m2" type="text" inputmode="numeric" placeholder="0000"></div>
+        </div>
+        <div class="field"><label for="m3">Escalão</label>
+          <select id="m3">
+            <option>Petizes</option><option>Traquinas</option><option>Benjamins</option><option>Infantis</option><option>Iniciados</option><option>Juvenis</option><option selected="selected">Juniores</option><option>Escola GR</option>
+          </select>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--mut);">Período a pagar</span>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+            <template data-for="{{ periods }}" data-as="pr">
+              <template data-if="{{ pr.active }}">
+                <button type="button" aria-pressed="true" onClick="{{ pr.pick }}" style="cursor: pointer; border: 2px solid var(--acc); background: rgba(255,255,255,0.12); color: #F4F1EA; min-height: 52px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;">{{ pr.name }}</button>
+              </template>
+              <template data-if="{{ pr.inactive }}">
+                <button type="button" aria-pressed="false" onClick="{{ pr.pick }}" style="cursor: pointer; border: 1px solid rgba(244,241,234,.22); background: transparent; color: var(--mut2); min-height: 52px; font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;">{{ pr.name }}</button>
+              </template>
+            </template>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-size: 10px; letter-spacing: .28em; text-transform: uppercase; color: var(--mut);">Método de pagamento</span>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+            <template data-for="{{ methods }}" data-as="mt">
+              <template data-if="{{ mt.active }}">
+                <button type="button" aria-pressed="true" onClick="{{ mt.pick }}" style="cursor: pointer; border: 2px solid var(--acc); background: rgba(255,255,255,0.1); color: #F4F1EA; min-height: 56px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;"><span class="pay-ic"><img src="{{ mt.logo }}" alt="{{ mt.name }}"></span></button>
+              </template>
+              <template data-if="{{ mt.inactive }}">
+                <button type="button" aria-pressed="false" onClick="{{ mt.pick }}" style="cursor: pointer; border: 1px solid rgba(244,241,234,.22); background: transparent; color: var(--mut2); min-height: 56px; font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;"><span class="pay-ic"><img src="{{ mt.logo }}" alt="{{ mt.name }}"></span></button>
+              </template>
+            </template>
+          </div>
+        </div>
+        <template data-if="{{ isMbway }}">
+          <div class="swap field"><label for="m4">Telemóvel associado ao MB WAY</label><input id="m4" type="tel" placeholder="9XX XXX XXX"></div>
+        </template>
+        <template data-if="{{ isRef }}">
+          <div class="swap" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgba(244,241,234,.12); border: 1px solid rgba(244,241,234,.12);">
+            <div style="background: var(--bg); padding: 16px; display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 9px; letter-spacing: .26em; color: var(--mut);">ENTIDADE</span><span style="font-family: var(--display); font-size: 16px; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">00000</span></div>
+            <div style="background: var(--bg); padding: 16px; display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 9px; letter-spacing: .26em; color: var(--mut);">REFERÊNCIA</span><span style="font-family: var(--display); font-size: 16px; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">000 000 000</span></div>
+            <div style="background: var(--bg); padding: 16px; display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 9px; letter-spacing: .26em; color: var(--mut);">VALOR</span><span style="font-family: var(--display); font-size: 16px; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">[0] €</span></div>
+          </div>
+        </template>
+        <template data-if="{{ paid }}">
+          <div class="swap" role="status" style="display: flex; gap: 12px; align-items: center; padding: 14px 16px; background: rgba(46,122,42,.18); border: 1px solid rgba(46,122,42,.6); font-size: 14px;"><span style="color: #7FD17A; font-size: 18px;">✓</span> Pedido enviado. Confirma o pagamento no teu telemóvel.</div>
+        </template>
+        <button type="button" class="btn btn-gold" onClick="{{ pay }}">{{ payLabel }} <span class="arr">→</span></button>
+        <span style="font-size: 11px; color: var(--mut3); line-height: 1.6;">Pagamentos processados de forma segura através da Eupago.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="max-width: 980px; margin: 0 auto; padding: 0 24px 120px;">
+    <h2 class="rv" style="margin: 0 0 12px; font-family: var(--display); font-size: clamp(30px, 3.1vw, 45px); line-height: 0.92; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">Perguntas frequentes</h2>
+    <template data-for="{{ faq }}" data-as="q">
+      <details class="faq"><summary>{{ q.q }} <span class="pl">+</span></summary><p>{{ q.a }}</p></details>
+    </template>
+  </section>
+
+  </div>
+  </template>
+
+  <footer class="v2-foot" id="rodape">
+    <div class="wrap">
+      <div class="v2-foot-top">
+        <img src="/assets/4a3f587d612e0707d718734d37dd8d9d.png" alt="Emblema SF Damaiense">
+        <p>A Damaia joga<br><b>connosco.</b></p>
+        <a href="#top" class="v2-totop" aria-label="Voltar ao topo">↑</a>
+      </div>
+      <div class="v2-foot-cols">
+        <div><span class="t">Sede</span><span>R. Carvalho Araújo 30<br>2720-698 Damaia</span><a href="/contactos/">Como chegar ↗</a></div>
+        <div><span class="t">Contactos</span><a href="tel:+351214901752">214 901 752</a><a href="mailto:geral@sfdamaiense.pt">geral@sfdamaiense.pt</a><a href="/contactos/">Enviar mensagem</a></div>
+        <div><span class="t">Clube</span><a href="/clube/">História</a><a href="/futebol/">Futebol</a><a href="/academia/">Academia</a><a href="/socios/">Sócios e quotas</a><a href="/loja/">Loja oficial</a></div>
+        <div><span class="t">Segue-nos</span><div class="v2-social">
+          <a href="https://www.instagram.com/sfdamaiense/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"></circle></svg></a>
+          <a href="https://www.facebook.com/SFDamaiense" target="_blank" rel="noopener" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v5h4v-5h3l1-4h-4V8z"></path></svg></a>
+          <a href="https://www.youtube.com/@damaiensetv" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"></rect><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"></path></svg></a>
+        </div></div>
+      </div>
+      <div class="v2-foot-bottom">
+        <span>© 2026 SF Damaiense · Desde 1938</span>
+        <span class="v2-pay"><span>Pagamentos</span><img src="/assets/45466474f5f2f72e3ee0bc0df83079cc.png" alt="MB WAY"><img src="/assets/7fde7c98f52bac35fcba1c2ee1a7f4c8.png" alt="Multibanco"></span>
+        <span>Website por Beatriz Studio</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</template>
+<script type="text/x-dc" data-dc-script data-props='{"fundo":{"editor":"enum","options":["Damaiense","Carbono","Relvado","Bordeaux","Noite (azul)"],"default":"Damaiense"},"$preview":{"width":1440,"height":4200}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { showMethod: false, tab: 4, level: 'Juniores', period: 'Mês', method: 'MB WAY', paid: false, menuOpen: false, ready: false }; }
+  componentDidMount() { /*sfd-cms*/ if (window.SFDContent) window.SFDContent.ready.then(() => this.setState({ cms: Date.now() }));
+    this.fxInit();
+    this._r = setTimeout(() => this.setState({ ready: true }), 60);
+    this._h = () => this.readHash(); try { window.addEventListener('hashchange', this._h); } catch (e) {}
+    this.readHash();
+  }
+  componentWillUnmount() {
+    this.fxStop(); clearTimeout(this._r); try { window.removeEventListener('hashchange', this._h); } catch (e) {} }
+  readHash() {
+    let h = ''; try { h = (window.location.hash || '').slice(1); } catch (e) {}
+    const map = { 'academia': 4, 'inscricao': 4, 'mensalidade': 4 };
+    if (h in map) {
+      this.setState({ tab: map[h] });
+      if (h === 'inscricao' || h === 'mensalidade') setTimeout(() => { try { document.getElementById(h).scrollIntoView({ behavior: 'smooth' }); } catch (e) {} }, 120);
+    }
+  }
+  setTab(i) {
+    this.setState({ tab: i });
+    try { history.replaceState(null, '', '#' + ['equipa-a', 'sub-19', 'sub-17', 'sub-15', 'academia'][i]); } catch (e) {}
+  }
+  goTo(id) { setTimeout(() => { try { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); } catch (e) {} }, 30); }
+  // ===== SFD v2 · efeitos (scroll suave, reveal, parallax, cursor, header) =====
+  fxInit() {
+    const d = document, w = window;
+    const rm = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine = w.matchMedia && w.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    let lastY = w.scrollY || 0, tick = false;
+    const upd = () => {
+      tick = false;
+      const y = w.scrollY || 0, max = d.documentElement.scrollHeight - w.innerHeight;
+      const p = d.querySelector('.v2-progress'); if (p) p.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+      const h = d.querySelector('.v2-header');
+      if (h) { h.classList.toggle('scrolled', y > 40); h.classList.toggle('hide', y > lastY + 2 && y > 320 && !this.state.menuOpen); if (y < lastY - 2 || y < 320) h.classList.remove('hide'); }
+      lastY = y;
+      if (!rm) {
+        d.querySelectorAll('[data-parallax]').forEach((el) => {
+          const box = el.parentElement.getBoundingClientRect();
+          if (box.bottom < -200 || box.top > w.innerHeight + 200) return;
+          const sp = parseFloat(el.getAttribute('data-parallax')) || 0.15;
+          el.style.transform = 'translate3d(0,' + (-box.top * sp).toFixed(1) + 'px,0) scale(1.08)';
+        });
+      }
+    };
+    this._fxScroll = () => { if (!tick) { tick = true; w.requestAnimationFrame(upd); } };
+    w.addEventListener('scroll', this._fxScroll, { passive: true });
+    w.addEventListener('resize', this._fxScroll, { passive: true });
+    upd();
+    if ('IntersectionObserver' in w) {
+      this._fxIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); this._fxIO.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -25px 0px' });
+      const scan = () => d.querySelectorAll('.reveal:not([data-io])').forEach((el) => { el.setAttribute('data-io', '1'); if (rm) el.classList.add('in'); else this._fxIO.observe(el); });
+      scan();
+      this._fxMO = new MutationObserver(() => { clearTimeout(this._fxScan); this._fxScan = setTimeout(scan, 40); });
+      this._fxMO.observe(d.body, { childList: true, subtree: true });
+    } else { d.querySelectorAll('.reveal').forEach((el) => el.classList.add('in')); }
+    if (fine && !rm) {
+      const g = d.querySelector('.v2-glow');
+      this._fxMove = (e) => { if (!g) return; g.style.transform = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0)'; g.style.opacity = '1'; };
+      this._fxLeave = () => { if (g) g.style.opacity = '0'; };
+      w.addEventListener('pointermove', this._fxMove, { passive: true });
+      d.addEventListener('pointerleave', this._fxLeave);
+      // Lenis (scroll suave) — só em rato/trackpad; telemóveis mantêm o scroll nativo
+      const start = () => {
+        try {
+          if (!w.Lenis || this._lenis) return;
+          this._lenis = new w.Lenis({ lerp: 0.12, smoothWheel: true, wheelMultiplier: 1 });
+          const raf = (t) => { if (!this._lenis) return; this._lenis.raf(t); this._fxRaf = w.requestAnimationFrame(raf); };
+          this._fxRaf = w.requestAnimationFrame(raf);
+        } catch (e) {}
+      };
+      if (w.Lenis) start(); else {
+        const sc = d.createElement('script'); sc.src = '/assets/0c7813240655c01d2b32e329308b576f.js'; sc.async = true; sc.onload = start; d.head.appendChild(sc);
+      }
+    }
+  }
+  fxStop() {
+    const w = window;
+    try {
+      w.removeEventListener('scroll', this._fxScroll); w.removeEventListener('resize', this._fxScroll);
+      if (this._fxMove) w.removeEventListener('pointermove', this._fxMove);
+      if (this._fxLeave) document.removeEventListener('pointerleave', this._fxLeave);
+      if (this._fxIO) this._fxIO.disconnect(); if (this._fxMO) this._fxMO.disconnect();
+      clearTimeout(this._fxScan); if (this._fxRaf) w.cancelAnimationFrame(this._fxRaf);
+      if (this._lenis) { this._lenis.destroy(); this._lenis = null; }
+    } catch (e) {}
+  }
+  fxTo(id) {
+    const el = document.getElementById(id); if (!el) return;
+    if (this._lenis) this._lenis.scrollTo(el, { offset: -80 }); else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  renderVals() {
+    const s = this.state;
+    const th = { 'Damaiense': 'damaiense', 'Carbono': 'carbono', 'Relvado': 'relvado', 'Bordeaux': 'bordeaux', 'Noite (azul)': 'noite' }[this.props.fundo ?? 'Damaiense'] || 'damaiense';
+    // ===== Dados desportivos (fonte: zerozero.pt, atualizados a 22/10/2026) =====
+    // Em produção: substituído por um ficheiro JSON atualizado automaticamente.
+    const SFD = {
+      updated: '22/10/2026',
+      venueHome: 'Complexo Desportivo Eugénia e Joaquim Cannas da Silva · Damaia',
+      teams: [
+        {
+          key: 'a', name: 'Equipa A', comp: 'AF Lisboa 2.ª Divisão · Série 2',
+          zz: 'https://www.zerozero.pt/equipa/damaiense/11188',
+          zzGames: 'https://www.zerozero.pt/equipa/damaiense/11188/jogos?grp=1',
+          zzTable: 'https://www.zerozero.pt/edicao/af-lisboa-2-divisao-1-fase-serie-2-2026-2027/223617',
+          table: [
+            [1, 'Casa Pia AC B', 16, 6, 5, 1, 0, '+14'], [2, 'SF Damaiense', 11, 6, 3, 2, 1, '+6'], [3, 'Algés', 11, 6, 3, 2, 1, '+4'],
+            [4, 'Belenenses B', 11, 6, 3, 2, 1, '+3'], [5, 'U. Tires', 10, 6, 3, 1, 2, '+5'], [6, 'Águias da Musgueira', 10, 6, 3, 1, 2, '+3'],
+            [7, 'Atlético Cacém', 10, 6, 3, 1, 2, '-1'], [8, 'Operário Lisboa', 9, 6, 3, 0, 3, '-3'], [9, 'Santo António Lisboa', 7, 6, 2, 1, 3, '0'],
+            [10, 'Leões Porto Salvo', 7, 6, 2, 1, 3, '0'], [11, 'Linda-a-Velha', 7, 5, 2, 1, 2, '-2'], [12, 'Fontainhas', 7, 6, 1, 4, 1, '-3'],
+            [13, 'Carcavelos', 6, 6, 2, 0, 4, '-4'], [14, 'Abóboda', 5, 6, 1, 2, 3, '-2'], [15, 'UDR Santa Maria', 4, 5, 1, 1, 3, '-5'],
+            [16, 'CSD Bairro da Boavista', 0, 6, 0, 0, 6, '-15']
+          ],
+          games: [
+            ['J1', '2026-09-13', '17:00', 'C', 'U. Tires', 3, 2], ['J2', '2026-09-20', '15:00', 'F', 'Abóboda', 3, 3],
+            ['J3', '2026-09-27', '15:00', 'C', 'CSD Bairro da Boavista', 5, 1], ['J4', '2026-10-04', '15:00', 'F', 'Linda-a-Velha', 2, 2],
+            ['J5', '2026-10-11', '15:00', 'C', 'Operário Lisboa', 4, 2], ['J6', '2026-10-18', '15:00', 'F', 'UDR Santa Maria', 1, 2],
+            ['J7', '2026-10-25', '15:00', 'C', 'Leões Porto Salvo'], ['J8', '2026-11-01', '15:00', 'F', 'Casa Pia AC B'],
+            ['J9', '2026-11-08', '15:00', 'F', 'Algés'], ['J10', '2026-11-15', '15:00', 'C', 'Carcavelos'],
+            ['J11', '2026-11-29', '15:00', 'F', 'Santo António Lisboa'], ['J12', '2026-12-13', '15:00', 'C', 'Águias da Musgueira'],
+            ['J13', '2026-12-20', '15:00', 'F', 'Atlético Cacém'], ['J14', '2027-01-10', '15:30', 'C', 'Fontainhas'],
+            ['J15', '2027-01-17', '15:30', 'F', 'Belenenses B'], ['J16', '2027-01-24', '15:30', 'F', 'U. Tires'],
+            ['J17', '2027-01-31', '15:30', 'C', 'Abóboda'], ['J18', '2027-02-14', '15:30', 'F', 'CSD Bairro da Boavista'],
+            ['J19', '2027-02-21', '15:30', 'C', 'Linda-a-Velha'], ['J20', '2027-02-28', '15:30', 'F', 'Operário Lisboa'],
+            ['J21', '2027-03-07', '15:30', 'C', 'UDR Santa Maria'], ['J22', '2027-03-14', '15:30', 'F', 'Leões Porto Salvo'],
+            ['J23', '2027-03-21', '15:30', 'C', 'Casa Pia AC B'], ['J24', '2027-04-04', '16:00', 'C', 'Algés'],
+            ['J25', '2027-04-11', '16:00', 'F', 'Carcavelos'], ['J26', '2027-04-18', '16:00', 'C', 'Santo António Lisboa'],
+            ['J27', '2027-04-25', '16:00', 'F', 'Águias da Musgueira'], ['J28', '2027-05-02', '16:00', 'C', 'Atlético Cacém'],
+            ['J29', '2027-05-09', '17:00', 'F', 'Fontainhas'], ['J30', '2027-05-16', '17:00', 'C', 'Belenenses B']
+          ]
+        },
+        {
+          key: 's19', name: 'Sub-19', comp: 'AF Lisboa Juniores A · 1.ª Divisão',
+          zz: 'https://www.zerozero.pt/equipa/damaiense/12767',
+          zzGames: 'https://www.zerozero.pt/equipa/damaiense/12767',
+          zzTable: 'https://www.zerozero.pt/edicao/af-lisboa-juniores-a-1-divisao-2026-2027/224376',
+          table: [
+            [1, 'GDS Cascais', 9, 3, 3, 0, 0, '+6'], [2, 'Sintrense', 9, 3, 3, 0, 0, '+6'], [3, 'Real SC', 7, 3, 2, 1, 0, '+7'],
+            [4, 'AD Oeiras', 7, 3, 2, 1, 0, '+4'], [5, 'Algés', 7, 3, 2, 1, 0, '+3'], [6, '1º Dezembro', 6, 3, 2, 0, 1, '+2'],
+            [7, 'At. Povoense', 5, 3, 1, 2, 0, '+2'], [8, 'GS Loures', 4, 3, 1, 1, 1, '0'], [9, 'SF Damaiense', 4, 3, 1, 1, 1, '0'],
+            [10, 'UDR Santa Maria', 3, 3, 1, 0, 2, '-1'], [11, 'Mem Martins SC', 3, 3, 1, 0, 2, '-2'], [12, 'Carcavelos', 1, 3, 0, 1, 2, '-3'],
+            [13, 'Sacavenense', 1, 3, 0, 1, 2, '-5'], [14, 'At. Malveira', 1, 3, 0, 1, 2, '-3'], [15, 'Ponte Frielas', 0, 3, 0, 0, 3, '-7'],
+            [16, 'Operário Lisboa', 0, 3, 0, 0, 3, '-9']
+          ],
+          games: [
+            ['J1', '2026-10-03', '16:00', 'C', '1º Dezembro', 0, 1], ['J2', '2026-10-10', '15:00', 'F', 'GS Loures', 2, 2],
+            ['J3', '2026-10-17', '16:00', 'C', 'Mem Martins SC', 1, 0], ['J4', '2026-10-24', '15:00', 'F', 'At. Malveira'],
+            ['J5', '2026-10-31', '16:00', 'C', 'Real SC'], ['J6', '2026-11-07', '16:00', 'F', 'Sacavenense']
+          ]
+        },
+        {
+          key: 's17', name: 'Sub-17', comp: 'AF Lisboa Juniores B · 1.ª Divisão',
+          zz: 'https://www.zerozero.pt/equipa/damaiense/12720',
+          zzGames: 'https://www.zerozero.pt/equipa/damaiense/12720',
+          zzTable: 'https://www.zerozero.pt/edicao/af-lisboa-juniores-b-1-divisao-2026-2027/224930',
+          table: [
+            [1, 'Oriental', 9, 3, 3, 0, 0, '+7'], [2, 'Atlético CP', 9, 3, 3, 0, 0, '+7'], [3, 'Sacavenense', 6, 3, 2, 0, 1, '+1'],
+            [4, 'CAC', 6, 3, 2, 0, 1, '+3'], [5, 'Torreense B', 6, 3, 2, 0, 1, '-1'], [6, 'Sintrense', 6, 3, 2, 0, 1, '+2'],
+            [7, 'Algés', 5, 3, 1, 2, 0, '+1'], [8, 'CD Mafra', 4, 3, 1, 1, 1, '+1'], [9, 'FC Alverca B', 4, 3, 1, 1, 1, '0'],
+            [10, 'Belenenses B', 3, 3, 1, 0, 2, '0'], [11, '1º Dezembro', 3, 3, 1, 0, 2, '-4'], [12, 'UDR Santa Maria', 3, 3, 1, 0, 2, '-2'],
+            [13, 'Ericeirense', 3, 3, 1, 0, 2, '-2'], [14, 'At. Povoense', 1, 3, 0, 1, 2, '-3'], [15, 'SF Damaiense', 1, 3, 0, 1, 2, '-4'],
+            [16, 'EFBO', 0, 3, 0, 0, 3, '-6']
+          ],
+          games: [
+            ['J1', '2026-10-04', '11:00', 'F', 'UDR Santa Maria', 1, 2], ['J2', '2026-10-11', '08:45', 'C', 'Atlético CP', 1, 4],
+            ['J3', '2026-10-18', '10:00', 'F', 'CD Mafra', 0, 0], ['J4', '2026-10-25', '08:45', 'C', 'Oriental'],
+            ['J5', '2026-11-01', '10:00', 'F', 'CAC'], ['J6', '2026-11-08', '08:45', 'C', 'Belenenses B']
+          ]
+        },
+        {
+          key: 's15', name: 'Sub-15', comp: 'AF Lisboa Juniores C · 2.ª Divisão · Série 2',
+          zz: 'https://www.zerozero.pt/equipa/damaiense/12570',
+          zzGames: 'https://www.zerozero.pt/equipa/damaiense/12570',
+          zzTable: 'https://www.zerozero.pt/edicao/af-lisboa-juniores-c-2-divisao-serie-2-2026-27/225386',
+          table: [
+            [1, 'Casa Pia AC B', 9, 3, 3, 0, 0, '+16'], [2, 'Benfica C', 9, 3, 3, 0, 0, '+12'], [3, 'CIF', 9, 3, 3, 0, 0, '+8'],
+            [4, 'Belenenses C', 7, 3, 2, 1, 0, '+4'], [5, 'Malveira da Serra', 6, 3, 2, 0, 1, '+1'], [6, 'Olivais Sul', 6, 3, 2, 0, 1, '+16'],
+            [7, 'SF Damaiense', 5, 3, 1, 2, 0, '+8'], [8, 'Assoc. Torre', 4, 3, 1, 1, 1, '0'], [9, 'Academia Alcoitão', 3, 3, 1, 0, 2, '+1'],
+            [10, 'Linda-a-Velha', 3, 3, 1, 0, 2, '0'], [11, 'Real SC B', 3, 3, 1, 0, 2, '-2'], [12, 'Fut. Benfica', 3, 3, 1, 0, 2, '-6'],
+            [13, 'Carcavelos', 1, 3, 0, 1, 2, '-4'], [14, 'São João de Brito', 1, 3, 0, 1, 2, '-11'], [15, 'EF Belém Estádio Restelo', 0, 3, 0, 0, 3, '-20'],
+            [16, 'CAC', 0, 3, 0, 0, 3, '-23']
+          ],
+          games: [
+            ['J1', '2026-10-04', '11:00', 'C', 'São João de Brito', 9, 1], ['J2', '2026-10-11', '11:00', 'F', 'Belenenses C', 2, 2],
+            ['J3', '2026-10-18', '11:00', 'C', 'Carcavelos', 1, 1], ['J4', '2026-10-25', '11:00', 'F', 'Malveira da Serra'],
+            ['J5', '2026-11-01', '11:00', 'C', 'CAC'], ['J6', '2026-11-08', '11:00', 'F', 'Real SC B']
+          ]
+        }
+      ]
+    };
+    const DIAS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+    const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+    const sfdGame = (g) => {
+      const d = new Date(g[1] + 'T' + g[2] + ':00');
+      const played = g.length > 5;
+      const res = played ? (g[5] > g[6] ? 'V' : g[5] < g[6] ? 'D' : 'E') : '';
+      return { round: g[0], date: d, day: DIAS[d.getDay()] + ' · ' + String(d.getDate()).padStart(2, '0') + ' ' + MESES[d.getMonth()], time: g[2], home: g[3] === 'C', opp: g[4], played: played, gf: played ? g[5] : null, ga: played ? g[6] : null, res: res,
+        homeName: g[3] === 'C' ? 'SF Damaiense' : g[4], awayName: g[3] === 'C' ? g[4] : 'SF Damaiense',
+        scoreHA: played ? (g[3] === 'C' ? g[5] + '–' + g[6] : g[6] + '–' + g[5]) : '' };
+    };
+    const sfdTeam = (t, nowMs) => {
+      const games = t.games.map(sfdGame);
+      const next = games.find((g) => !g.played && g.date.getTime() + 2 * 3600000 > nowMs) || null;
+      const past = games.filter((g) => g.played);
+      const last = past.length ? past[past.length - 1] : null;
+      const me = t.table.find((r) => r[1] === 'SF Damaiense');
+      return Object.assign({}, t, { g: games, next: next, last: last, form: past.slice(-5).map((g) => g.res), pos: me ? me[0] : null, pts: me ? me[2] : null });
+    };
+    const initials = (n) => n.replace(/[^A-Za-zÀ-ÿ0-9 ]/g, '').split(' ').filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+    // ===== fim dos dados =====
+    // Emblemas dos clubes (fonte: zerozero.pt)
+    const CREST = {"Águias da Musgueira": "4b9ac4519948c2dda1c151a70a4bc790", "Algés": "86c034688e17bbaef5374d32dae3a2ff", "Santo António Lisboa": "b45ef91f2305875b1f42ea6a917291a7", "SF Damaiense": "4a3f587d612e0707d718734d37dd8d9d", "Damaiense": "4a3f587d612e0707d718734d37dd8d9d", "Carcavelos": "a7bd27dfe04e8074431d17832da74ec7", "UDR Santa Maria": "18e3c89c1594f3ef1d1278a3d0999679", "Operário Lisboa": "d7422b7cedf277fb98254c9f07672802", "Abóboda": "480031dbf29fdbded93196311d92d6d4", "Leões Porto Salvo": "a90e4339c92f4218fde7d286cab3a4e4", "Casa Pia AC B": "9771612f80d1376451fb85f51593cc17", "Casa Pia AC": "9771612f80d1376451fb85f51593cc17", "Atlético Cacém": "affabc6af12964687f9161a31c423132", "U. Tires": "60616b5412fd03bc4f39f492d7b12107", "Fontainhas": "6b21c89645da87d8e4f4c8bdc5173889", "Belenenses B": "3ea17be0feb6da08d26aef74411fa675", "Belenenses": "3ea17be0feb6da08d26aef74411fa675", "CSD Bairro da Boavista": "9020a0439862933606c47f67ec678862", "Linda-a-Velha": "b67d33fba464715047e94a88635c18bf", "1º Dezembro": "9e8eb6d0fbd25fb00bcdc547d390d48f", "AD Oeiras": "1d0efd60b7be8113afc4dc1cabfcdf3b", "At. Malveira": "c40d95075101cc3943c3b9badde48d97", "At. Povoense": "fffdec9b990e6c179d4933e149097f8e", "GDS Cascais": "4c597a096442b31082e20fdd4d913f39", "GS Loures": "b8c8815ae3b9d043cd1e18d9287ff727", "Mem Martins SC": "9407a534bd50dc20546610affecbe85f", "Ponte Frielas": "12d7fcab8904101e6b3c98897aa4f93b", "Real SC": "c1015ff51d82fe0f0e04626f4328a984", "Sacavenense": "f6be4c495c04f857f83ee4806e6434d4", "Sintrense": "268276996f622f5395d65078bb99e2e6", "Atlético CP": "b69299907ea108b8a50c148edc2b4110", "CAC": "3bab22ff0e0d4492cadffa0e4fa05160", "CD Mafra": "8355f06f8241d1cc536c3e4a7949a897", "EFBO": "161cd91165ecd5671943bb8abb16bd21", "Ericeirense": "35caeb9b749e5c59b71325775854eb33", "FC Alverca": "6bae56f17f0bf98dbaec638ef6afecd8", "FC Alverca B": "6bae56f17f0bf98dbaec638ef6afecd8", "Oriental": "bfb37bc8c20c0d30bef421fa81dcc8e8", "Torreense": "ad6d66deb3d1fa12f991ebdf8cd556bf", "Torreense B": "ad6d66deb3d1fa12f991ebdf8cd556bf", "CIF": "36b41663b8ecb158f252481d1861c4d1", "Benfica C": "94a21fd269c7a165fd2521c9cd8b0eef", "EF Belém Estádio Restelo": "1638381b1c0a3bc8efeae82c773348cd", "Assoc. Torre": "228920b2b714ce8661b7516bb475f5e8", "São João de Brito": "528f190845f182c2d2345bd4066e46fa", "Malveira da Serra": "eb025a5b39fd904763441b3aead232ba", "Academia Alcoitão": "26c60817f408c8421514060d27c73dcb", "Fut. Benfica": "2327b6093aa99689ef1c69dc3c90fc47", "Olivais Sul": "c9f4e7d66f3d6a05dc45846f558def54", "Real SC B": "c1015ff51d82fe0f0e04626f4328a984", "Belenenses C": "3ea17be0feb6da08d26aef74411fa675"};
+    const crestOf = (n) => CREST[n] ? '/_blob/' + CREST[n] : '';
+    const T = SFD.teams.map((t) => sfdTeam(t, Date.now()));
+    const tabNames = ['Equipa A', 'Sub-19', 'Sub-17', 'Sub-15', 'Academia'];
+    const tab = s.tab;
+    const P = (name, img, pos, nr) => ({ name: name, img: '/_blob/' + img, pos: pos, nr: nr || '' });
+    const Q = '[Posição a confirmar]';
+    const players = [
+      P('André Anciães', '4b39531ba62f66541f113c77d6414bc7', 'Guarda-redes', '12'), P('Ricardo Silva', 'd95533ddef9fe89abd724eafc36ed742', 'Guarda-redes', '1'),
+      P('Francisco Moreira', '9bb05d87a09b062961e0281a4b404aaa', 'Defesa', '13'), P('Gabriel Nascimento', '81517935cb61df24ddc00ad41c937ae4', 'Defesa', '2'),
+      P('Lauro Moniz', '6aa9cac587b3c0ddaca8753ecded8721', 'Defesa', '33'), P('Rodrigo Urbano', 'c35284fc08b5aa05275ac3c10e20cf89', 'Defesa', '34'),
+      P('Rúben Silva', 'd6d408f584ff44119fef8fbaec743145', 'Defesa', '23'),
+      P('Gonçalo Costa', '34b5c56d9010015b2c5931e4878d3462', 'Médio', '14'), P('Pedro Albino', '2134bdeec210c458cd148a33e0475739', 'Médio', '21'),
+      P('Bruno Mané', 'edf45eed6646285cdcf41497e47c1014', 'Avançado', '11'), P('Bruno Mendes', 'be41e4d6e2dacd5f47a0a9e1689d3d44', 'Avançado', '17'),
+      P('Gerson Horta', '0924e6811e5ba26ac7799eb4f57b0dde', 'Avançado', '7'), P('José Lourenço', '886bf95f98b216ed4a25742011e07b1b', 'Avançado', '31'),
+      P('João Felício', 'de3701c4651b03564fc31962977e1881', Q, '4'), P('Rodrigo Castro', '17c3e558eaf920969b425f9db131e728', Q, '10'),
+      P('Rafael Marques', '2dc9dd312ffd1c7c788dbd8fe3b9c45a', Q, '30'), P('Gonçalo Ferreira', '86054a1f6088cf91827b0ca7f8e9cc16', Q, ''),
+      P('Rafael Ribeiro', 'ef3359fa35db0191df14d30d0d764617', Q, ''),
+      P('Miguel Ivo', '03e1c4568bd5e905fe2521a660e18248', Q, '6'), P('Tiago Fernandes', '0ff6210668661ac64f6847cc3f5b6b52', Q, '8'), P('Rodrigo Conde', '72e8ca12479397479ba65f229e1550f2', Q, '9'),
+      P('Walson Bastos', 'a6759c9dba112d3a7f7ef4b8aa75d26d', Q, '15'), P('Gonçalo Silva', '8d48d90cba14bc2d029439f3318b2952', Q, '18'), P('Zidane', 'da9e68f6e6d67b2096ab9aad133dbca8', Q, '19'),
+      P('Tiago Santos', '7b56ccdbfb0bd91f80641b52fe2fab67', Q, '20'), P('Tiago Oliveira', 'b51a9845812c60443536b1f629d31b77', Q, '25'), P('Tomás Silva', '82dd2c6d4e7ba5796a449e68abeae857', Q, '26'),
+      P('Francisco Valério', 'e0ac3573bb77ba9bb3ac45e525c040af', Q, '27')
+    ].sort((x, y) => (parseInt(x.nr, 10) || 999) - (parseInt(y.nr, 10) || 999));
+    const staffA = [['André Couto', 'Treinador principal'], ['Ricardo Pereira "Ricardinho"', 'Diretor desportivo'], ['João Coimbra "Chipy"', 'Team manager'], ['Pedro Mota', 'Coordenador técnico'], ['João Lavado', 'Presidente do clube']].map((x) => ({ name: x[0], role: x[1] }));
+    const ROSTER = {"s15": {"players": [], "staff": []}, "s19": {"players": [["João Lopes", "ff6e9c68f91e09f366ef4f2a000d35bc", "Guarda-redes", "12"], ["Diogo Martinho", "96fcce76a2cb2d5830bde0ccaf00e56d", "Guarda-redes", "28"], ["Rafael Calvino", "2fefed3a2ef044bcecbaa8a945ee472b", "Defesa", "22"], ["Diogo Marques", "e29e4c72bd66e59b2f21036ea5a5499d", "Defesa", "27"], ["Seco Cassamá", "dfbdf46b9d9f7c7aed85aa140ad772b8", "Defesa", "5"], ["Hassan Baldé", "2af8d2786c133380787b3b0978bf8f6b", "Médio", "22"], ["Tomás Magalhães", "a29170a008478bffb7562f30e6a78f12", "Médio", "26"], ["Luís Gomes", "bcf21025fd0131e494d0a050747ac6a1", "Médio", "6"], ["Dinis Ladeira", "aab68bbfdb3ea76abb7d253f70ca9ffc", "Médio", "6"], ["Artur Santos", "7d93b130884e03c8bba3cc9e35b1b47f", "Médio", "8"], ["Gustavo Gomes", "279c4e6f08a78dd21a0931d2c0978c2f", "Avançado", "10"], ["Gonçalo Madruga", "e59a967b93df1b93442294fa4bd7c335", "Avançado", "30"], ["António Morais", "b7a3a7bc8835d62cacd5ebf26f406cb8", "Avançado", "7"], ["André Delgado", "28678834cfdb6ea3d6125a7db0db5ffa", "Avançado", "9"], ["Amílcar Napoco", "", "Avançado", "99"], ["André Ferreira", "9cdee8de6465893c2a711f90950c6448", "Avançado", ""]], "staff": [["Pedro Mota", "b70b945abf8948d6d562a7ab54605491", "Treinador"], ["Rui Egídio", "2d1c362c51864b0a40df2d6b09903937", "Treinador adjunto"], ["João Ramalho", "825f806973a25256c12c2710088cdf12", "Treinador de guarda-redes"], ["António Oliveira", "36193baa8d57cdc142d41105dbf3168c", "Team Manager"], ["Pedro Baia", "93d649bf5830fa81eb2a61c1d45d3e21", "Team Manager"]]}, "s17": {"players": [["Rodrigo Antunes", "a952bc3af19b706565299cd033c2281c", "Guarda-redes", ""], ["Rodrigo Pinto", "8a9a7280863c5a39c267a908fb0e80ba", "Defesa", "4"], ["Rodrigo Teixeira", "d10c2a9006292c4a7e68dfe64ff761cf", "Defesa", "66"], ["Simão Carvalheiro", "4bc385972f24838e13d261cd14454fd0", "Defesa", "72"], ["Mauro Coimbra", "2dd78415f291e1f67967d2b18cea00aa", "Defesa", ""], ["Rafael Rosário", "f40f3fff50e2791e2013c8c1200bef71", "Defesa", ""], ["Caetano", "", "Defesa", ""], ["Martim Sá Cruz", "6e88a69aef307fb7e432cb86bb1d3e25", "Médio", "6"], ["Gabriel Amaral", "7faf418b5fbca773e41d02428ceba03f", "Médio", ""], ["Eduardo Santos", "f9040b16d28bf8917ca9af23ce2b07d5", "Avançado", "11"], ["Gabriel Reis C", "550e5480450c510684b5082747e3ff5e", "Avançado", "77"], ["Diego Fernandes", "11cc8c04ef930999a136bd2440f92d62", "Avançado", ""], ["Janilson Moura", "cb676ac59ab3719d6b55ae5bd4824bce", "Avançado", ""]], "staff": [["Walter Mota", "d268c620f4e4886962a755d4e7f36cce", "Treinador"], ["Diogo Pires", "", "Treinador adjunto"]]}};
+    const ini = (n) => n.split(' ').filter(Boolean).map((w) => w.charAt(0)).slice(0, 2).join('');
+    const yGroups = (key) => {
+      const l = ROSTER[key].players.map((p) => ({ name: p[0], img: p[1] ? '/_blob/' + p[1] : '', hasImg: !!p[1], noImg: !p[1], ini: ini(p[0]), pos: p[2], nr: p[3] })).sort((x, y) => (parseInt(x.nr, 10) || 999) - (parseInt(y.nr, 10) || 999));
+      return [['Guarda-redes', 'Guarda-redes'], ['Defesas', 'Defesa'], ['Médios', 'Médio'], ['Avançados', 'Avançado']].map((g) => { const m = l.filter((p) => p.pos === g[1]); return { name: g[0], n: m.length + (m.length === 1 ? ' atleta' : ' atletas'), players: m }; }).filter((g) => g.players.length);
+    };
+    const yStaff = (key) => ROSTER[key].staff.map((c) => ({ name: c[0], role: c[2], img: c[1] ? '/_blob/' + c[1] : '', hasImg: !!c[1], noImg: !c[1], ini: ini(c[0]) }));
+    const grp = (name, f) => { const l = players.filter(f); return { name: name, n: l.length + (l.length === 1 ? ' atleta' : ' atletas'), players: l }; };
+    const groups = [grp('Guarda-redes', (p) => p.pos === 'Guarda-redes'), grp('Defesas', (p) => p.pos === 'Defesa'), grp('Médios', (p) => p.pos === 'Médio'), grp('Avançados', (p) => p.pos === 'Avançado'), grp('Outros jogadores', (p) => p.pos.charAt(0) === '[')];
+    const nextTxt = (t) => t.next ? (t.next.home ? 'SF Damaiense vs ' + t.next.opp : t.next.opp + ' vs SF Damaiense') : '—';
+    const nextWhen = (t) => t.next ? t.next.day + ' · ' + t.next.time + ' · ' + (t.next.home ? 'Casa' : 'Fora') : '';
+    const A = T[0];
+    const coaches = { a: 'André Couto (treinador)', s19: 'Pedro Mota', s17: 'Walter Mota', s15: '[A confirmar com o clube]' };
+    const youthT = tab === 1 ? T[1] : tab === 2 ? T[2] : tab === 3 ? T[3] : null;
+    const data = [
+      { name: 'Petizes', age: 'SUB-7', years: '[Anos de nascimento]', teams: 'Iniciação ao futebol' },
+      { name: 'Traquinas', age: 'SUB-9', years: '[Anos de nascimento]', teams: 'Futebol de 7' },
+      { name: 'Benjamins', age: 'SUB-11', years: '[Anos de nascimento]', teams: 'E1 · E2' },
+      { name: 'Infantis', age: 'SUB-13', years: '[Anos de nascimento]', teams: 'D1 · D2' },
+      { name: 'Iniciados', age: 'SUB-15', years: '[Anos de nascimento]', teams: '1.º Ano · 2.º Ano · C1' },
+      { name: 'Juvenis', age: 'SUB-17', years: '[Anos de nascimento]', teams: '1.º Ano · 2.º Ano' },
+      { name: 'Juniores', age: 'SUB-19', years: '[Anos de nascimento]', teams: '1.º Ano · 2.º Ano' }
+    ];
+    return {
+      rootCls: 'th-' + th + (s.ready ? ' go' : ''),
+      menuOpen: s.menuOpen, menuOpenStr: s.menuOpen ? 'true' : 'false', burgerCls: 'v2-burger' + (s.menuOpen ? ' open' : ''),
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }),
+      mobileNav: [['/', 'Início'], ['/jogos/', 'Jogos'], ['/futebol/', 'Futebol'], ['/noticias/', 'Notícias'], ['/loja/', 'Loja'], ['/socios/', 'Sócios'], ['/clube/', 'Clube'], ['/contactos/', 'Contactos']].map((x) => ({ href: x[0], label: x[1] })),
+      title: 'ACADEMIA'.split('').map((c, i) => ({ c: c, d: (0.15 + i * 0.06).toFixed(2) + 's' })),
+      levels: data.map((d) => ({ name: d.name, age: d.age, active: d.name === s.level, inactive: d.name !== s.level, pick: () => this.setState({ level: d.name }) })),
+      selList: [Object.assign({}, data.find((d) => d.name === s.level) || data[6], { payPick: () => this.setState({ paid: false }) })],
+      periods: ['Mês', 'Trimestre', 'Época'].map((n) => ({ name: n, active: n === s.period, inactive: n !== s.period, pick: () => this.setState({ period: n, paid: false }) })),
+      methods: ['MB WAY', 'Multibanco'].map((n) => ({ name: n, logo: n === 'MB WAY' ? '/assets/45466474f5f2f72e3ee0bc0df83079cc.png' : '/assets/7fde7c98f52bac35fcba1c2ee1a7f4c8.png', active: n === s.method, inactive: n !== s.method, pick: () => this.setState({ method: n, paid: false }) })),
+      isMbway: s.method === 'MB WAY',
+      isRef: s.method === 'Multibanco',
+      paid: s.paid,
+      pay: () => this.setState({ paid: true }),
+      inscOk: !!s.inscOk, inscErr: !!s.inscErr,
+      sendInsc: () => { const g = (i) => { try { const e = document.getElementById(i); return e.type === 'checkbox' ? (e.checked ? 'x' : '') : (e.value || '').trim(); } catch (e) { return ''; } }; const em = (v) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v); const tel = (v) => v.replace(/\D/g, '').length >= 9; const ok = g('a1') && g('a2') && g('a4') && tel(g('a5')) && em(g('a6')) && g('a7'); this.setState({ inscOk: !!ok, inscErr: !ok }); },
+      payLabel: (s.method === 'MB WAY' ? 'Pagar com MB WAY' : 'Gerar referência Multibanco') + ' · ' + s.period,
+      grPillars: [
+        { n: '01', t: 'Física', d: 'Coordenação, explosão e mobilidade adaptadas à idade.' },
+        { n: '02', t: 'Técnica', d: 'Defesa da baliza, cruzamentos, 1x1 e jogo com os pés.' },
+        { n: '03', t: 'Tática', d: 'Leitura do jogo, coberturas e organização da defesa.' },
+        { n: '04', t: 'Psicológica', d: 'Confiança, concentração e liderança dentro de campo.' }
+      ],
+      steps: [{ n: '1', t: 'Preenche a pré-inscrição' }, { n: '2', t: 'Treino de captação com a equipa técnica' }, { n: '3', t: 'Realizar pagamento e atleta inscrito' }],
+      faq: [
+        { q: 'A partir de que idade posso inscrever o meu filho?', a: '[Resposta do clube — ex.: a partir dos 5 anos, nos Petizes.]' },
+        { q: 'É preciso fazer exame médico?', a: '[Resposta do clube sobre exame médico desportivo.]' },
+        { q: 'O equipamento está incluído?', a: '[Resposta do clube sobre kit de treino e jogo.]' },
+        { q: 'Há descontos para irmãos?', a: '[Resposta do clube.]' }
+      ],
+      tabName: tabNames[tab],
+      tabs: tabNames.map((n, i) => ({ name: n, cls: 'stab' + (i === tab ? ' on' : ''), sel: i === tab ? 'true' : 'false', pick: () => this.setTab(i) })),
+      isA: tab === 0, isAcad: tab === 4,
+      goInfo: (e) => { if (e && e.preventDefault) e.preventDefault(); try { const el = document.getElementById('informacoes'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (x) {} },
+      showMethod: s.showMethod, methodBtn: s.showMethod ? 'Fechar' : 'Saber mais', toggleMethod: () => this.setState({ showMethod: !s.showMethod }),
+      pillars: [
+        { n: '01', t: 'Aprender a jogar', d: 'Muito tempo com bola, jogos reduzidos e decisões a cada momento. A técnica aprende-se a jogar.' },
+        { n: '02', t: 'Crescer em equipa', d: 'Cada atleta tem um papel. Ensinamos a comunicar, a ajudar o colega e a ganhar e perder juntos.' },
+        { n: '03', t: 'Formar pessoas', d: 'Respeito pelo adversário, pelo árbitro e pela escola. Acompanhamos o percurso escolar com as famílias.' },
+        { n: '04', t: 'Representar a Damaia', d: 'Do primeiro treino aos Juniores, com o objetivo de chegar à equipa principal do clube.' }
+      ],
+      contacts: [['Secretaria', '[Nome a confirmar]', 1], ['Telefone', '214 901 752', 0], ['Email', 'geral@sfdamaiense.pt', 0], ['Coordenação técnica', 'Pedro Mota', 0], ['Telemóvel', '[A confirmar]', 1], ['Email', '[A confirmar]', 1]].map((c) => ({ l: c[0], v: c[1], cls: c[2] ? 'na' : '' })),
+      schedule: (window.SFDContent && window.SFDContent.get('schedule')) || [['Petizes', 'Sub-7', ''], ['Traquinas', 'Sub-9', ''], ['Benjamins', 'Sub-11', ''], ['Infantis', 'Sub-13', ''], ['Iniciados', 'Sub-15', ''], ['Juvenis', 'Sub-17', 'Walter Mota'], ['Juniores', 'Sub-19', 'Pedro Mota'], ['Escola de Guarda-Redes', '6 aos 18', '']].map((h) => ({ name: h[0], age: h[1], days: '[A confirmar]', time: '[A confirmar]', coach: h[2] || '[A confirmar]', coachCls: h[2] ? '' : 'na' })),
+      hasLocal: !!((window.SFDContent && window.SFDContent.get('schedule')) || []).some((h) => h.local),
+      acNote: (window.SFDContent && window.SFDContent.text('academia_nota')) || 'Horários da época 2026/27 a confirmar com a coordenação. Competições ao fim de semana (sábado ou domingo).',
+      goInsc: (e) => { if (e && e.preventDefault) e.preventDefault(); this.goTo('inscricao'); },
+      goMens: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ paid: false }); this.goTo('mensalidade'); },
+      summary: [{ comp: A.comp, pos: A.pos + '.º', pts: String(A.pts), next: nextTxt(A), nextWhen: nextWhen(A), coach: coaches.a }],
+      groups: groups.filter((g) => g.players.length),
+      staffA: staffA,
+      youth: youthT ? [{
+        name: youthT.name, comp: youthT.comp, pos: youthT.pos + '.º', pts: String(youthT.pts), next: nextTxt(youthT), nextWhen: nextWhen(youthT),
+        last: youthT.last ? youthT.last.homeName + ' ' + youthT.last.scoreHA + ' ' + youthT.last.awayName : '—', lastWhen: youthT.last ? youthT.last.day : '',
+        coach: coaches[youthT.key], zz: youthT.zz,
+        groups: yGroups(youthT.key), staff: yStaff(youthT.key), nPlayers: ROSTER[youthT.key].players.length ? String(ROSTER[youthT.key].players.length) : '—', nStaff: ROSTER[youthT.key].staff.length ? String(ROSTER[youthT.key].staff.length) : '—', noRoster: !ROSTER[youthT.key].players.length, hasRoster: ROSTER[youthT.key].players.length > 0, hasStaff: ROSTER[youthT.key].staff.length > 0,
+        games: youthT.g.filter((g) => !g.played).slice(0, 6).map((g) => ({ round: g.round, venue: g.home ? 'CASA' : 'FORA', tagCls: 'vt ' + (g.home ? 'c' : 'f'), opp: g.opp, crest: crestOf(g.opp), when: g.day + ' · ' + g.time }))
+      }] : []
+    };
+  }
+}
+</script>
+</body>
+</html>

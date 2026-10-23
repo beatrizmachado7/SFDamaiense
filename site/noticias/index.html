@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<title>SF Damaiense — Notícias</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0E3A22">
+<script src="/config.js"></script>
+<script src="/js/sfd-content.js"></script>
+<script src="/js/assets-map.js"></script>
+<script src="/js/vendor/morphdom-umd.min.js"></script>
+<script src="/js/dc-runtime.js"></script>
+</head>
+<body>
+<template id="x-dc">
+<helmet>
+<style>
+@font-face{font-family:'Tungsten';src:url(/assets/96a6c4058d9925bb362137182b9f6187.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Suisse Intl';src:url(/assets/70d0003be0a793d320939f01b352e5dc.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+[style*="Tungsten"],details.faq summary{text-transform:uppercase}
+:root,.th-carbono{--bg:#0C0C0D;--bg2:#151517;--bg3:#070708;--hi:#232326;--ov:12,12,13;--ov2:7,7,8;--mut:#A8A6A0;--mut2:#D2CFC7;--mut3:#8E8B85;--feat:linear-gradient(135deg,#0F4520 0%,#0A2413 55%,#0C0C0D 100%);--featdot:#0A2413;--tex:radial-gradient(ellipse 50% 40% at 0% 0%,rgba(200,17,28,.10),rgba(0,0,0,0) 70%),radial-gradient(ellipse 50% 40% at 100% 100%,rgba(46,122,42,.10),rgba(0,0,0,0) 70%),repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0 1px,rgba(0,0,0,0) 1px 120px)}
+.th-relvado{--bg:#07130D;--bg2:#0E1F16;--bg3:#040C08;--hi:#163024;--ov:7,19,13;--ov2:4,12,8;--mut:#A6B6AC;--mut2:#CFDAD3;--mut3:#83958A;--feat:linear-gradient(135deg,#6A0B12 0%,#3A070B 55%,#07130D 100%);--featdot:#3A070B;--tex:radial-gradient(ellipse 60% 45% at 50% 0%,rgba(46,122,42,.16),rgba(0,0,0,0) 70%),repeating-linear-gradient(90deg,rgba(46,122,42,.05) 0 160px,rgba(0,0,0,0) 160px 320px)}
+.th-bordeaux{--bg:#130A0C;--bg2:#1E1013;--bg3:#0B0507;--hi:#2C161B;--ov:19,10,12;--ov2:11,5,7;--mut:#B9AAAC;--mut2:#DACECF;--mut3:#988A8C;--feat:linear-gradient(135deg,#0F4520 0%,#0A2413 55%,#130A0C 100%);--featdot:#0A2413;--tex:radial-gradient(ellipse 55% 45% at 100% 0%,rgba(200,17,28,.14),rgba(0,0,0,0) 70%),radial-gradient(ellipse 40% 35% at 0% 100%,rgba(255,255,255,0.06),rgba(0,0,0,0) 70%)}
+.th-noite{--bg:#0A0918;--bg2:#0F0E22;--bg3:#07060F;--hi:#1D1B42;--ov:10,9,24;--ov2:7,6,15;--mut:#A9A7BF;--mut2:#C9C7DA;--mut3:#8E8CA6;--feat:#3F3A8A;--featdot:#3F3A8A;--tex:none}
+.th-damaiense{--bg:#0A2614;background-color:#0A2614;--bg2:rgba(7,28,15,.66);--bg3:#071C0F;--hi:rgba(51,129,44,.38);--ov:8,32,18;--ov2:6,24,13;--mut:#C6D2C8;--mut2:#E6ECE5;--mut3:#A7B6AA;--feat:linear-gradient(120deg,#C8111C 0%,#93101A 48%,#1E6A2B 100%);--featdot:#93101A;--tex:none}
+.th-damaiense::before{content:"";position:fixed;inset:-60%;z-index:0;pointer-events:none;background-image:url(/assets/ac34ed85ee34adfe4550a3a51b5a155f.png);background-size:406px 276px;background-repeat:repeat;opacity:.075;transform:rotate(-8deg) skewX(-8deg)}
+.th-damaiense::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 100% 0%,rgba(200,17,28,.16),rgba(0,0,0,0) 70%),radial-gradient(ellipse 60% 50% at 0% 100%,rgba(46,122,42,.20),rgba(0,0,0,0) 70%),linear-gradient(180deg,rgba(6,22,12,0) 0%,rgba(6,22,12,.35) 100%)}
+
+@keyframes fluid{0%{transform:scale(1.05) translate(0,0) rotate(0deg)}50%{transform:scale(1.18) translate(-3%,2%) rotate(2deg)}100%{transform:scale(1.1) translate(3%,-2%) rotate(-1.5deg)}}
+.th-damaiense > *{position:relative;z-index:1}
+.th-damaiense > .hdr{position:sticky;z-index:50}
+@media (prefers-reduced-motion: reduce){.th-damaiense::before{content:"";position:fixed;inset:-60%;z-index:0;pointer-events:none;background-image:url(/assets/ac34ed85ee34adfe4550a3a51b5a155f.png);background-size:406px 276px;background-repeat:repeat;opacity:.075;transform:rotate(-8deg) skewX(-8deg)}}
+.site{background-color:var(--bg);background-image:var(--tex);background-attachment:fixed}
+body{margin:0;background:var(--bg)}
+*{box-sizing:border-box}
+a{color:#F4F1EA;text-decoration:none}a:hover{color:var(--acc)}
+button,input{font-family:'Suisse Intl', sans-serif}
+.hdr{position:sticky;top:0;z-index:50;background:rgba(var(--ov),.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid rgba(244,241,234,.1)}
+.navlink{position:relative;padding:6px 0}
+.navlink::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--acc);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.navlink:hover::after,.navlink.on::after{transform:scaleX(1);transform-origin:left}
+.navlink.on{color:var(--acc)}
+.burger{display:none}
+@media (max-width: 1240px){ .nav-desk{display:none !important} .burger{display:inline-flex !important} }
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 28px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;border:none;z-index:0}
+.btn::before{content:"";position:absolute;inset:0;transform:translateX(-101%);transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:-1}
+.btn:hover::before{transform:translateX(0)}
+.btn .arr{transition:transform .4s}.btn:hover .arr{transform:translateX(6px)}
+.btn-red{background:#C8111C;color:#FFFFFF}.btn-red::before{background:#8E0A12}.btn-red:hover{color:#FFFFFF}
+.ltr{display:inline-block}
+.go .ltr{animation:ltrUp .9s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes ltrUp{from{opacity:0;transform:translateY(105%)}to{opacity:1;transform:none}}
+.go .fade-up{animation:fadeUp .9s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.d2{animation-delay:.55s}
+.swap{animation:swapIn .6s cubic-bezier(.2,.8,.2,1)}
+@keyframes swapIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.card{display:flex;flex-direction:column;border:1px solid rgba(244,241,234,.1);background:var(--bg2);transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .4s}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,0.22)}
+.zoom{position:relative;overflow:hidden}
+.zoom .zi{position:absolute;inset:0;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.card:hover .zi{transform:scale(1.08)}
+.uline{background:linear-gradient(var(--acc),var(--acc)) 0 100%/0 2px no-repeat;transition:background-size .5s}
+.card:hover .uline{background-size:100% 2px}
+.crest{display:block;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+@supports (animation-timeline: view()){ .go .rv{animation:rvUp linear both;animation-timeline:view();animation-range:entry 0% cover 22%} }
+@keyframes rvUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none !important;transition:none !important}}
+@media (max-width: 760px){ .hide-sm{display:none !important} }
+
+/* Imagens das notícias: cartaz inteiro, fundo desfocado da própria imagem */
+.nimg{position:relative;overflow:hidden;background:#07150C}
+.nimg .nb{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(22px) brightness(.5) saturate(1.1)}
+.nimg .zi{background-size:contain;background-repeat:no-repeat;background-position:center}
+.ncat{display:inline-block;background:#C8111C;color:#FFFFFF;padding:6px 10px;font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
+.ncat.c-formacao{background:#2E7A2A}
+.ncat.c-futebol{background:var(--red);color:#FFFFFF}
+.n-ex{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.more{cursor:pointer;min-height:52px;padding:0 30px;border:1px solid rgba(244,241,234,.35);background:transparent;color:#F4F1EA;font-family:'Suisse Intl',sans-serif;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;transition:background .3s,color .3s,border-color .3s}
+.more:hover{background:var(--acc);border-color:var(--acc);color:#0C0C0D}
+
+.pay-ic{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.pay-ic img{height:30px;width:auto;display:block}
+button:has(.pay-ic){display:flex !important;align-items:center;justify-content:center;gap:12px}
+@media (max-width:560px){button:has(.pay-ic){flex-direction:column;gap:6px;padding:10px 6px !important;font-size:11px !important;letter-spacing:.08em !important;min-height:84px !important}.pay-ic{max-width:100%}.pay-ic img{height:22px;max-width:100%;object-fit:contain}}
+
+/* ===================== SFD v2 — design system (adaptado do template "Vértice FC") ===================== */
+@font-face{font-family:'Space Grotesk';src:url(/assets/13875eae1d79064dbb465a2adea232e3.woff2) format('woff2');font-weight:300 700;font-style:normal;font-display:swap}
+.v2{--paper:#EFEFE9;--paper2:#E2E5DB;--ink:#0B120E;--night:#0E3A22;--night2:#124428;--night3:#185232;--red:#D3121C;--red2:#A90E17;--green:#2E7A2A;--green2:#6FBF6A;--muted:#6E776E;--muted-d:#B3C6B8;--line:#CDD1C6;--line-d:rgba(255,255,255,.12);--display:'Space Grotesk','Suisse Intl',Arial,sans-serif;--body:'Suisse Intl',Arial,sans-serif;--ease:cubic-bezier(.2,.7,.2,1);
+  background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip;animation:v2PageIn .55s ease both}
+@keyframes v2PageIn{from{opacity:0}to{opacity:1}}
+.v2 *{box-sizing:border-box}
+:where(.v2) a{color:inherit;text-decoration:none}
+.v2 ::selection{background:var(--red);color:#fff}
+.v2 button,.v2 input,.v2 select,.v2 textarea{font-family:var(--body)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-stopped{overflow:hidden}
+.v2 .wrap{width:min(1390px,calc(100% - 112px));margin-inline:auto}
+/* progresso e brilho do cursor */
+.v2-progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--red);z-index:120;transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+.v2-glow{position:fixed;width:460px;height:460px;left:-230px;top:-230px;pointer-events:none;z-index:9;border-radius:50%;background:radial-gradient(circle,rgba(226,40,48,.20) 0,rgba(226,40,48,.04) 42%,transparent 70%);opacity:0;transition:opacity .35s;mix-blend-mode:screen;will-change:transform}
+/* header */
+.v2-header{position:fixed;top:0;left:0;right:0;z-index:100;height:85px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 56px;color:#fff;background:rgba(10,46,27,.62);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.1);transition:transform .45s var(--ease),background .35s,height .35s}
+.v2-header.scrolled{background:rgba(10,46,27,.94);height:72px}
+.v2-header.hide{transform:translateY(-100%)}
+.v2-brand{display:flex;gap:14px;align-items:center;flex:none}
+.v2-brand img{width:44px;height:auto;display:block}
+.v2-brand b{display:block;font:700 19px/1 var(--display);letter-spacing:.06em;text-transform:uppercase}
+.v2-brand small{display:block;font:600 8px var(--body);letter-spacing:.37em;margin-top:6px;color:#A9B5A2;text-transform:uppercase}
+.v2-nav{display:flex;gap:34px}
+.v2-nav a{position:relative;font-size:12px;color:#C5CEC7;letter-spacing:.04em;padding:6px 0;transition:color .25s}
+.v2-nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--red);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.v2-nav a:hover{color:#fff}
+.v2-nav a:hover::after,.v2-nav a.on::after{transform:scaleX(1);transform-origin:left}
+.v2-nav a.on{color:#fff}
+.v2-dd{position:relative;display:flex;align-items:center}
+.v2-dd>a{display:inline-flex;align-items:center;gap:6px}
+.v2-dd-ic{transition:transform .3s var(--ease);opacity:.7}
+.v2-dd:hover .v2-dd-ic,.v2-dd:focus-within .v2-dd-ic{transform:rotate(180deg)}
+.v2-dd-menu{position:absolute;top:100%;left:-22px;min-width:220px;padding:10px;margin-top:14px;background:var(--night);border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -20px rgba(0,0,0,.55);display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .35s var(--ease),visibility 0s .35s}
+.v2-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.v2-dd:hover .v2-dd-menu,.v2-dd:focus-within .v2-dd-menu{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .35s var(--ease),visibility 0s}
+.v2-nav .v2-dd-menu a{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;font:700 13px var(--display);letter-spacing:-.01em;text-transform:uppercase;color:#E0E8E2;border-radius:2px;transition:background .2s,color .2s,padding .3s var(--ease)}
+.v2-nav .v2-dd-menu a::after{display:none}
+.v2-nav .v2-dd-menu a span{font-size:14px;color:var(--red);opacity:0;transform:translate(-4px,4px);transition:opacity .25s,transform .3s var(--ease)}
+.v2-nav .v2-dd-menu a:hover{background:rgba(255,255,255,.07);color:#fff;padding-left:18px}
+.v2-nav .v2-dd-menu a:hover span{opacity:1;transform:none}
+.v2-msub{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:16px 0 6px}
+.v2-msub span{width:100%;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#A9BDAF}
+.v2-msub a{border:1px solid rgba(255,255,255,.22);padding:10px 14px;font:700 12px var(--display);text-transform:uppercase;border-radius:2px}
+.v2-hright{display:flex;align-items:center;gap:12px;flex:none}
+.v2-cta{display:inline-flex;align-items:center;gap:22px;background:var(--red);color:#fff;font:700 11px var(--body);letter-spacing:.08em;text-transform:uppercase;padding:14px 19px;border-radius:2px;border:none;cursor:pointer;transition:background .3s,transform .3s var(--ease)}
+.v2-cta span{font-size:16px;line-height:0;transition:transform .3s var(--ease)}
+.v2-cta:hover{background:#fff;color:var(--ink)}
+.v2-cta:hover span{transform:translate(2px,-2px)}
+.v2-iconbtn{position:relative;width:46px;height:46px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;border-radius:2px;transition:border-color .25s,background .25s}
+.v2-iconbtn:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.v2-burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:40px;height:44px;border:none;background:none;padding:6px;cursor:pointer}
+.v2-burger span{height:2px;width:26px;background:#fff;display:block;transition:transform .35s var(--ease),opacity .25s}
+.v2-burger.open span:first-child{transform:translateY(4px) rotate(45deg)}
+.v2-burger.open span:last-child{transform:translateY(-4px) rotate(-45deg)}
+.v2-mnav{position:fixed;left:0;right:0;top:72px;bottom:0;z-index:99;background:var(--night);color:#fff;padding:28px 20px 40px;display:flex;flex-direction:column;gap:4px;overflow-y:auto;animation:v2Menu .4s var(--ease) both}
+@keyframes v2Menu{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+.v2-mnav a.m{font:700 clamp(34px,9vw,52px)/1.05 var(--display);letter-spacing:-.05em;text-transform:uppercase;padding:8px 0;border-bottom:1px solid var(--line-d);display:flex;justify-content:space-between;align-items:center}
+.v2-mnav a.m span{font-size:20px;color:var(--red)}
+.v2-mnav .v2-cta{margin-top:22px;justify-content:center}
+.v2-badge{position:absolute;top:-8px;right:-8px;min-width:22px;height:22px;border-radius:11px;background:var(--red);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 6px}
+/* tipografia e secções */
+.v2-sec{padding:140px 0}
+.v2-index{font:700 11px var(--body);letter-spacing:.16em;display:flex;align-items:center;align-self:start;gap:13px;text-transform:uppercase}
+.v2-index i{width:8px;height:8px;border:2px solid currentColor;border-radius:50%;flex:none}
+.v2-top{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin-bottom:60px}
+.v2-h2{font:700 clamp(54px,7.1vw,111px)/.94 var(--display);letter-spacing:-.075em;margin:26px 0 0;text-transform:uppercase}
+.v2-h2 span{color:#8D9B88}
+.v2-aside{color:#667268;max-width:260px;font-size:14px;line-height:1.7;margin:0 0 10px}
+.v2-dark{background:var(--night2);color:#fff;position:relative}
+.v2-dark .v2-h2 span{color:var(--red)}
+.v2-dark .v2-aside{color:#B3C6B8}
+.v2-alt{background:var(--paper2)}
+.v2-link{font:700 11px var(--body);letter-spacing:.1em;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid currentColor;display:inline-flex;gap:46px;white-space:nowrap;align-items:center;transition:gap .35s var(--ease),color .25s}
+.v2-link span{font-size:19px;line-height:0}
+.v2-link:hover{gap:58px;color:var(--red)}
+.v2-btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:52px;padding:0 24px;background:var(--ink);color:#fff;font:700 11px var(--body);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ink);border-radius:2px;cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.v2-btn:hover{background:var(--red);border-color:var(--red);color:#fff;transform:translateY(-2px)}
+.v2-btn.red{background:var(--red);border-color:var(--red)}
+.v2-btn.red:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.v2-btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.v2-btn.ghost:hover{background:#fff;border-color:#fff;color:var(--ink)}
+.v2-round{width:114px;height:114px;border:1px solid rgba(178,192,170,.5);border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;transition:background .35s,color .35s,transform .35s var(--ease),border-color .35s;flex:none}
+.v2-round b{font-size:25px;font-weight:400}
+.v2-round:hover{background:var(--red);border-color:var(--red);transform:rotate(-9deg)}
+.v2-fine{font-size:11px;color:#829386;margin:20px 0 0}
+.v2-tabs{display:flex;gap:4px;flex-wrap:wrap}
+.v2-tab{cursor:pointer;border:1px solid currentColor;background:transparent;color:inherit;opacity:.55;padding:0 18px;min-height:42px;font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;border-radius:2px;transition:opacity .25s,background .25s,color .25s}
+.v2-tab:hover{opacity:1}
+.v2-tab.on{opacity:1;background:var(--ink);border-color:var(--ink);color:#fff}
+.v2-dark .v2-tab.on{background:#fff;border-color:#fff;color:var(--ink)}
+/* animações de entrada */
+.v2 .reveal{opacity:0;transform:translateY(42px);transition:opacity .85s ease,transform .85s var(--ease)}
+.v2 .reveal.in{opacity:1;transform:none}
+.v2 .stagger>.reveal:nth-child(2){transition-delay:.08s}.v2 .stagger>.reveal:nth-child(3){transition-delay:.16s}.v2 .stagger>.reveal:nth-child(4){transition-delay:.24s}.v2 .stagger>.reveal:nth-child(5){transition-delay:.32s}.v2 .stagger>.reveal:nth-child(6){transition-delay:.4s}.v2 .stagger>.reveal:nth-child(7){transition-delay:.48s}.v2 .stagger>.reveal:nth-child(8){transition-delay:.56s}
+.v2 .zoom{overflow:hidden;position:relative}
+.v2 .zoom .zi{transition:transform 1s var(--ease)}
+.v2 .lift{transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.v2 .lift:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(11,18,14,.45)}
+.v2 .lift:hover .zi{transform:scale(1.06)}
+/* rodapé */
+.v2-foot{background:var(--night);color:#fff;padding:85px 0 25px;position:relative;overflow:hidden}
+.v2-foot-top{display:flex;align-items:center;justify-content:space-between;gap:30px;padding-bottom:70px}
+.v2-foot-top img{width:92px;height:auto;display:block;flex:none}
+.v2-foot-top p{font:700 clamp(37px,5vw,75px)/1 var(--display);letter-spacing:-.065em;margin:0;text-transform:uppercase}
+.v2-foot-top p b{color:var(--red)}
+.v2-totop{border:1px solid #69816E;border-radius:50%;width:70px;height:70px;display:grid;place-items:center;font-size:28px;flex:none;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.v2-totop:hover{background:var(--red);border-color:var(--red);transform:translateY(-4px)}
+.v2-foot-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;padding:48px 0 56px;border-top:1px solid rgba(255,255,255,.12);font-size:14px;line-height:1.7}
+.v2-foot-cols div{display:flex;flex-direction:column;gap:8px}
+.v2-foot-cols span.t{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#A9BDAF;margin-bottom:6px}
+.v2-foot-cols a{color:#D7DED8;transition:color .25s;align-self:flex-start}
+.v2-foot-cols a:hover{color:#fff}
+.v2-foot-news{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;justify-content:space-between;padding:40px 0;border-top:1px solid rgba(255,255,255,.12)}
+.v2-foot-news h3{margin:0;font:700 clamp(26px,2.6vw,38px)/1.05 var(--display);letter-spacing:-.05em;text-transform:uppercase;max-width:460px}
+.v2-foot-news form,.v2-foot-news .nf{display:flex;flex:1 1 360px;max-width:560px;border-bottom:1px solid #69816E}
+.v2-foot-news input{flex:1;min-width:0;background:transparent;border:none;color:#fff;font-size:16px;padding:16px 0;outline:none}
+.v2-foot-news input::placeholder{color:#A9BDAF}
+.v2-foot-news button{background:none;border:none;color:#fff;font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;display:flex;gap:16px;align-items:center}
+.v2-foot-news button:hover{color:var(--red)}
+.v2-foot-bottom{display:flex;justify-content:space-between;gap:16px 25px;flex-wrap:wrap;align-items:center;border-top:1px solid rgba(255,255,255,.12);padding-top:25px;color:#B3C6B8;font-size:10px;letter-spacing:.09em;text-transform:uppercase}
+.v2-foot-bottom a{color:#B3C6B8}.v2-foot-bottom a:hover{color:#fff}
+.v2-pay{display:inline-flex;align-items:center;gap:12px}
+.v2-pay img{height:18px;width:auto;display:block}
+.v2-social,.v2-foot-cols .v2-social{display:flex;flex-direction:row;gap:10px}
+.v2-social a{width:40px;height:40px;border:1px solid rgba(255,255,255,.22);border-radius:50%;display:grid;place-items:center;color:#D7DED8;transition:background .3s,border-color .3s,color .3s}
+.v2-social a:hover{background:var(--red);border-color:var(--red);color:#fff}
+/* responsivo */
+@media (max-width:1180px){.v2-header{padding:0 32px}.v2-nav{gap:20px}.v2 .wrap{width:calc(100% - 64px)}.v2-sec{padding:100px 0}.v2-foot-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:980px){.v2-nav{display:none}.v2-burger{display:flex}}
+@media (max-width:760px){.v2 .wrap{width:calc(100% - 40px)}.v2-header,.v2-header.scrolled{height:72px;padding:0 20px}.v2-brand img{width:36px}.v2-brand b{font-size:15px}.v2-brand small{font-size:7px;letter-spacing:.3em}.v2-cta.hdr{padding:12px;gap:8px;font-size:10px}.v2-hide-sm{display:none !important}.v2-sec{padding:85px 0}.v2-top{align-items:flex-start;flex-direction:column;margin-bottom:38px;gap:20px}.v2-h2{font-size:clamp(46px,12vw,79px)}.v2-aside{max-width:380px}.v2-foot-top{flex-wrap:wrap;align-items:flex-start;padding-bottom:50px}.v2-foot-top img{width:62px}.v2-foot-top p{width:100%;order:2;font-size:clamp(30px,8vw,50px)}.v2-foot-cols{grid-template-columns:1fr 1fr;gap:28px}.v2-foot-bottom{flex-direction:column;align-items:flex-start;gap:12px}.v2-round{width:86px;height:86px;font-size:8px}.v2-round b{font-size:18px}}
+@media (prefers-reduced-motion:reduce){.v2,.v2 *{animation-duration:.01ms !important;transition-duration:.01ms !important}.v2 .reveal{opacity:1;transform:none}.v2-glow{display:none}}
+@media (max-width:430px){.v2-iconbtn + .v2-cta.hdr{display:none}}
+
+/* ---------- Mobile: iOS (Safari) e Android (Chrome) ---------- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.v2 a,.v2 button,.v2 input,.v2 select,.v2 textarea,.v2 summary,.v2 label{-webkit-tap-highlight-color:rgba(211,18,28,.12);touch-action:manipulation}
+.v2 img,.v2 video{-webkit-user-drag:none}
+/* zonas seguras (notch, barra inferior do iPhone, ecrãs Android edge-to-edge) */
+.v2-header{padding-left:max(var(--hp,32px),env(safe-area-inset-left));padding-right:max(var(--hp,32px),env(safe-area-inset-right));padding-top:env(safe-area-inset-top);box-sizing:border-box}
+.v2-foot{padding-bottom:calc(25px + env(safe-area-inset-bottom))}
+.v2-mnav{padding-bottom:calc(40px + env(safe-area-inset-bottom));overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+@media (min-width:1201px){.v2-header{--hp:56px}}
+@media (max-width:760px){.v2-header{--hp:20px}}
+/* iOS: campos com 16px para não fazer zoom ao tocar */
+@media (max-width:1024px){.v2 input:not([type=checkbox]):not([type=radio]),.v2 select,.v2 textarea{font-size:16px !important}}
+.v2 input,.v2 select,.v2 textarea{border-radius:0}
+.v2 input[type=date]{min-height:48px;-webkit-appearance:none;appearance:none}
+.v2 select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23B3C6B8' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px !important}
+/* ecrãs táteis: sem efeitos de hover "presos" e sem fundo fixo (o iOS não o suporta) */
+@media (hover:none){
+  .v2 .card:hover,.v2 .lift:hover,.v2 .pcard:hover,.v2 .prod:hover,.v2 .path:hover,.v2 .lvl:hover,.v2 .btn:hover,.v2 .v2-cta:hover,.v2 .m-card:hover,.v2 .ac-btn:hover{transform:none !important}
+  .v2 .pcard:hover .ph,.v2 .pcard:hover .num{transform:none !important}
+  .v2 .site,.site{background-attachment:scroll !important}
+  .v2-glow{display:none !important}
+}
+/* tablets táteis (iPad, tablets Android): menu completo no botão, com os escalões */
+@media (hover:none) and (max-width:1366px){.v2-nav{display:none}.v2-burger{display:flex}}
+/* alvos de toque com pelo menos 44px */
+@media (max-width:760px){.v2-foot a{display:inline-block;padding:6px 0}.v2-social a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}.v2-msub a{min-height:44px;display:flex;align-items:center}}
+@media (max-width:380px){.v2-header{gap:12px}.v2-brand small{display:none}}
+@media (max-width:980px),(hover:none){.v2-header{background:rgba(10,46,27,.96) !important}}
+@media (min-width:761px){.v2-mnav{padding-left:max(32px,env(safe-area-inset-left));padding-right:max(32px,env(safe-area-inset-right))}}
+/* ecrã inteiro: sem margens brancas do navegador (inclui o "elástico" do iOS) */
+html,body{margin:0 !important;padding:0 !important;background:#0E3A22 !important;min-height:100%}
+body > *{margin:0}
+.nl-ok{color:#9BE29B}.nl-err{color:#FF8A8F}
+/* ---------- Páginas interiores (sistema v2 sobre fundo escuro) ---------- */
+.v2.v2-in{--acc:#F0464E;--bg:#0E3A22;--bg2:rgba(255,255,255,.035);--bg3:#0B321D;--hi:rgba(255,255,255,.06);--ov:10,46,27;--ov2:7,36,21;--mut:#B3C6B8;--mut2:#E0E8E2;--mut3:#9DB4A4;--feat:#124428;--featdot:#124428;background:var(--night) !important;background-image:none !important;color:#F4F1EA;animation:v2PageIn .55s ease both !important}
+.v2.v2-in::before,.v2.v2-in::after{display:none !important}
+.v2-in .v2-spacer{height:85px;background:var(--night)}
+@media (max-width:760px){.v2-in .v2-spacer{height:72px}}
+/* títulos convertidos para a fonte de destaque */
+.v2-in .v2d{font-family:var(--display) !important;font-weight:700 !important;text-transform:uppercase;letter-spacing:-.055em !important}
+/* botões no estilo do template */
+.v2-in .btn{border-radius:2px;font-family:var(--body);font-size:11px !important;letter-spacing:.1em !important;min-height:52px;padding:0 24px;gap:16px;transition:background .3s,color .3s,transform .3s var(--ease),border-color .3s}
+.v2-in .btn::before{display:none !important}
+.v2-in .btn:hover{transform:translateY(-2px)}
+.v2-in .btn-gold,.v2-in .btn-red{background:var(--red) !important;color:#fff !important;border:1px solid var(--red) !important}
+.v2-in .btn-gold:hover,.v2-in .btn-red:hover{background:#fff !important;color:var(--ink) !important;border-color:#fff !important}
+.v2-in .btn-line,.v2-in .btn-ghost{background:transparent !important;color:#fff !important;border:1px solid rgba(255,255,255,.45) !important}
+.v2-in .btn-line:hover,.v2-in .btn-ghost:hover{background:#fff !important;color:var(--ink) !important;border-color:#fff !important}
+.v2-in .btn-dark{background:var(--ink) !important;color:#fff !important}
+.v2-in .btn-dark:hover{background:var(--red) !important}
+.v2-in .btn-light{background:#fff !important;color:var(--ink) !important}
+.v2-in .btn-light:hover{background:var(--red) !important;color:#fff !important}
+/* cartões e superfícies */
+.v2-in .card,.v2-in .lift,.v2-in .pcard,.v2-in .prod{transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .4s}
+.v2-in .card:hover,.v2-in .lift:hover,.v2-in .pcard:hover,.v2-in .prod:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);border-color:rgba(255,255,255,.28) !important}
+.v2-in .uline{background:linear-gradient(var(--red),var(--red)) 0 100%/0 2px no-repeat !important}
+.v2-in .outline-txt{-webkit-text-stroke:1px rgba(255,255,255,.12) !important;color:transparent}
+.v2-in .ltr{animation-duration:.9s !important}
+/* barras fixas por baixo do header */
+.v2-in .subtabs-wrap{top:72px !important;background:rgba(14,58,34,.94) !important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.v2-in .cnav,.v2-in .subnav{background:rgba(14,58,34,.94) !important}
+.v2-in .pd-info,.v2-in .sum{top:96px}
+/* entrada suave das secções (complementa o reveal) */
+.v2-in section{scroll-margin-top:90px}
+@media (max-width:760px){.v2-in .btn{min-height:48px;padding:0 18px}}
+</style>
+</helmet>
+
+<div class="site v2 v2-in {{ rootCls }}" id="top" style="font-family: 'Suisse Intl', sans-serif; color: #F4F1EA; min-height: 100vh; overflow-x: clip;">
+
+  <div class="v2-progress" aria-hidden="true"></div>
+  <div class="v2-glow" aria-hidden="true"></div>
+  <header class="v2-header">
+    <a class="v2-brand" href="/" aria-label="SF Damaiense — Início"><img src="/assets/4a3f587d612e0707d718734d37dd8d9d.png" alt=""><span><b>SF Damaiense</b><small>Desde 1938 · Damaia</small></span></a>
+    <nav class="v2-nav" aria-label="Principal"><a class="" href="/">Início</a><a class="" href="/jogos/">Jogos</a><div class="v2-dd"><a class="" href="/futebol/" aria-haspopup="true">Futebol<svg class="v2-dd-ic" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"></path></svg></a><div class="v2-dd-menu" role="menu"><a href="/futebol/#equipa-a">Equipa A<span>↗</span></a><a href="/futebol/#sub-19">Sub-19<span>↗</span></a><a href="/futebol/#sub-17">Sub-17<span>↗</span></a><a href="/futebol/#sub-15">Sub-15<span>↗</span></a><a href="/academia/">Academia<span>↗</span></a></div></div><a class="on" href="/noticias/">Notícias</a><a class="" href="/loja/">Loja</a><a class="" href="/clube/">Clube</a><a class="" href="/contactos/">Contactos</a></nav>
+    <div class="v2-hright"><a class="v2-cta hdr" href="/socios/">Ser sócio <span>↗</span></a><button type="button" class="{{ burgerCls }}" aria-label="Menu" aria-expanded="{{ menuOpenStr }}" onClick="{{ toggleMenu }}"><span></span><span></span></button></div>
+  </header>
+  <template data-if="{{ menuOpen }}">
+    <nav class="v2-mnav" aria-label="Menu">
+      <template data-for="{{ mobileNav }}" data-as="m"><a class="m" href="{{ m.href }}" onClick="{{ toggleMenu }}">{{ m.label }}<span>↗</span></a></template>
+      <div class="v2-msub"><span>Futebol</span><a href="/futebol/#equipa-a" onClick="{{ toggleMenu }}">Equipa A</a><a href="/futebol/#sub-19" onClick="{{ toggleMenu }}">Sub-19</a><a href="/futebol/#sub-17" onClick="{{ toggleMenu }}">Sub-17</a><a href="/futebol/#sub-15" onClick="{{ toggleMenu }}">Sub-15</a><a href="/academia/" onClick="{{ toggleMenu }}">Academia</a></div>
+      <a class="v2-cta" href="/socios/" onClick="{{ toggleMenu }}">Ser sócio <span>↗</span></a>
+    </nav>
+  </template>
+  <div class="v2-spacer" aria-hidden="true"></div>
+
+  <!-- Título -->
+  <section style="max-width: 1360px; margin: 0 auto; padding: 72px 24px 32px;">
+    <div class="fade-up" style="font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--mut);"><a href="/" style="color: var(--mut);">Início</a> <span style="color: var(--acc);">/</span> Notícias</div>
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-top: 14px;">
+      <h1 aria-label="Notícias" style="margin: 0; padding-top: .16em; font-family: var(--display); font-size: clamp(55px, 8.06vw, 124px); line-height: 0.92; overflow: hidden; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;">
+        <template data-for="{{ title }}" data-as="l"><span class="ltr" style="animation-delay: {{ l.d }}">{{ l.c }}</span></template>
+      </h1>
+      <div class="fade-up d2" role="group" aria-label="Filtrar por categoria" style="display: flex; gap: 6px; flex-wrap: wrap;">
+        <template data-for="{{ cats }}" data-as="c">
+          <template data-if="{{ c.active }}">
+            <button type="button" aria-pressed="true" onClick="{{ c.pick }}" style="cursor: pointer; border: 1px solid var(--acc); background: var(--red); color: #FFFFFF; padding: 0 18px; min-height: 44px; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;">{{ c.name }}</button>
+          </template>
+          <template data-if="{{ c.inactive }}">
+            <button type="button" aria-pressed="false" onClick="{{ c.pick }}" style="cursor: pointer; border: 1px solid rgba(244,241,234,.25); background: transparent; color: #F4F1EA; padding: 0 18px; min-height: 44px; font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;">{{ c.name }}</button>
+          </template>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destaque -->
+  <section style="max-width: 1360px; margin: 0 auto; padding: 16px 24px 48px;">
+    <template data-for="{{ feat }}" data-as="f">
+      <a class="card fade-up d2" href="{{ f.href }}" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));">
+        <div class="zoom nimg" style="min-height: clamp(380px, 46vw, 600px);">
+          <div class="nb" style="background-image: url({{ f.img }});"></div>
+          <div class="zi" style="background-image: url({{ f.img }});"></div>
+          <span style="position: absolute; left: 20px; top: 20px; background: var(--red); color: #FFFFFF; padding: 8px 14px; font-size: 10px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase;">Mais recente</span>
+        </div>
+        <div style="padding: clamp(28px, 4vw, 56px); display: flex; flex-direction: column; justify-content: center; gap: 20px;">
+          <div style="display: flex; gap: 14px; align-items: center; font-size: 10px; letter-spacing: .26em; text-transform: uppercase;"><span class="ncat {{ f.catCls }}">{{ f.cat }}</span><span style="color: var(--mut);">{{ f.date }}</span><span style="color: var(--mut);">· {{ f.min }} min</span></div>
+          <span style="font-family: var(--display); font-size: clamp(27px, 2.85vw, 45px); line-height: 0.92; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;"><span class="uline">{{ f.title }}</span></span>
+          <span class="n-ex" style="font-size: 15px; line-height: 1.75; color: var(--mut2); max-width: 520px;">{{ f.ex }}</span>
+          <span style="font-size: 11px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--acc);">Ler notícia →</span>
+        </div>
+      </a>
+    </template>
+  </section>
+
+  <!-- Grelha -->
+  <section style="max-width: 1360px; margin: 0 auto; padding: 0 24px 100px;">
+    <div class="swap" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 24px;">
+      <template data-for="{{ items }}" data-as="n">
+        <a class="card" href="{{ n.href }}">
+          <div class="zoom nimg" style="aspect-ratio: 4 / 5;">
+            <div class="nb" style="background-image: url({{ n.img }});"></div>
+            <div class="zi" style="background-image: url({{ n.img }});"></div>
+            <span class="ncat {{ n.catCls }}" style="position: absolute; left: 16px; top: 16px;">{{ n.cat }}</span>
+          </div>
+          <div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1;">
+            <span style="font-size: 10px; letter-spacing: .26em; text-transform: uppercase; color: var(--mut);">{{ n.date }} · {{ n.min }} min</span>
+            <span style="font-family: var(--display); font-size: 19px; line-height: 1; font-weight: 700; letter-spacing: -.05em; text-transform: uppercase;"><span class="uline">{{ n.title }}</span></span>
+            <span class="n-ex" style="font-size: 14px; line-height: 1.65; color: var(--mut2);">{{ n.ex }}</span>
+          </div>
+        </a>
+      </template>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 56px;">
+      <span style="font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--mut);">A mostrar {{ shown }} de {{ total }} notícias</span>
+      <template data-if="{{ hasMore }}">
+        <button type="button" class="more" onClick="{{ loadMore }}">Carregar mais notícias</button>
+      </template>
+    </div>
+  </section>
+
+  <footer class="v2-foot" id="rodape">
+    <div class="wrap">
+      <div class="v2-foot-top">
+        <img src="/assets/4a3f587d612e0707d718734d37dd8d9d.png" alt="Emblema SF Damaiense">
+        <p>A Damaia joga<br><b>connosco.</b></p>
+        <a href="#top" class="v2-totop" aria-label="Voltar ao topo">↑</a>
+      </div>
+      <div class="v2-foot-cols">
+        <div><span class="t">Sede</span><span>R. Carvalho Araújo 30<br>2720-698 Damaia</span><a href="/contactos/">Como chegar ↗</a></div>
+        <div><span class="t">Contactos</span><a href="tel:+351214901752">214 901 752</a><a href="mailto:geral@sfdamaiense.pt">geral@sfdamaiense.pt</a><a href="/contactos/">Enviar mensagem</a></div>
+        <div><span class="t">Clube</span><a href="/clube/">História</a><a href="/futebol/">Futebol</a><a href="/academia/">Academia</a><a href="/socios/">Sócios e quotas</a><a href="/loja/">Loja oficial</a></div>
+        <div><span class="t">Segue-nos</span><div class="v2-social">
+          <a href="https://www.instagram.com/sfdamaiense/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"></circle></svg></a>
+          <a href="https://www.facebook.com/SFDamaiense" target="_blank" rel="noopener" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v5h4v-5h3l1-4h-4V8z"></path></svg></a>
+          <a href="https://www.youtube.com/@damaiensetv" target="_blank" rel="noopener" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"></rect><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"></path></svg></a>
+        </div></div>
+      </div>
+      <div class="v2-foot-bottom">
+        <span>© 2026 SF Damaiense · Desde 1938</span>
+        <span class="v2-pay"><span>Pagamentos</span><img src="/assets/45466474f5f2f72e3ee0bc0df83079cc.png" alt="MB WAY"><img src="/assets/7fde7c98f52bac35fcba1c2ee1a7f4c8.png" alt="Multibanco"></span>
+        <span>Website por Beatriz Studio</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</template>
+<script type="text/x-dc" data-dc-script data-props='{"fundo":{"editor":"enum","options":["Damaiense","Carbono","Relvado","Bordeaux","Noite (azul)"],"default":"Damaiense"},"$preview":{"width":1440,"height":2800}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { cat: 'Todas', menuOpen: false, ready: false, n: 9 }; }
+  componentDidMount() { /*sfd-cms*/ if (window.SFDContent) window.SFDContent.ready.then(() => this.setState({ cms: Date.now() }));
+    this.fxInit(); this._r = setTimeout(() => this.setState({ ready: true }), 60); }
+  componentWillUnmount() {
+    this.fxStop(); clearTimeout(this._r); }
+  // ===== SFD v2 · efeitos (scroll suave, reveal, parallax, cursor, header) =====
+  fxInit() {
+    const d = document, w = window;
+    const rm = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine = w.matchMedia && w.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    let lastY = w.scrollY || 0, tick = false;
+    const upd = () => {
+      tick = false;
+      const y = w.scrollY || 0, max = d.documentElement.scrollHeight - w.innerHeight;
+      const p = d.querySelector('.v2-progress'); if (p) p.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+      const h = d.querySelector('.v2-header');
+      if (h) { h.classList.toggle('scrolled', y > 40); h.classList.toggle('hide', y > lastY + 2 && y > 320 && !this.state.menuOpen); if (y < lastY - 2 || y < 320) h.classList.remove('hide'); }
+      lastY = y;
+      if (!rm) {
+        d.querySelectorAll('[data-parallax]').forEach((el) => {
+          const box = el.parentElement.getBoundingClientRect();
+          if (box.bottom < -200 || box.top > w.innerHeight + 200) return;
+          const sp = parseFloat(el.getAttribute('data-parallax')) || 0.15;
+          el.style.transform = 'translate3d(0,' + (-box.top * sp).toFixed(1) + 'px,0) scale(1.08)';
+        });
+      }
+    };
+    this._fxScroll = () => { if (!tick) { tick = true; w.requestAnimationFrame(upd); } };
+    w.addEventListener('scroll', this._fxScroll, { passive: true });
+    w.addEventListener('resize', this._fxScroll, { passive: true });
+    upd();
+    if ('IntersectionObserver' in w) {
+      this._fxIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); this._fxIO.unobserve(e.target); } }), { threshold: 0.12, rootMargin: '0px 0px -25px 0px' });
+      const scan = () => d.querySelectorAll('.reveal:not([data-io])').forEach((el) => { el.setAttribute('data-io', '1'); if (rm) el.classList.add('in'); else this._fxIO.observe(el); });
+      scan();
+      this._fxMO = new MutationObserver(() => { clearTimeout(this._fxScan); this._fxScan = setTimeout(scan, 40); });
+      this._fxMO.observe(d.body, { childList: true, subtree: true });
+    } else { d.querySelectorAll('.reveal').forEach((el) => el.classList.add('in')); }
+    if (fine && !rm) {
+      const g = d.querySelector('.v2-glow');
+      this._fxMove = (e) => { if (!g) return; g.style.transform = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0)'; g.style.opacity = '1'; };
+      this._fxLeave = () => { if (g) g.style.opacity = '0'; };
+      w.addEventListener('pointermove', this._fxMove, { passive: true });
+      d.addEventListener('pointerleave', this._fxLeave);
+      // Lenis (scroll suave) — só em rato/trackpad; telemóveis mantêm o scroll nativo
+      const start = () => {
+        try {
+          if (!w.Lenis || this._lenis) return;
+          this._lenis = new w.Lenis({ lerp: 0.12, smoothWheel: true, wheelMultiplier: 1 });
+          const raf = (t) => { if (!this._lenis) return; this._lenis.raf(t); this._fxRaf = w.requestAnimationFrame(raf); };
+          this._fxRaf = w.requestAnimationFrame(raf);
+        } catch (e) {}
+      };
+      if (w.Lenis) start(); else {
+        const sc = d.createElement('script'); sc.src = '/assets/0c7813240655c01d2b32e329308b576f.js'; sc.async = true; sc.onload = start; d.head.appendChild(sc);
+      }
+    }
+  }
+  fxStop() {
+    const w = window;
+    try {
+      w.removeEventListener('scroll', this._fxScroll); w.removeEventListener('resize', this._fxScroll);
+      if (this._fxMove) w.removeEventListener('pointermove', this._fxMove);
+      if (this._fxLeave) document.removeEventListener('pointerleave', this._fxLeave);
+      if (this._fxIO) this._fxIO.disconnect(); if (this._fxMO) this._fxMO.disconnect();
+      clearTimeout(this._fxScan); if (this._fxRaf) w.cancelAnimationFrame(this._fxRaf);
+      if (this._lenis) { this._lenis.destroy(); this._lenis = null; }
+    } catch (e) {}
+  }
+  fxTo(id) {
+    const el = document.getElementById(id); if (!el) return;
+    if (this._lenis) this._lenis.scrollTo(el, { offset: -80 }); else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  renderVals() {
+    const s = this.state;
+    const th = { 'Damaiense': 'damaiense', 'Carbono': 'carbono', 'Relvado': 'relvado', 'Bordeaux': 'bordeaux', 'Noite (azul)': 'noite' }[this.props.fundo ?? 'Damaiense'] || 'damaiense';
+    // ===== Notícias (fonte: sfdamaiense.emjogo.pt, recolhidas a 13/10/2026) =====
+    const NEWS = (window.SFDContent && window.SFDContent.get('news')) || [{"slug": "renovacao-andre-couto", "title": "RENOVAÇÃO · ANDRÉ COUTO", "date": "23.06.2026", "iso": "2026-06-23", "cat": "Clube", "img": "/assets/c79bcbed7dc7c8c0dba60f90deeda7f8.jpg", "body": ["O SF Damaiense tem o orgulho de anunciar a continuidade de André Couto como treinador principal da equipa sénior para a época 2026/27.", "Ligado ao clube há 9 anos, André Couto representa na perfeição os valores e a identidade do Damaiense, tendo deixado a sua marca tanto como jogador como no papel de treinador.", "Ao longo deste percurso de dedicação, compromisso e paixão pelo nosso emblema, alcançou este ano um dos momentos mais marcantes da sua caminhada no clube: a conquista da subida de divisão de Juniores para a 1.ªDistrital, resultado do trabalho, união e ambição demonstrados por toda a equipa.", "A renovação de André Couto reforça a aposta na continuidade de um projeto sólido, assente no conhecimento da casa e na vontade de levar o SF Damaiense cada vez mais longe.", "Parabéns, Mister! Que a nova época seja repleta de sucessos."], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/renovacao-andre-couto/"}, {"slug": "bem-vindos-de-volta-a-casa", "title": "Bem-vindos de volta a casa!", "date": "22.06.2026", "iso": "2026-06-22", "cat": "Clube", "img": "/assets/177e6ac4455c70ec993e8c19024c9402.jpg", "body": ["O SF Damaiense tem o enorme prazer de anunciar o regresso de duas figuras que fazem parte da história do nosso clube.", "Ricardo Pereira “Ricardinho” assume funções como Diretor Desportivo da equipa sénior. Antigo jogador das nossas camadas jovens e da nossa equipa sénior e treinador, regressa a uma casa que bem conhece, trazendo consigo anos de dedicação, experiência e paixão pelo nosso clube", "João Coimbra “Chipy” integra a estrutura como Team Manager. Com mais de 15 anos de ligação ao clube, destacou-se como jogador e treinador da nossa formação e equipa sénior, sendo uma referência de compromisso, identidade e espírito damaiense.", "Dois homens da casa, dois exemplos de dedicação ao nosso emblema, que agora abraçam um novo desafio ao serviço da equipa sénior.", "Desejamos ‘Chipy’ e ‘Ricardinho’ os maiores sucessos nesta nova etapa.", "Juntos, continuaremos a construir o futuro do SF Damaiense!"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/bem-vindos-de-volta-a-casa/"}, {"slug": "os-nossos-juniores-sao-de-1a", "title": "Os nossos Juniores são de 1.ª!", "date": "23.05.2026", "iso": "2026-05-23", "cat": "Formação", "img": "/assets/6a42ae5c06b00db2f0423dfd83c83c35.jpg", "body": ["É oficial: os nossos Juniores garantiram a subida à 1.ª Divisão! Um feito extraordinário que recompensa o trabalho, a dedicação e o espírito de sacrifício demonstrados ao longo de toda a época.", "Os nossos jovens atletas demonstraram, dentro e fora de campo, os valores que representam o clube: compromisso, ambição, respeito e paixão pelo futebol. Hoje celebramos uma subida de divisão, mas também o crescimento de um grupo que nunca deixou de acreditar nos seus sonhos.", "Parabéns Craques!", "Os nossos Juniores são de 1.ª!", "Parabéns, campeões! O Damaiense orgulha-se de vocês."], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/os-nossos-juniores-sao-de-1a/"}, {"slug": "novo-coordenador-tecnico-do-damaiense", "title": "Novo Coordenador Técnico do Damaiense", "date": "19.04.2026", "iso": "2026-04-19", "cat": "Clube", "img": "/assets/d6bc4e51f7ba3e1e89682c716576220c.jpg", "body": ["O Damaiense tem o prazer de anunciar a nomeação de Pedro Mota como novo Coordenador Técnico do clube.", "Esta decisão reflete a total confiança na sua competência, no seu percurso e na forma como entende o futebol — assente na ambição, no rigor e no verdadeiro espírito de equipa", "Identificado com os valores que orientam o Damaiense — dedicação, compromisso e desenvolvimento integral dos atletas — Pedro Mota assume este desafio com uma visão estratégica alinhada com a direção. A sua chegada representa um passo importante para a consolidação e crescimento sustentado do nosso projeto desportivo", "Iniciamos, assim, um novo ciclo com confiança, responsabilidade e determinação, preparados para enfrentar os desafios futuros e continuar a elevar o nome do Damaiense", "#SomosDamaiense #Desde1938"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/novo-coordenador-tecnico-do-damaiense/"}, {"slug": "mensagem-pascoa-2026", "title": "Mensagem Páscoa 2026", "date": "05.04.2026", "iso": "2026-04-05", "cat": "Clube", "img": "/assets/7f9e413f355b561efcab64e3d009b81a.jpg", "body": ["O SF Damaiense deseja a todos os seus atletas, famílias, sócios, adeptos e parceiros uma Páscoa repleta de saúde, união e momentos de verdadeira partilha.", "Que esta época especial simbolize renovação, esperança e motivação para continuarmos, juntos, a representar o clube com dedicação, respeito e um forte espírito de equipa.", "Seguimos unidos, dentro e fora de campo, com o compromisso de crescer e honrar os valores que nos definem.", "Feliz Páscoa!"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/mensagem-pascoa-2026/"}, {"slug": "assembleia-geral-convocatoria", "title": "Assembleia Geral - Convocatória", "date": "28.03.2026", "iso": "2026-03-28", "cat": "Clube", "img": "/assets/49098648fb7d60d323204f2bafb40cd6.jpg", "body": ["O SF Damaiense informa todos os seus sócios que a Assembleia Geral terá lugar hoje, pelas 17h30.", "A participação dos associados é de extrema importância, sendo fundamental para a definição do futuro e crescimento do clube.", "A Direção apela à presença de todos os sócios neste momento relevante da vida do clube."], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/assembleia-geral-convocatoria/"}, {"slug": "feliz-dia-do-pai", "title": "Feliz dia do Pai", "date": "19.03.2026", "iso": "2026-03-19", "cat": "Clube", "img": "/assets/05ad05171a090af6f8852f3e03d44b0b.jpg", "body": ["Hoje celebramos aqueles que, desde o primeiro momento, nos ensinaram muito mais do que palavras — ensinaram-nos a sentir, a viver e a acreditar.", "Ser pai é representar força, dedicação e presença constante. É estar ao lado nos desafios e nas conquistas, dentro e fora de qualquer campo. É liderar pelo exemplo, inspirar com atitudes e transmitir valores que se carregam para toda a vida.", "Ser pai também é cultivar uma paixão silenciosa, um orgulho que não precisa de explicação — apenas se sente. É construir laços, histórias e memórias que atravessam gerações.", "A todos os pais que fazem parte da nossa comunidade, o nosso sincero agradecimento por caminharem connosco e ajudarem a dar sentido a tudo o que somos.", "Feliz Dia do Pai. ", "#SomosDamaiense"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/feliz-dia-do-pai/"}, {"slug": "patrono-damaiense-pascoa-cup", "title": "Patrono Damaiense Páscoa Cup", "date": "12.03.2026", "iso": "2026-03-12", "cat": "Formação", "img": "/assets/4aa4a45d62285887e59120b638882dc0.jpg", "body": ["Natural da Damaia, Diogo Prioste nunca escondeu o carinho pelo SF Damaiense. Mesmo sem nunca ter representado o clube, cresceu a assistir aos jogos e a viver de perto a paixão pelo futebol no nosso bairro.", "Agora, como Capitão do SL Benfica B, aceitou sem hesitar o convite para ser Patrono Oficial da XI edição do Damaiense Páscoa Cup 2026.", "Para o Diogo, este convite é um verdadeiro privilégio e também uma forma de reviver a infância, vendo os mais jovens espalhar talento dentro de campo… e quem sabe se entre eles não estará um futuro craque a seguir os seus passos.", "O nosso muito obrigado ao Diogo por aceitar fazer parte desta edição!", "A Damaia orgulha-se de ti", "#PatronoOficial #DamaiensePascoaCup2026"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/patrono-damaiense-pascoa-cup/"}, {"slug": "celebracao-dia-da-mulher", "title": "Celebração Dia da Mulher", "date": "08.03.2026", "iso": "2026-03-08", "cat": "Clube", "img": "/assets/7e097ec578ff17747fd20662427c4ed2.jpg", "body": ["Durante o fim de semana celebrámos o Dia da Mulher de uma forma muito especial", "Antes do início do jogo, os nossos jogadores entraram em campo acompanhados pelas “suas” mulheres, num gesto simbólico de respeito, reconhecimento e agradecimento a todas aquelas que fazem parte das nossas vidas e do nosso Damaiense", "Um pequeno momento, mas cheio de significado, para homenagear a força, a dedicação e a inspiração que as mulheres representam todos os dias.", "Este foi um resumo do nosso grande Dia da Mulher no Damaiense"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/celebracao-dia-da-mulher/"}, {"slug": "andre-salvado-deixa-funcoes-no-sport-futebol-damaiense", "title": "André Salvado deixa funções no SF Damaiense", "date": "08.03.2026", "iso": "2026-03-08", "cat": "Clube", "img": "/assets/80966fafc93534d52886d222d3742aa3.jpg", "body": ["O SF Damaiense informa que André Salvado cessa hoje as suas funções como treinador da equipa sénior e coordenador de futebol do clube.", "Esta decisão foi tomada por mútuo acordo e resulta exclusivamente de uma decisão pessoal do treinador, a qual o clube respeita na totalidade.", "André Salvado deixa um legado marcante na história recente do Damaiense, tendo representado o clube com enorme dedicação ao longo de vários anos e em diferentes funções. Iniciou o seu percurso como jogador, assumiu posteriormente responsabilidades como treinador da formação, coordenador do futebol e, mais recentemente, liderou a nossa equipa sénior.", "Ao longo deste percurso, destacou-se pelo profissionalismo, compromisso e profunda ligação ao clube, contribuindo de forma significativa para o crescimento e afirmação do projeto desportivo do Damaiense.", "O SF Damaiense agradece sinceramente todo o trabalho, dedicação e paixão demonstrados.", "Desejamos ao André Salvado os maiores sucessos pessoais e profissionais para o futuro.", "Esta será sempre a tua casa.", "Obrigado por tudo, Mister."], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/andre-salvado-deixa-funcoes-no-sport-futebol-damaiense/"}, {"slug": "xi-edicao-damaiense-pascoa-cup-2026", "title": "XI Edição Damaiense Páscoa CUP 2026", "date": "24.02.2026", "iso": "2026-02-24", "cat": "Formação", "img": "/assets/d44e49cff902050ffc80363b25f54567.jpg", "body": ["A XI Edição do Damaiense Páscoa CUP 2026 já tem data marcada e promete voltar a ser um dos grandes momentos do futebol de formação nesta época desportiva.", "O torneio irá decorrer entre 30 de março e 4 de abril de 2026, reunindo alguns dos clubes mais emblemáticos da região e proporcionando uma semana repleta de competição, fair-play, convívio e paixão pelo futebol.", "Escalões em Competição: Petizes, Traquinas, Benjamins, Infantis", "Durante seis dias, jovens atletas terão a oportunidade de competir num ambiente organizado, competitivo e formativo, promovendo os valores do desporto, da amizade e do respeito.", "Equipas Confirmadas", "A edição de 2026 contará já com as seguintes equipas confirmadas:", "Clube de Futebol Benfica (Fofó)", "Estrela da Amadora", "Real Massamá", "Sport Lisboa Benfica", "Futebol Clube Outurela", "REP Tenente Valdez", "CD Olivais e Moscavide", "Casa Pia", "UDR Algés", "Mais equipas poderão ser anunciadas brevemente.", "O Damaiense Páscoa CUP continua a afirmar-se como uma referência no futebol jovem, proporcionando uma experiência única a atletas, treinadores, famílias e adeptos.", "Fique atento às próximas novidades, calendário de jogos e informações adicionais que serão divulgadas em breve.", "30 de março a 4 de abril de 2026", "XI Damaiense Páscoa CUP 2026", "Ainda vais a tempo de garantir o teu lugar no melhor torneio da Páscoa! ", "Garante já a tua inscrição para torneios@sfdamaiense.pt "], "min": 2, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/xi-edicao-damaiense-pascoa-cup-2026/"}, {"slug": "joao-lavado-e-o-novo-presidente-do-sport-futebol-damaiense", "title": "João Lavado é o novo Presidente do SF Damaiense", "date": "02.02.2026", "iso": "2026-02-02", "cat": "Clube", "img": "/assets/190faba7b878838a8bb9c0438bcf85eb.jpg", "body": ["O SF Damaiense anuncia, com grande entusiasmo, a eleição de João Lavado como novo Presidente do clube.", "Assumindo esta função com um profundo sentido de responsabilidade, dedicação e paixão pelo Damaiense, João Lavado inicia um novo ciclo de liderança com o compromisso de deixar uma marca duradoura na história do clube. A sua presidência tem como pilares a excelência desportiva, o fortalecimento da estrutura do clube e a promoção do bem-estar de todos os atletas, sócios e colaboradores.", "A visão do novo Presidente assenta no crescimento sustentável do SF Damaiense, na superação contínua de desafios e na valorização do espírito de família que sempre caracterizou o clube. Acreditando que o sucesso se constrói em conjunto, João Lavado reforça a importância da união entre direção, atletas, equipa técnica, sócios e adeptos.", "Este novo capítulo representa uma oportunidade para consolidar valores, honrar a história do Damaiense e projetar o clube para um futuro ainda mais ambicioso.", "O SF Damaiense expressa o seu mais profundo agradecimento à Presidente cessante Sónia Santos e a toda a sua Direção pelo trabalho, dedicação e compromisso demonstrados ao longo dos dois mandatos ao serviço do nosso clube.", "Viva o Damaiense! ", "Desde 1938, a dignificar e honrar o nosso emblema."], "min": 2, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/joao-lavado-e-o-novo-presidente-do-sport-futebol-damaiense/"}, {"slug": "88-anos-de-historia", "title": "88 Anos de História", "date": "01.01.2026", "iso": "2026-01-01", "cat": "Clube", "img": "/assets/f7c6c4424d4b8208f42eef2d52d69ec5.jpg", "body": ["88 Anos de História! Um Orgulho que Atravessa Gerações.", "Desde 1938, o SF Damaiense é mais do que um clube — é identidade, paixão e pertença. São 88 anos de história feitos de conquistas, desafios superados e de um amor incondicional às nossas cores.", "Cada jogo, cada atleta, cada sócio e adepto ajudaram a construir este legado que atravessa gerações e continua vivo dentro e fora do campo. O passado honra-nos, o presente move-nos e o futuro chama-nos a continuar a escrever a nossa história com ambição, união e respeito pelos valores que nos definem.", "O Damaiense não é apenas o que foi.", "É tudo o que somos.", "E tudo o que ainda vamos ser.", "Desde 1938. Sempre Damaiense."], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/88-anos-de-historia/"}, {"slug": "feliz-natal", "title": "Feliz Natal", "date": "15.12.2025", "iso": "2025-12-15", "cat": "Clube", "img": "/assets/c0b9399350acde1928ab5e83297decd4.jpg", "body": ["O Sport Futebol Damaiense deseja a todos os seus atletas, treinadores, dirigentes, sócios, adeptos e parceiros um Santo e Feliz Natal.", "Que esta época seja vivida com união, alegria e espírito de equipa — os mesmos valores que nos movem diariamente dentro e fora do campo. Que o novo ano traga saúde, sucesso desportivo e muitas conquistas, sempre com o Damaiense no coração. ", "Obrigado por fazerem parte da nossa família.", "Juntos, continuamos a construir o futuro!  "], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/feliz-natal/"}, {"slug": "no-damaiense-jogamos-juntos-e-fora-do-relvado", "title": "No Damaiense, jogamos juntos e fora do relvado", "date": "08.10.2025", "iso": "2025-10-08", "cat": "Clube", "img": "/assets/d8eee4d6a81af3f034c6e0bb65266030.jpg", "body": ["Outubro Rosa: A Prevenção é a Melhor Jogada!", "Neste Outubro Rosa, lembramos que a prevenção é a melhor jogada — e que juntos podemos vencer o cancro da mama!", "Durante este mês, multiplicam-se as ações de sensibilização que têm como objetivo alertar para a importância do diagnóstico precoce e para os cuidados com a saúde da mulher.", "O cancro da mama é um dos tipos mais comuns entre as mulheres, mas quando detetado a tempo, as hipóteses de cura podem ultrapassar os 90%. Por isso, é fundamental realizar o autoexame regularmente e fazer mamografias de rotina conforme a orientação médica.", "Mais do que uma cor ou um símbolo, o Outubro Rosa é um movimento de união, empatia e força.", "Use o laço rosa, partilhe informação e incentive outras mulheres a cuidarem de si — porque cada gesto conta, e juntos podemos lutar contra o cancro da mama!"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/no-damaiense-jogamos-juntos-e-fora-do-relvado/"}, {"slug": "esta-a-chegar-a-damaiense-minifoot-league-2025", "title": "Está a chegar a Damaiense Minifoot League 2025!", "date": "15.09.2025", "iso": "2025-09-15", "cat": "Formação", "img": "/assets/51ea0b37af3a1c4c015138bddffd79e2.jpg", "body": ["A partir do dia 26 de outubro, todos os meses o Complexo Desportivo do SF Damaiense será palco de uma competição especial, onde a paixão pelo futebol e a alegria das crianças são os verdadeiros protagonistas.", "Petizes e Traquinas vão viver a magia do futebol em mais uma grande competição organizada pelo nosso clube, que promete emoção, fair play e muitos golos!", "Escalão Petizes", "SF Damaiense", "SU Sintrense", "“Os Fixes”", "Os Belenenses (Mem Martins)", "Os Belenenses (Lisboa Centro)", "EF Misericórdia", "Mem Martins SC", "Estrela da Amadora", "Escalão Traquinas", "SL Benfica", "Mercês", "O futebol de formação é futuro, é paixão e é família. Vem apoiar os nossos pequenos grandes jogadores e sentir de perto a energia da Damaiense Minifoot League 2025!", "#SomosDamaiense #Desde1938 #AcademiaDamaiense #FamiliaDamaiense #MinifootLeague"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/esta-a-chegar-a-damaiense-minifoot-league-2025/"}, {"slug": "nota-de-pesar-sf-damaiense", "title": "Nota de Pesar – SF Damaiense", "date": "08.09.2025", "iso": "2025-09-08", "cat": "Clube", "img": "/assets/709db4da0e9e8aceab9d52b3ca24618b.jpg", "body": ["O SF Damaiense manifesta o seu mais profundo pesar pelo falecimento do jovem atleta Sub-8 do Boavista Futebol Clube.", "Neste momento de imensa dor, endereçamos as nossas mais sentidas condolências à família, amigos, colegas de equipa e a toda a estrutura do Boavista FC, desejando força e união para enfrentar esta perda irreparável.", "O futebol é paixão, é união, é partilha — e hoje estamos todos juntos na dor.", "#ForçaBoavista #SomosDamaiense"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/nota-de-pesar-sf-damaiense/"}, {"slug": "plantel-oficial-202526-sport-futebol-damaiense", "title": "Plantel Oficial 2025/26 – SF Damaiense", "date": "06.09.2025", "iso": "2025-09-06", "cat": "Futebol", "img": "/assets/31b415e04e5564923fb5926a056c933c.jpg", "body": ["O SF Damaiense apresenta oficialmente o plantel sénior para a época 2025/2026!", "Um grupo que junta experiência, juventude e ambição, pronto para vestir com orgulho as cores do nosso clube e lutar em cada jornada.", "Na fotografia oficial da época estão representados não só os nossos jogadores, mas também toda a equipa técnica e staff de apoio, elementos fundamentais para que nada falte dentro e fora de campo.", "O Damaiense é mais do que uma equipa: é uma família. Unidos pelo mesmo objetivo, preparados para enfrentar cada desafio e escrever mais um capítulo da nossa história desde 1938.", "Esta é a nossa força. Este é o nosso plantel. Este é o Damaiense!", "#SomosDamaiense #Desde1938 #FamiliaDamaiense #Epoca2025_26"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/plantel-oficial-202526-sport-futebol-damaiense/"}, {"slug": "a-nossa-equipa-tecnica-202526", "title": "A Nossa Equipa Técnica 2025/26", "date": "04.09.2025", "iso": "2025-09-04", "cat": "Futebol", "img": "/assets/6e9f8fc749b951317f73e47d96b72f94.jpg", "body": ["Experiência, energia e compromisso. É com estes valores que a equipa técnica sénior do SF Damaiense encara a nova época desportiva, preparada para enfrentar desafios e conquistar objetivos.", "No comando estará o treinador André Salvado, que contará com o apoio de uma equipa de adjuntos de excelência:", "Vasco Augusto", "João Coimbra", "André Couto", "André Luz", "Pedro Abrantes", "A equipa técnica ficará ainda mais forte com o trabalho fundamental do fisioterapeuta Diogo Gonçalves, garantindo que os nossos jogadores se mantêm preparados e em plena forma ao longo da época.", "Mais do que treinadores, são líderes, mentores e parte essencial da Família Damaiense. Porque a força de um clube não está apenas no relvado, mas também em quem o orienta fora dele.", "Juntos, carregamos o Damaiense para mais uma época inesquecível!", "#SomosDamaiense #Desde1938 #FamiliaDamaiense"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/a-nossa-equipa-tecnica-202526/"}, {"slug": "damaiense-cup-2025-sub-17", "title": "Damaiense Cup 2025 · Sub-17", "date": "03.09.2025", "iso": "2025-09-03", "cat": "Formação", "img": "/assets/550a2b5bb13868c08a24c25027bdd85e.jpg", "body": ["O Futebol de Formação está de volta em grande!", "No próximo 20 de setembro, o Complexo Desportivo Eugénia e Joaquim Cannas da Silva será palco da Damaiense Cup 2025 Sub-17, um torneio que promete muita emoção, talento e rivalidade saudável dentro das quatro linhas.", "Grupo A", "SF Damaiense B", "SC Lourinhanense", "CD Pinhalnovense", "Grupo B", "SF Damaiense A", "AL Cartaxo", "GD Coruchense", "Com a participação de equipas de referência no futebol jovem, esta edição traz ainda um patrono de luxo: Jorge Andrade, ex-internacional português, que dará ainda mais brilho à competição.", "Um agradecimento especial a todos os patrocinadores, que tornam possível este grande evento e que, tal como nós, vão a jogo connosco", "A Damaiense Cup 2025 Sub-17 não é apenas um torneio: é uma celebração da paixão pelo futebol, da dedicação dos jovens atletas e da força do desporto em comunidade.", "Marca já na tua agenda e vem viver connosco esta festa do futebol de formação!", "#DamaienseCup2025 #Sub17 #SFDamaiense #SomosDamaiense #Desde1938 #ADNDamaiense"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/damaiense-cup-2025-sub-17/"}, {"slug": "um-agradecimento-especial-ao-nosso-patrono", "title": "Um agradecimento especial ao nosso Patrono", "date": "21.04.2025", "iso": "2025-04-21", "cat": "Clube", "img": "/assets/f0821ec183276c93305223a856337ade.jpg", "body": ["Um agradecimento especial ao nosso Patrono Oficial da X Edição do Torneio : Geovany Quenda", "Foi com um enorme prazer que recebemos nesta que continua a ser a sua casa o nosso ex-atleta e atual jogador do Sporting Clube de Portugal e Seleção de Portugal A.", "Serás sempre bem-vindo!", "O nosso Muito Obrigado"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/um-agradecimento-especial-ao-nosso-patrono/"}, {"slug": "classificacoes-finais-10a-damaiense-pascoa-cup", "title": "Classificações finais - 10ª Damaiense Páscoa Cup", "date": "20.04.2025", "iso": "2025-04-20", "cat": "Formação", "img": "/assets/64a35f3d104b0b9df1a43f3fc5f830b4.jpg", "body": ["Petizes", "Sporting CP", "SL Benfica", "Futebol Benfica", "Melhor Jogador : Rodrigo Pires (SL Benfica)", "Melhor Marcador : Francisco Simão (Sporting CP)", "Melhor GR : Lucas Lima (Sporting CP)", "Traquinas", "Real SC", "Melhor Jogador : Benjamin Bernardes (Os Fixes)", "Melhor Marcador : Liam Dabó (Sporting CP)", "Melhor GR: Enzo Delgado (Futebol Benfica)", "Benjamins E1", "Casa Pia AC", "SL Olivais", "Outurela", "Melhor Jogador : Miguel Duarte (Outurela)", "Melhor Marcador : Tomás Oliveira (Outurela)", "Melhor GR: Davi Silva (Casa Pia AC)", "Benjamins E2", "Damaiense Red", "Melhor Jogador : Rodrigo Oliveira (Sporting CP)", "Melhor Marcador : Malik Baio (Sporting CP)", "Melhor GR: Rodrigo Pereira (Damaiense Red)", "Infantis D1", "Damaiense", "Melhor Jogador : Zacarias Lopes (Casa Pia AC)", "Melhor Marcador : Cláudio Grosa (Damaiense)", "Melhor GR: Bernardo Costa (Damaiense)", "Infantis D2", "Estrela Amadora", "Melhor Jogador : Kevin Silva (SL Benfica)", "Melhor Marcador : Rafael Fonseca (SL Benfica)", "Melhor GR: Gonçalo Ferreira (Estrela Amadora)", "Link Instagram", "#DamaiensePascoaCup2025"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/classificacoes-finais-10a-damaiense-pascoa-cup/"}, {"slug": "reportagem-com-geovany-quenda", "title": "Reportagem com Geovany Quenda", "date": "08.04.2025", "iso": "2025-04-08", "cat": "Formação", "img": "/assets/1bf8d4872dc1163e74f5a8bb33c645d9.jpg", "body": ["Com a palavra, o nosso @gquenda07", "A jovem estrela da Seleção Nacional, que deu início à sua brilhante jornada a defender as cores do Damaiense, regressou às nossas instalações para partilhar o seu carinho pelo clube e falar sobre a 10ª da edição da Damaiense Páscoa CUP, torneio do qual é Patrono Oficial!", "Podem aceder ao link do nosso instagram para ver a reportagem: http://www.instagram.com/p/DILuQWBC6vG/", "Carrega Damaiense!!", "#SomosDamaiense #Desde1938 #FamiliaDamaiense #AcademiaDamaiense", "#ForçaDamaiense #quenda #seleção #portugal"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/reportagem-com-geovany-quenda/"}, {"slug": "parceiros-oficiais-10a-edicao-da-damaiense-pascoa-cup", "title": "Parceiros Oficiais 10ª edição da Damaiense Páscoa CUP", "date": "04.04.2025", "iso": "2025-04-04", "cat": "Clube", "img": "/assets/51caaa1fd9ecd9cc77b2fd1a665cac33.jpg", "body": ["A 10ª edição da Damaiense Páscoa Cup está prestes a começar e nada disto seria possível sem o apoio dos nossos patrocinadores!", "Não percas, de 14 a 19 de abril, voltamos a fazer história. O futuro do futebol começa aqui!!", "#AcademiaDamaiense #SomosDamaiense #Desde1938 #FamiliaDamaiense"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/parceiros-oficiais-10a-edicao-da-damaiense-pascoa-cup/"}, {"slug": "10a-edicao-da-damaiense-pascoa-cup", "title": "10ª edição da Damaiense Páscoa CUP", "date": "18.02.2025", "iso": "2025-02-18", "cat": "Formação", "img": "/assets/c09b6b7e99d39c8cf01dcb156490d928.jpg", "body": ["Geovany Quenda, ex-atleta do SFD, é o Patrono Oficial da 10ª edição da Damaiense Páscoa CUP", "Uma honra contar com a presença de quem tanto representa o espirito do futebol!", "Este torneio reunirá algumas das principais equipas de futebol jovem do país, proporcionando um ambiente de competição saudável, convívio e desenvolvimento para crianças dos escalões de Petizes, Traquinas, Benjamins e Infantis.", "Com a participação de clubes renomados como Sporting CP, Estrela da Amadora, Casa Pia e Futebol Benfica, entre outros, o Páscoa Cup 2025 será um palco de grandes momentos para as futuras estrelas do futebol.", "Data: 14 a 19 de Abril de 2025", "Horário: Das 9h às 18h", "Local:  Complexo Desportivo Eugénia e Joaquim Cannas da Silva"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/10a-edicao-da-damaiense-pascoa-cup/"}, {"slug": "patrono-oficial-sf-damaiense-pascoa-cup-2024", "title": "Patrono Oficial SF Damaiense Páscoa Cup 2024", "date": "15.03.2024", "iso": "2024-03-15", "cat": "Formação", "img": "/assets/9e315c16622771503c63e3864069e821.jpg", "body": ["O Ex-atleta do SF Damaiense e atual jogador do SL Benfica e Seleção de Cabo Verde é o Patrono Oficial do torneio SFD Damaiense Páscoa Cup 2024."], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/patrono-oficial-sf-damaiense-pascoa-cup-2024/"}, {"slug": "sf-damaiense-pascoa-cup-2024", "title": "SF Damaiense Páscoa Cup 2024", "date": "07.12.2023", "iso": "2023-12-07", "cat": "Formação", "img": "/assets/96b744de65b0f28d80237c453f9ad264.jpg", "body": ["O nosso SF Damaiense Páscoa Cup estará de volta em 2024", "Inscrições abertas para o melhor torneio de Páscoa em vários escalões de formação.", "Inscrições", "Luís Octaviano", "962 761 449", "luis.octaviano@sfdamaiense.pt", "Vasco Silveira", "912 148 688", "coordenacao@sfdamaiense.pt", "João Felício", "934 596 125", "joao.felicio@sfdamaiense.pt"], "min": 1, "src": "https://sfdamaiense.emjogo.pt/pt/noticias/sf-damaiense-pascoa-cup-2024/"}];
+    const ccls = (c) => 'c-' + c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const nv = (x) => ({ title: x.title, date: x.date, cat: x.cat, catCls: ccls(x.cat), img: x.img, min: x.min, href: '/noticia/#' + x.slug, ex: x.body.join(' ').replace(/\s+/g, ' ').slice(0, 260) });
+    const names = ['Todas', 'Clube', 'Formação', 'Futebol'];
+    const list = s.cat === 'Todas' ? NEWS : NEWS.filter((x) => x.cat === s.cat);
+    const rest = s.cat === 'Todas' ? list.slice(1) : list;
+    return {
+      rootCls: 'th-' + th + (s.ready ? ' go' : ''),
+      menuOpen: s.menuOpen, menuOpenStr: s.menuOpen ? 'true' : 'false', burgerCls: 'v2-burger' + (s.menuOpen ? ' open' : ''),
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }),
+      mobileNav: [['/', 'Início'], ['/jogos/', 'Jogos'], ['/futebol/', 'Futebol'], ['/noticias/', 'Notícias'], ['/loja/', 'Loja'], ['/socios/', 'Sócios'], ['/clube/', 'Clube'], ['/contactos/', 'Contactos']].map((x) => ({ href: x[0], label: x[1] })),
+      title: 'NOTÍCIAS'.split('').map((c, i) => ({ c: c, d: (0.15 + i * 0.06).toFixed(2) + 's' })),
+      cats: names.map((n) => ({ name: n + ' (' + (n === 'Todas' ? NEWS.length : NEWS.filter((x) => x.cat === n).length) + ')', active: n === s.cat, inactive: n !== s.cat, pick: () => this.setState({ cat: n, n: 9 }) })),
+      feat: s.cat === 'Todas' ? [nv(NEWS[0])] : [],
+      items: rest.slice(0, s.n).map(nv),
+      shown: Math.min(s.n, rest.length) + (s.cat === 'Todas' ? 1 : 0),
+      total: list.length,
+      hasMore: rest.length > s.n,
+      loadMore: () => this.setState({ n: s.n + 9 })
+    };
+  }
+}
+</script>
+</body>
+</html>
